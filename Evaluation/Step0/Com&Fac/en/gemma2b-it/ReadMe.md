@@ -1,5 +1,5 @@
-Factuality score is: 0.6915422885572139
+Factuality score is: 0.6318407960199005
 
-Completeness score is: 0.45037616655841317
+Completeness score is: 0.43871906511340913
 
-F1_prim score is: 0.54549283
+F1_prim score is: 0.517861006
