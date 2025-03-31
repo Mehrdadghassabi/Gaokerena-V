@@ -110,17 +110,19 @@ is another significant contribution in the field. This project involved extracti
 
 MedMobile
 \cite{b9}
-represents yet another advancement in the realm of medical language models. This work fine-tuned the Phi-3-mini model using a combination of synthetic and human-generated datasets, enabling it to achieve optimal performance tailored for mobile applications in the medical domain. By focusing on the specific requirements of mobile users, MedMobile sought to deliver a model that is both efficient and effective, ensuring accessibility to high-quality medical information on the go.
+represents yet another advancement in the realm of small medical language models. This work fine-tuned the Phi-3-mini model
+\cite{b10}
+using a combination of synthetic and human-generated datasets, enabling it to achieve optimal performance tailored for mobile applications in the medical domain. By focusing on the specific requirements of mobile users, MedMobile sought to deliver a model that is both efficient and effective, ensuring accessibility to high-quality medical information on the go.
 \subsection{Persian Medical Language models}
 As previously mentioned, there has been limited research focused on Persian medical language models, highlighting a significant gap in resources for the Persian-speaking medical community. While some general-purpose language models, such as aya-expanse
 \cite{b5}
 , Gemma
-\cite{b10}
-, and PersianMind
 \cite{b11}
+, and PersianMind
+\cite{b12}
 , are multilingual and support Persian, their application in the medical domain has not been extensively explored.
 
-One notable effort in this area is Sina BERT
+Maybe the notable effort in this area is Sina BERT
 \cite{b4}
 , which involved training a BERT model using a crawled corpus along with developed Persian annotated datasets tailored for various tasks, including question answering. However, the Sina BERT team did not publish either their model or their datasets, which restricts access for researchers and practitioners who could benefit from their work.
 
@@ -148,30 +150,32 @@ In our research, we crawled more than 140,000 question-answer pairs from Persian
 \section{Training}
 \subsection{fine tuning}
 We fine-tuned the aya-expanse8b model on 60\% of our corpus, leveraging LoRA
-\cite{b12}
+\cite{b13}
 method to optimize performance. Specifically, we implemented a rank of 8, an alpha value of 16, and a LoRA dropout rate of 0.05, conducting the fine-tuning for a single epoch. This approach allowed us to effectively adapt the model to our specific dataset while minimizing resource usage, ensuring a balance between efficiency and performance enhancement in our training process.
 \subsection{instruction tuning}
 In addition to fine-tuning the aya-expanse8b model, we also instruction-tuned the fine-tuned model on our crawled free-form Farsi question-answering (MF3QA) dataset. For this instruction tuning, we employed a LoRA method with a rank of 2, an alpha value of 2, and a LoRA dropout rate of 0.4, conducting the process for a single epoch. This targeted approach allowed us to further enhance the model’s ability to understand and generate responses in the context of Farsi question-answering, optimizing its performance for our specific dataset and improving its overall effectiveness.
 \subsection{Carbon Footprint}
 During our recent computational experiments, we utilized an A100 PCIe 40/80G hardware setup on the Google Cloud Platform, specifically in the asia-east1 compute region. The hardware was operational for a total of 19 hours, resulting in a carbon footprint of 2.66 kg CO2 equivalent emissions calculated  based on the formula introduced by Wu et all
-\cite{b13}
+\cite{b14}
 .
 \section{Results}
 Since there is no publicly available medical Persian language model to compare our results against, and given that only a few small Persian language models exist, we opted to compare our model with a pipeline system that combines an English medical language model with a translator, specifically targeting systems with a total of less than 8 billion parameters, which we define as runnable on home devices. We evaluated our model against two different pipeline configurations to demonstrate that, in addition to their poor grammatical performance, these systems also struggle to effectively encode medical knowledge, as evidenced by their low scores in multiple-choice question-answering datasets. The first configuration involved using MedMobile
 \cite{b9}
 as the English small medical language model paired with gemma-2b-it
-\cite{b14}
-as the translator, while the second configuration used MedMobile with Parsinlu
 \cite{b15}
+as the translator, while the second configuration used MedMobile with Parsinlu
 \cite{b16}
+\cite{b17}
 as the translator. Our comparisons highlighted the limitations of these pipeline systems in both linguistic accuracy and medical comprehension.
 \footnote{
 	you can see the detailed result at https://github.com/Mehrdadghassabi/Gaokerena
 }
 \subsection{multiple choice question answering}
 In our results section, we address the significant challenge of the lack of available Persian datasets for medical language processing. To overcome this, we translated the medical portion of the Massive Multitask Language Understanding (MMLU)
-\cite{b17}
-dataset into Persian and supplemented it with data from the Iranian Basic Medical Sciences Entrance Exam(IBMSEE), which we also crawled. Notably,as you can see on Table I our model achieved remarkable success by surpassing the passing score of the Iranian Basic Medical Sciences Entrance Exam, which stands at 36\%, making it the first Persian small language model to pass this exam. Furthermore, our model demonstrated substantial improvements on the translated MMLU dataset, not only achieving higher average scores but also excelling across most sub-categories, thereby showcasing its effectiveness in understanding and generating medical knowledge in the Persian language.
+\cite{b18}
+dataset into Persian and supplemented it with data from the Iranian Basic Medical Sciences Entrance Exam(IBMSEE), which we also crawled. Notably,as you can see on Table
+\ref{tab:model_results_on_mcqa}
+our model achieved remarkable success by surpassing the passing score of the Iranian Basic Medical Sciences Entrance Exam, which stands at 36\%, making it the first Persian small language model to pass this exam. Furthermore, our model demonstrated substantial improvements on the translated MMLU dataset, not only achieving higher average scores but also excelling across most sub-categories, thereby showcasing its effectiveness in understanding and generating medical knowledge in the Persian language.
 \begin{table}[ht]
 	\centering
 	\caption{Results on medical multiple choice question answering}
@@ -202,12 +206,12 @@ dataset into Persian and supplemented it with data from the Iranian Basic Medica
 		IBMSEE & \textbf{38.69} & 34.52 & 24.40 & 32.73 \\ 
         \hline
 	\end{tabular}
-	\label{tab:model_results}
+	\label{tab:model_results_on_mcqa}
 \end{table}
 \subsection{free form question answering}
 \subsubsection{K-QA benchmark}
 In this study, we utilized the K-QA dataset introduced by Itay Manes
-\cite{b18}
+\cite{b19}
 , which consists of expert-generated question-answer pairs, each accompanied by “nice to have” and “must have” lists. Manes proposed two key metrics, Completeness and Factuality, which are essential for evaluating the quality of the question-answer pairs. These metrics, as reformulated by Hyunjae Kim
 \cite{b8}
 , are defined as follows:  
@@ -225,7 +229,9 @@ Manes likened these metrics to traditional precision and recall, leading to the 
 \[
 F_{1}^{\prime} = \frac{2 \times S_{comp} \times S_{fact}}{S_{comp} + S_{fact}}
 \]
-In our research, we translated the k-QA dataset into Persian and computed the Completeness and Factuality scores for our model, Gaokerena, as well as for the baseline model,aya-expanse-8b. as you can see in the Table II the results indicated that Gaokerena slightly outperformed aya-expanse-8b in both the $F_{1}^{\prime}$ score and the Factuality score, demonstrating the effectiveness of our approach.
+In our research, we translated the K-QA dataset into Persian and computed the Completeness and Factuality scores for our model, Gaokerena, as well as for the baseline model,aya-expanse-8b. as you can see in the Table
+\ref{tab:model_accuracy_on_ffqa}
+the results indicated that Gaokerena slightly outperformed aya-expanse-8b in both the $F_{1}^{\prime}$ score and the Factuality score, demonstrating the effectiveness of our approach.
 
 \begin{table}[ht]
 	\centering
@@ -241,12 +247,12 @@ In our research, we translated the k-QA dataset into Persian and computed the Co
 		$F_{1}^{\prime}$ & \textbf{0.5847} & 0.5781 \\ 
 		\hline
 	\end{tabular}
-	\label{tab:model_accuracy}
+	\label{tab:model_accuracy_on_ffqa}
 \end{table}
 
 \subsubsection{AI Evaluating AI}
-In addition to our k-QA benchmark, we also utilized GPT-4o
-\cite{b19}
+In addition to our K-QA benchmark, we also utilized GPT-4o
+\cite{b20}
 as an evaluator for free form question answering. We provided the test set from the MF3QA dataset to both aya-expanse-8b and our model. As illustrated in figure
 \ref{fig2}
 ,GPT-4o predominantly preferred the responses generated by our model to the baseline model. This indicates that our model delivers high-quality responses as judged by an advanced language model.
@@ -271,16 +277,17 @@ Singhal, Karan, et al. "Large language models encode clinical knowledge." Nature
 \bibitem{b7} Touvron, Hugo, et al. "Llama: Open and efficient foundation language models." arXiv preprint arXiv:2302.13971 (2023).
 \bibitem{b8} Kim, Hyunjae, et al. "Small language models learn enhanced reasoning skills from medical textbooks." arXiv preprint arXiv:2404.00376 (2024).
 \bibitem{b9} Vishwanath, Krithik, et al. "MedMobile: A mobile-sized language model with expert-level clinical capabilities." arXiv preprint arXiv:2410.09019 (2024).
-\bibitem{b10} Team, Gemma, et al. "Gemma: Open models based on gemini research and technology." arXiv preprint arXiv:2403.08295 (2024).
-\bibitem{b11} Rostami, Pedram, Ali Salemi, and Mohammad Javad Dousti. "Persianmind: A cross-lingual persian-english large language model." arXiv preprint arXiv:2401.06466 (2024).
-\bibitem{b12} Hu, Edward J., et al. "Lora: Low-rank adaptation of large language models." ICLR 1.2 (2022): 3.
-\bibitem{b13} Wu, Carole-Jean, et al. "Sustainable ai: Environmental implications, challenges and opportunities." Proceedings of Machine Learning and Systems 4 (2022): 795-813.
-\bibitem{b14} Team, Gemma, et al. "Gemma 2: Improving open language models at a practical size, 2024." URL https://arxiv. org/abs/2408.00118 1.3 (2024).
-\bibitem{b15} Khashabi, Daniel, et al. "Parsinlu: a suite of language understanding challenges for persian." Transactions of the Association for Computational Linguistics 9 (2021): 1147-1162.
-\bibitem{b16} Kashefi, Omid. "MIZAN: a large persian-english parallel corpus." arXiv preprint arXiv:1801.02107 (2018).
-\bibitem{b17} Hendrycks, Dan, et al. "Measuring massive multitask language understanding." arXiv preprint arXiv:2009.03300 (2020).
-\bibitem{b18} Manes, Itay, et al. "K-qa: A real-world medical q\&a benchmark." arXiv preprint arXiv:2401.14493 (2024).
-\bibitem{b19} Hurst, Aaron, et al. "Gpt-4o system card." arXiv preprint arXiv:2410.21276 (2024).
+\bibitem{b10} Abdin, Marah, et al. "Phi-3 technical report: A highly capable language model locally on your phone." arXiv preprint arXiv:2404.14219 (2024).
+\bibitem{b11} Team, Gemma, et al. "Gemma: Open models based on gemini research and technology." arXiv preprint arXiv:2403.08295 (2024).
+\bibitem{b12} Rostami, Pedram, Ali Salemi, and Mohammad Javad Dousti. "Persianmind: A cross-lingual persian-english large language model." arXiv preprint arXiv:2401.06466 (2024).
+\bibitem{b13} Hu, Edward J., et al. "Lora: Low-rank adaptation of large language models." ICLR 1.2 (2022): 3.
+\bibitem{b14} Lacoste, Alexandre, et al. "Quantifying the carbon emissions of machine learning." arXiv preprint arXiv:1910.09700 (2019).
+\bibitem{b15} Team, Gemma, et al. "Gemma 2: Improving open language models at a practical size, 2024." URL https://arxiv. org/abs/2408.00118 1.3 (2024).
+\bibitem{b16} Khashabi, Daniel, et al. "Parsinlu: a suite of language understanding challenges for persian." Transactions of the Association for Computational Linguistics 9 (2021): 1147-1162.
+\bibitem{b17} Kashefi, Omid. "MIZAN: a large persian-english parallel corpus." arXiv preprint arXiv:1801.02107 (2018).
+\bibitem{b18} Hendrycks, Dan, et al. "Measuring massive multitask language understanding." arXiv preprint arXiv:2009.03300 (2020).
+\bibitem{b19} Manes, Itay, et al. "K-qa: A real-world medical q\&a benchmark." arXiv preprint arXiv:2401.14493 (2024).
+\bibitem{b20} Hurst, Aaron, et al. "Gpt-4o system card." arXiv preprint arXiv:2410.21276 (2024).
 \end{thebibliography}
 
 
