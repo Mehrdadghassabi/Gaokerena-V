@@ -1,1 +1,1 @@
-![logo_without_bg_smaller](https://github.com/user-attachments/assets/cefda916-e868-43c4-8dd8-43176a311f2b)
+![logo_with_bg_smaller](https://github.com/user-attachments/assets/3d87d3e0-c4e8-44ad-8d27-9bb3656e3af6)
