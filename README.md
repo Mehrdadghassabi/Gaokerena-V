@@ -26,3 +26,9 @@ A highlight of the Gaokerena project is the  dataset our team has developed—th
 - Question-Answer Dataset: We also developed the first Persian dataset for medical question answering, collecting over 140,000 question-answer pairs from online forums. Our team tried hard to clean and filter this data, ensuring it’s high-quality and useful for training the model to handle real-world medical queries effectively.
 
 Both datasets are fully open-source, inviting researchers and developers to build on our work and advance Persian medical NLP.
+
+# Base model
+Gaokerena is built on Aya-ExPanse-8B, a robust and efficient language model selected for its proven performance and adaptability. This base model was fine-tuned to address the specific requirements of Persian medical applications, ensuring optimal accuracy and performance.
+
+# Training process
+The Gaokerena model was trained through a  process that involved fine-tuning the Aya-ExPanse-8B base model on 60% of our Persian medical corpus, using the LoRA method for efficiency. This was followed by instruction tuning on our free-form question-answering dataset, optimizing it for Persian medical queries.  The training was conducted on A100 PCIe 40/80G hardware via the Google Cloud Platform in the asia-east1 region, operating for 19 hours and resulting in a carbon footprint of 2.66 kg CO2 equivalent emissions.
