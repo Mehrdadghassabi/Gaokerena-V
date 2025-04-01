@@ -19,3 +19,10 @@ AI has huge potential to improve medicine, and with Gaokerena, we’re working t
 - Great Results: Stands out by delivering better results than other related models, including those that pair English medical models with translation systems. It excels at accurately interpreting medical questions and providing clear, reliable answers in Persian, making it highly effective for healthcare needs.
 
 - Focus on Privacy and Ease: A lightweight model (based on aya-expanse-8b) optimized for local deployment, ensuring sensitive medical data remains secure and confidential.
+
+# Dataset
+A highlight of the Gaokerena project is the  dataset our team has developed—the first ever created for Persian medical language processing. We’ve built two essential resources that set a new standard for the field:
+- Persian Medical Corpus: This is the first collection of its kind, built by gathering around 90 million tokens and 100,000 articles from various Persian medical websites and sources. It gives Gaokerena the foundation it needs to understand and generate accurate medical content in Persian. 
+- Question-Answer Dataset: We also developed the first Persian dataset for medical question answering, collecting over 140,000 question-answer pairs from online forums. Our team tried hard to clean and filter this data, ensuring it’s high-quality and useful for training the model to handle real-world medical queries effectively.
+
+Both datasets are fully open-source, inviting researchers and developers to build on our work and advance Persian medical NLP.
