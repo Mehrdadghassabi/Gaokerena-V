@@ -48,6 +48,6 @@ Gaokerena is built on [aya-expanse-8b](https://huggingface.co/CohereForAI/aya-ex
 The Gaokerena model was trained through a  process that involved fine-tuning the Aya-ExPanse-8B base model on 60% of our Persian medical corpus, using the LoRA method for efficiency. This was followed by instruction tuning on our free-form question-answering dataset, optimizing it for Persian medical queries.  The training was conducted on A100 PCIe 40/80G hardware via the Google Cloud Platform in the asia-east1 region, operating for 19 hours and resulting in a carbon footprint of 2.66 kg CO2 equivalent emissions.
 
 ## 📊 Results
-## License ⛔️ License
-## Collaborators 🤝 Collaborators
-## Acknowledgement 🙏🏼 Acknowledgement
+## ⛔️ License
+## 🤝 Collaborators
+## 🙏🏼 Acknowledgement
