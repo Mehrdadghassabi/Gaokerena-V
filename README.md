@@ -49,5 +49,11 @@ The Gaokerena model was trained through a  process that involved fine-tuning the
 
 ## 📊 Results
 ## ⛔️ License
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) (non-commercial use only)
 ## 🤝 Collaborators
+1. Mehrdad Ghassabi
+2. Pedram Rostami
+3. Amirhossein Poursina
+4. Zahra Kazemi
+5. Milad Tavakoli
 ## 🙏🏼 Acknowledgement
