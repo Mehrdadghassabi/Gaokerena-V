@@ -9,12 +9,16 @@ AI has huge potential to improve medicine, and with Gaokerena, we’re working t
 
 # Features
 - First Open-Source Persian Medical Model: The only publicly available Persian language model fine-tuned specifically for medical applications. making it freely available for research and other applications.
-
-- High-Quality Persian Medical Datasets: Introduces the first-ever dataset in Persian for medical question answering, developed by our team from scratch, setting a new benchmark for Persian medical NLP resources. The dataset include:
+- The first model to pass the Iranian Basic Medical Sciences Entrance Exam
+- High-Quality Persian Medical resources including:
 
     1. 90M-token Persian medical corpus (crawled from diverse sources).
 
-    2. MF3QA: 140K+ filtered medical Q&A pairs (first free-form Persian dataset).
+    2. MF3QA: 20k filtered medical free form QA pairs (crawled from diverse sources).
+ 
+    4. Translation of [K-QA](https://github.com/Itaymanes/K-QA/blob/main/dataset/questions_w_answers.jsonl) benchmark into persian
+
+    6. Translation of medical portion of [MMLU](https://github.com/Itaymanes/K-QA/blob/main/dataset/questions_w_answers.jsonl) benchmark into persian
 
 - Great Results: Stands out by delivering better results than other related models, including those that pair English medical models with translation systems. It excels at accurately interpreting medical questions and providing clear, reliable answers in Persian, making it highly effective for healthcare needs.
 
