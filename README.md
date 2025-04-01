@@ -25,7 +25,7 @@ Gaokerena is compact but powerful, designed to run smoothly even on home devices
 AI has huge potential to improve medicine, and with Gaokerena, we’re working to bring that potential to the Persian-speaking world.
 
 ## 🕵🏼‍♀️ Features
-- First Open-Source Persian Medical Model: The only publicly available Persian language model fine-tuned specifically for medical applications. making it freely available for research and other applications.
+- First [Open-Source](https://huggingface.co/gaokerena/gaokerena-v1) Persian Medical Model: The only publicly available Persian language model fine-tuned specifically for medical applications. making it freely available for research and other applications.
 - The first model to pass the Iranian Basic Medical Sciences Entrance Exam
 - High-Quality Persian Medical resources introduced including:
 
