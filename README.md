@@ -24,7 +24,7 @@ Welcome to the Gaokerena Project! We’re excited to share an innovative initiat
 Gaokerena is compact but powerful, designed to run smoothly even on home devices while keeping privacy and security—essential for medical use—at the forefront. We trained it on a new Persian medical dataset, including free-form Q&A, to make healthcare information more accessible and interactions safer.\
 AI has huge potential to improve medicine, and with Gaokerena, we’re working to bring that potential to the Persian-speaking world.
 
-## Features
+## 🕵🏼‍♀️ Features
 - First Open-Source Persian Medical Model: The only publicly available Persian language model fine-tuned specifically for medical applications. making it freely available for research and other applications.
 - The first model to pass the Iranian Basic Medical Sciences Entrance Exam
 - High-Quality Persian Medical resources introduced including:
@@ -41,13 +41,13 @@ AI has huge potential to improve medicine, and with Gaokerena, we’re working t
 
 - Focus on Privacy and Ease: A lightweight model (based on aya-expanse-8b) optimized for local deployment, ensuring sensitive medical data remains secure and confidential.
 
-## Base model
+## 💾 Base model
 Gaokerena is built on [aya-expanse-8b](https://huggingface.co/CohereForAI/aya-expanse-8b), a robust and efficient language model selected for its proven performance and adaptability. This base model was fine-tuned to address the specific requirements of Persian medical applications, ensuring optimal accuracy and performance.
 
-## Training process
+## 🏃 Training process
 The Gaokerena model was trained through a  process that involved fine-tuning the Aya-ExPanse-8B base model on 60% of our Persian medical corpus, using the LoRA method for efficiency. This was followed by instruction tuning on our free-form question-answering dataset, optimizing it for Persian medical queries.  The training was conducted on A100 PCIe 40/80G hardware via the Google Cloud Platform in the asia-east1 region, operating for 19 hours and resulting in a carbon footprint of 2.66 kg CO2 equivalent emissions.
 
-## Results
-## License
-## Collaborators
-## Acknowledgement
+## 📊 Results
+## License ⛔️ License
+## Collaborators 🤝 Collaborators
+## Acknowledgement 🙏🏼 Acknowledgement
