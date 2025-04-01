@@ -2,6 +2,10 @@
   <img src="https://github.com/user-attachments/assets/fa5782f3-bf6e-4ff1-987d-517e6f2d135f"/>
 </div>
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fa5782f3-bf6e-4ff1-987d-517e6f2d135f" width="50%"/>
+</p>
+
 [![quick start](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mehrdadghassabi/Gaokerena/blob/master/assets/Untitled4.ipynb)
 
 # Overview
