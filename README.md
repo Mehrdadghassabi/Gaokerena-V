@@ -2,7 +2,7 @@
   <img src="https://github.com/user-attachments/assets/fa5782f3-bf6e-4ff1-987d-517e6f2d135f"/>
 </div>
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mehrdadghassabi/Gracc/blob/master/Gracc.ipynb)
+[![quick start](https://colab.research.google.com/assets/colab-badge.svg)]()
 
 # Overview
 Welcome to the Gaokerena Project! We’re excited to share an innovative initiative aimed at advancing natural language processing for the Persian-speaking medical community.\
