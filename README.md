@@ -29,7 +29,7 @@ AI has huge potential to improve medicine, and with Gaokerena, we’re working t
 - The first model to pass the Iranian Basic Medical Sciences Entrance Exam
 - High-Quality Persian Medical resources introduced including:
 
-    1. 90M-token Persian medical corpus (crawled from diverse sources).
+    1. [90M-token Persian medical corpus](https://huggingface.co/datasets/gaokerena/medical_corpus) (crawled from diverse sources).
 
     2. [MF3QA](https://github.com/Mehrdadghassabi/Gaokerena/tree/main/dataset/MF3QA): 20k filtered medical free form QA pairs (crawled from diverse sources).
  
