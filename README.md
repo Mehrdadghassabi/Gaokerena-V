@@ -10,7 +10,7 @@ AI has huge potential to improve medicine, and with Gaokerena, we’re working t
 # Features
 - First Open-Source Persian Medical Model: The only publicly available Persian language model fine-tuned specifically for medical applications. making it freely available for research and other applications.
 - The first model to pass the Iranian Basic Medical Sciences Entrance Exam
-- High-Quality Persian Medical resources including:
+- High-Quality Persian Medical resources introduced including:
 
     1. 90M-token Persian medical corpus (crawled from diverse sources).
 
