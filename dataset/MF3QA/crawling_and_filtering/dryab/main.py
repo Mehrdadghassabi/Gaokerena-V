@@ -71,20 +71,46 @@ def merge_excel_files(folder_path):
     merged_file_path = os.path.join(folder_path, 'merged_file.xlsx')
     merged_df.to_excel(merged_file_path, index=False)
 
-def crawl_qas():
+def crawl_qas(bgn):
     i = 1
-    for p in range(1, 4849):
+    for p in range(1, 5101):
+        if p <= bgn:
+            continue
         try:
             url_to_scrape = "https://doctor-yab.ir/faq/?page=" + str(p)
             file_name = str(i) + '.xlsx'
             save_qas(url_to_scrape, file_name)
+            print('page ' + str(p) + ' has been written.')
             i = i + 1
         except Exception as e:
             print(e)
     folder_path = './'
     merge_excel_files(folder_path)
 
+def append_record_to_excel(file_path, Question,Answer):
+    new_record = {
+        'Question': Question,
+        'Answer': Answer
+    }
+    new_record_df = pd.DataFrame([new_record])
+    try:
+        existing_df = pd.read_excel(file_path)
+        updated_df = pd.concat([existing_df, new_record_df], ignore_index=True)
+    except FileNotFoundError:
+        updated_df = new_record_df
 
-#crawl_qas()
-#merge_excel_files('./')
-#print(get_answer('https://doctor-yab.ir/faq/irq0/من-ناخواسته-باردار-شدم-و-قرصCYTOTECمصرف-مردم-یکم-خون-ریزی-داشتم-ولی-سقط-جنین-انجام-نشد-من-چیکار-کنم/').strip())
+    updated_df.to_excel(file_path, index=False)
+
+def isNaN(n):
+    return n != n
+
+def clean(in_path,out_path):
+    df = pd.read_excel(in_path)
+    for index, row in df.iterrows():
+        print(index)
+        Question = row['Question']
+        Answer = row['Answer']
+        if Question != 'Tag not found.' and Answer != 'Tag not found.' and not isNaN(Question) and not isNaN(Answer):
+            append_record_to_excel(out_path, Question, Answer)
+
+crawl_qas(2127)
