@@ -33,9 +33,9 @@ AI has huge potential to improve medicine, and with Gaokerena, we’re working t
 
     2. [MF3QA](https://github.com/Mehrdadghassabi/Gaokerena/tree/main/dataset/MF3QA): 20k filtered medical free form QA pairs (crawled from diverse sources).
  
-    4. Translation of [K-QA](https://github.com/Itaymanes/K-QA/blob/main/dataset/questions_w_answers.jsonl) benchmark into persian
+    4. [Translation](https://github.com/Mehrdadghassabi/Gaokerena/tree/main/dataset/KQA_fa) of [K-QA](https://github.com/Itaymanes/K-QA/blob/main/dataset/questions_w_answers.jsonl) benchmark into persian
 
-    6. Translation of medical portion of [MMLU](https://github.com/Itaymanes/K-QA/blob/main/dataset/questions_w_answers.jsonl) benchmark into persian
+    6. [Translation](https://github.com/Mehrdadghassabi/Gaokerena/tree/main/dataset/MMLU_fa) of medical portion of [MMLU](https://github.com/Itaymanes/K-QA/blob/main/dataset/questions_w_answers.jsonl) benchmark into persian
 
 ## 🕵🏼‍♀️ Features
 - First [Open-Source](https://huggingface.co/gaokerena/gaokerena-v1) Persian Medical Model: The only publicly available Persian language model fine-tuned specifically for medical applications. making it freely available for research and other applications.
