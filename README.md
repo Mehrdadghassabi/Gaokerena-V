@@ -31,7 +31,7 @@ AI has huge potential to improve medicine, and with Gaokerena, we’re working t
 
     1. [90M-token Persian medical corpus](https://huggingface.co/datasets/gaokerena/medical_corpus) (crawled from diverse sources).
 
-    2. [MF3QA](https://github.com/Mehrdadghassabi/Gaokerena/tree/main/dataset/MF3QA): 20k filtered medical free form QA pairs (crawled from diverse sources).
+    2. [MF3QA](https://github.com/Mehrdadghassabi/Gaokerena/tree/main/dataset/MF3QA): about 200k medical free form QA pairs and 20k cleaned QA pairs (crawled from diverse sources).
  
     4. [Translation](https://github.com/Mehrdadghassabi/Gaokerena/tree/main/dataset/KQA_fa) of [K-QA](https://github.com/Itaymanes/K-QA/blob/main/dataset/questions_w_answers.jsonl) benchmark into persian
 
