@@ -39,11 +39,11 @@ AI has huge potential to improve medicine, and with Gaokerena, we’re working t
 
 ## 🕵🏼‍♀️ Features
 - First [Open-Source](https://huggingface.co/gaokerena/gaokerena-v1) Persian Medical Model: The only publicly available Persian language model fine-tuned specifically for medical applications. making it freely available for research and other applications.
-- The first model to pass the Iranian Basic Medical Sciences Entrance Exam
+- The first small language model to pass the Iranian Basic Medical Sciences Entrance Exam (کنکور علوم پایه پزشکی)
 
 - Great Results: Stands out by delivering better results than other related models, including those that pair English medical models with translation systems. It excels at accurately interpreting medical questions and providing clear, reliable answers in Persian, making it highly effective for healthcare needs.
 
-- Focus on Privacy and Ease: A lightweight model (based on aya-expanse-8b) optimized for local deployment, ensuring sensitive medical data remains secure and confidential.
+- Focus on Privacy and Ease: built upon a small language model it have local deployment capability, ensuring sensitive medical data remains secure and confidential.
 
 ## 📚 Base model
 Gaokerena is built on [aya-expanse-8b](https://huggingface.co/CohereForAI/aya-expanse-8b), a robust and efficient language model selected for its proven performance and adaptability. This base model was fine-tuned to address the specific requirements of Persian medical applications, ensuring optimal accuracy and performance.
