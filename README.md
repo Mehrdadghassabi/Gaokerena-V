@@ -61,3 +61,7 @@ The Gaokerena model was trained through a  process that involved fine-tuning the
 4. Zahra Kazemi
 5. Milad Tavakoli
 ## 🙏🏼 Acknowledgement
+We would like to thank 
+- Amir Jahani for his help with the data cleaning process.
+- journeyfree.ai for creating logo
+- mohammad ghafghazian for crawling some part of data and putting it [here](https://www.kaggle.com/datasets/mohamadghafghaziyan/persian-medical-qa-dataset)
