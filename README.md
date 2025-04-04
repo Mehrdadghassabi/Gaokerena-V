@@ -15,6 +15,7 @@
 - [🏃 Training process](#-training-process)
 - [📊 Results](#-Results)
 - [⛔️ License](#-Results)
+- [⚠️ Risks and Limitations](#-risks-and-limitations)
 - [🤝 Collaborators](#-collaborators)
 - [🙏🏼 Acknowledgement](#-acknowledgement)
 
@@ -52,8 +53,16 @@ Gaokerena is built on [aya-expanse-8b](https://huggingface.co/CohereForAI/aya-ex
 The Gaokerena model was trained through a  process that involved fine-tuning the Aya-ExPanse-8B base model on 60% of our Persian medical corpus, using the LoRA method for efficiency. This was followed by instruction tuning on our free-form question-answering dataset [MF3QA](https://huggingface.co/datasets/gaokerena/MF3QA), optimizing it for Persian medical queries.  The training was conducted on A100 PCIe 40/80G hardware via the Google Cloud Platform in the asia-east1 region, operating for 19 hours and resulting in a carbon footprint of 2.66 kg CO2 equivalent emissions.
 
 ## 📊 Results
+
 ## ⛔️ License
 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) (non-commercial use only)
+
+## ⚠️ Risks and Limitations
+While Gaokerena aims to provide accurate information, it is not a substitute for professional medical advice. The model may have limitations in:
+-Handling medical emergencies.
+-Addressing highly specialized or rare medical conditions.
+-Offering region-specific guidance, as the training data does not include localized Persian medical practices.
+
 ## 🤝 Collaborators
 1. Mehrdad Ghassabi
 2. Pedram Rostami
