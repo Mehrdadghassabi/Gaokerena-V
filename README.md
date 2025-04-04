@@ -59,9 +59,10 @@ The Gaokerena model was trained through a  process that involved fine-tuning the
 
 ## ⚠️ Risks and Limitations
 While Gaokerena aims to provide accurate information, it is not a substitute for professional medical advice. The model may have limitations in:
--Handling medical emergencies.
--Addressing highly specialized or rare medical conditions.
--Offering region-specific guidance, as the training data does not include localized Persian medical practices.
+
+- Handling medical emergencies.
+- Addressing highly specialized or rare medical conditions.
+- Offering region-specific guidance, as the training data does not include localized Persian medical practices.
 
 ## 🤝 Collaborators
 1. Mehrdad Ghassabi
