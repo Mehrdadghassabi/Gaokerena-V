@@ -74,4 +74,4 @@ While Gaokerena aims to provide accurate information, it is not a substitute for
 We would like to thank 
 - Amir Jahani for his help with the data cleaning process.
 - journeyfree.ai for creating logo.
-- mohammad ghafghazian for crawling some part of data and putting it [here](https://www.kaggle.com/datasets/mohamadghafghaziyan/persian-medical-qa-dataset).
+- mohammad ghafghazian for crawling small portion of [dryab site](https://doctor-yab.ir) and putting it [here](https://www.kaggle.com/datasets/mohamadghafghaziyan/persian-medical-qa-dataset), we used his data in MF3QA.
