@@ -1,1 +1,1 @@
-download the corpus from [here](https://drive.google.com/file/d/11iTI9YpShmEkMHMzj4sERn8Fs4Cpty7N/view?usp=sharing),you can take it from [here](https://huggingface.co/datasets/gaokerena/medical_corpus) too.
+download the corpus from [here](https://drive.google.com/file/d/11iTI9YpShmEkMHMzj4sERn8Fs4Cpty7N/view?usp=sharing),you can take it from [huggingface repository](https://huggingface.co/datasets/gaokerena/medical_corpus) too.
