@@ -25,12 +25,6 @@ m.ghassabi@eng.ui.ac.ir}
 Tehran, Iran \\
 pedram.rostami@ut.ac.ir}
 \and
-\IEEEauthorblockN{3\textsuperscript{rd} Hamidreza Baradaran Kashani}
-\IEEEauthorblockA{\textit{Faculty of Computer Engineering} \\
-	\textit{University of Isfahan}\\
-	Isfahan, Iran \\
-	hrb.kashani@eng.ui.ac.ir}
-\and
 \IEEEauthorblockN{3\textsuperscript{rd} Amirhossein Poursina}
 \IEEEauthorblockA{\textit{Faculty of Medicine} \\
 \textit{Isfahan University of Medical Sciences}\\
@@ -156,7 +150,7 @@ As previously mentioned, there is a notable absence of publicly available Persia
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[width=0.4\textwidth]{fig1.png}}
-	\caption{Share of articles by magazine}
+	\caption{Our corpus resources}
 	\label{fig1}
 \end{figure}
 
@@ -198,9 +192,17 @@ The collection of a real-world doctor-patient question-answering dataset is cruc
 
 In our research, we crawled more than 180,000 question-answer pairs from Persian medical forums, employing both manual and automatic filtering methods to refine the dataset through a laborious cleaning process. This approach is similar to the work done by Yunxiang Li et al. \cite{b6} in their article on the Chat Doctor medical language model, where they extracted data from English medical forums. Notably, Yunxiang Li discarded about half of the question-answer pairs based on the length of the answers, as shorter responses are generally inadequate for training a model and can lead the model to learn to provide brief answers. However, we faced a greater challenge; Persian doctors tend to provide much shorter answers compared to their English counterparts, resulting in the necessity to discard over 80\% of our question-answer records to ensure quality and relevance for our training purposes.
 
-To create our dataset, we utilized patient-doctor interactions from the drhast and niniban platforms for the training split. It is important to note that drhast does not provide all of its doctor-patient interaction records on its site; it only offers access to the last 2,000 records. Additionally, each record is linked to 100 related records, complicating the crawling process. To address this challenge, we treated their data as a graph and performed a breadth-first search, which took about two weeks to extract 120,000 records out of a total of 200,000. For the test set, we used the doctor-yab and isovisit sites, ensuring diversity by translating the KQA question-answering dataset
+As you can see in the figure
+\ref{fig2}
+to create our dataset, we utilized patient-doctor interactions from the drhast and niniban platforms for the training split. It is important to note that drhast does not provide all of its doctor-patient interaction records on its site; it only offers access to the last 2,000 records. Additionally, each record is linked to 100 related records, complicating the crawling process. To address this challenge, we treated their data as a graph and performed a breadth-first search, which took about two weeks to extract 120,000 records out of a total of 200,000. For the test set, we used the doctor-yab and isovisit sites, ensuring diversity by translating the KQA question-answering dataset
 \cite{b10}
 and appending it to our test split. This comprehensive approach not only enriched our dataset but also underscored the importance of real-world doctor-patient interactions in training effective language models.
+
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=0.45\textwidth]{fig2.png}}
+	\caption{MF3QA resources}
+	\label{fig2}
+\end{figure}
 
 \section{Training}
 \subsection{fine tuning}
@@ -210,22 +212,24 @@ method to optimize performance. Specifically, we implemented a rank of 8, an alp
 \subsection{instruction tuning}
 In addition to fine-tuning the aya-expanse8b model, we also instruction-tuned the fine-tuned model on our crawled free-form Farsi question-answering (MF3QA) dataset. For this instruction tuning, we employed a LoRA method with a rank of 2, an alpha value of 2, and a LoRA dropout rate of 0.4, conducting the process for a single epoch. This targeted approach allowed us to further enhance the model’s ability to understand and generate responses in the context of Farsi question-answering, optimizing its performance for our specific dataset and improving its overall effectiveness.
 \subsection{Carbon Footprint}
-During our recent computational experiments, we utilized an A100 PCIe 40/80G hardware setup on the Google Cloud Platform, specifically in the asia-east1 compute region. The hardware was operational for a total of 19 hours, resulting in a carbon footprint of 2.66 kg CO2 equivalent emissions calculated  based on the formula introduced by Wu et all
+During our recent computational experiments, we utilized an A100 PCIe 40G hardware setup on the Google Cloud Platform, specifically in the asia-east1 compute region. The hardware was operational for a total of 19 hours, resulting in a carbon footprint of 2.66 kg CO2 equivalent emissions calculated  based on the formula introduced by Wu et all
 \cite{b14}
 .
 \section{Results}
-Since there is no publicly available medical Persian language model to compare our results against, and given that only a few small Persian language models exist, we opted to compare our model with a pipeline system that combines an English medical language model with a translator, specifically targeting systems with a total of less than 8 billion parameters, which we define as runnable on home devices. We evaluated our model against two different pipeline configurations to demonstrate that, in addition to their poor grammatical performance, these systems also struggle to effectively encode medical knowledge, as evidenced by their low scores in multiple-choice question-answering datasets. The first configuration involved using MedMobile
-\cite{b9}
-as the English small medical language model paired with gemma-2b-it
-\cite{b15}
-as the translator, while the second configuration used MedMobile with Parsinlu
-\cite{b16}
-\cite{b17}
-as the translator. Our comparisons highlighted the limitations of these pipeline systems in both linguistic accuracy and medical comprehension.
+In the absence of a publicly available Persian medical language model, we opted to evaluate our model against general-purpose language models to establish a baseline for performance. This comparison allows us to assess the efficacy of our specialized model in handling medical-related queries in Persian. Importantly, all models used for comparison were selected based on their suitability for small, runnable environments on home devices, addressing privacy concerns prevalent in the medical domain. Additionally, we compared our model with a pipeline alternative in our evaluation, the architecture of which is illustrated in Figure \ref{fig3}. By contrasting our model with both general-purpose language models and the pipeline alternative, we aim to demonstrate the advantages and specific capabilities of our small Persian medical language model in addressing the unique challenges of medical language processing within the Persian language context.
 \footnote{
 	you can see the detailed result at https://github.com/Mehrdadghassabi/Gaokerena
 }
-\subsection{multiple choice question answering}
+
+Moreover, we also address the significant challenge posed by the lack of available Persian benchmark for medical language processing. To overcome this challenge, we translated the medical portion of the Massive Multitask Language Understanding (MMLU) dataset \cite{b18} into Persian and supplemented it with data from the Iranian Basic Medical Sciences Entrance Exam (IBMSEE).
+
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=0.5\textwidth]{fig3.png}}
+	\caption{architecture of a pipeline alternative}
+	\label{fig3}
+\end{figure}
+
+\subsection{comparison with general purpose language models}
 In our results section, we address the significant challenge of the lack of available Persian datasets for medical language processing. To overcome this, we translated the medical portion of the Massive Multitask Language Understanding (MMLU)
 \cite{b18}
 dataset into Persian and supplemented it with data from the Iranian Basic Medical Sciences Entrance Exam(IBMSEE), which we also crawled. Notably,as you can see on Table
@@ -233,89 +237,99 @@ dataset into Persian and supplemented it with data from the Iranian Basic Medica
 our model achieved remarkable success by surpassing the passing score of the Iranian Basic Medical Sciences Entrance Exam, which stands at 36\%, making it the first Persian small language model to pass this exam. Furthermore, our model demonstrated substantial improvements on the translated MMLU dataset, not only achieving higher average scores but also excelling across most sub-categories, thereby showcasing its effectiveness in understanding and generating medical knowledge in the Persian language.
 \begin{table}[ht]
 	\centering
-	\caption{Results on medical multiple choice question answering}
+	\caption{
+		our model performance 
+		in comparison with general purpose language models
+		}
 	\begin{tabular}{|l|c|c|c|c|}  % Using vertical lines for a simple table
 		\hline
-		\textbf{} & \textbf{Gao-} & \textbf{aya-}
-		 & \textbf{MedMobile} & \textbf{MedMobile} \\ 
-		 & \textbf{kerena} & \textbf{expanse8b} & + \textbf{gemma2b-it} & \textbf{+ parsinlu} \\
+		\textbf{} & \textbf{Gao-} & \textbf{aya-} &  &  \\ 
+		 & \textbf{kerena} & \textbf{expanse8b} & \textbf{Qwen2.5} & \textbf{PersianMind} \\
 		 & (ours) & (baseline) &  &  \\ \hline
-		MMLU- & \textbf{48.14} & 40.74 & 14.07 & 25.18 \\ 
+		MMLU- & \textbf{48.14} & 40.74 & 41.48 & 25.18 \\ 
 		anatomy(fa) &  &  &  &  \\ \hline
-		MMLU- & 46.0 & \textbf{49.0} & 20.0 & 35.0 \\
-		medical &  &  &  &  \\ 
+		MMLU- &  &  &  &  \\
+		medical & \textbf{53.0} & 49.0 & 52.0 & 34.0 \\ 
 		genetics(fa) &  &  &  &  \\ \hline
-		MMLU- & 43.93 & \textbf{44.51} & 19.08 & 27.17 \\
-		college &  &  &  &  \\
+		MMLU- &  &  &  &  \\
+		college & 43.93 & \textbf{44.51} & 43.35 & 20.23 \\
 		medicine(fa) &  &  &  &  \\ \hline
-		MMLU- & \textbf{55.47} & 52.07 & 27.54 & 31.7 \\
-		clinical&  &  &  &  \\
+		MMLU- &  &  &  &  \\
+		clinical& \textbf{55.47} & 52.07 & 47.92 & 25.28 \\
 		knowledge(fa)&  &  &  &  \\ \hline
-		MMLU- & ? & ? & ? & ? \\
-        professional&  &  &  &  \\ 
+		MMLU- &  &  &  &  \\
+        professional& \textbf{47.05} & 45.58 & 43.01 & 23.89 \\ 
         medicine(fa)&  &  &  &  \\ \hline
-        MMLU- & \textbf{47.22} & 45.14 & 18.75 & 31.25 \\
-        college&  &  &  &  \\
+        MMLU- &  &  &  &  \\
+        college& \textbf{47.22} & 45.14 & 44.85 & 32.63 \\
         biology(fa)&  &  &  &  \\ \hline
-        MMLU(avg) & ? & ? & ? & ? \\ \hline
-		IBMSEE & \textbf{38.69} & 34.52 & 24.40 & 32.73 \\ 
-        (sept 2023) &  &  &  &  \\  \hline
+        MMLU(avg) & \textbf{49.31} & 46.64 & 45.17 & 25.89 \\ \hline
+		IBMSEE\_Sept &  &  &  &  \\ 
+        2023(without & \textbf{38.69} & 34.52 & 33.33 & 19.64 \\  
+         time limit) &  &  &  &  \\  \hline
+        IBMSEE\_Sept & \textbf{38.69} & 34.52 & 33.33 & 19.64 \\ 
+        2023(with & (passed) & (failed) & (failed) & (failed) \\  
+        time limit) &  &  &  &  \\  \hline
+        inference time & low & low & low & low \\  \hline
 	\end{tabular}
 	\label{tab:model_results_on_mcqa}
 \end{table}
-\subsection{free form question answering}
-\subsubsection{K-QA benchmark}
-In this study, we utilized the K-QA dataset introduced by Itay Manes
-\cite{b19}
-, which consists of expert-generated question-answer pairs, each accompanied by “nice to have” and “must have” lists. Manes proposed two key metrics, Completeness and Factuality, which are essential for evaluating the quality of the question-answer pairs. These metrics, as reformulated by Hyunjae Kim
-\cite{b8}
-, are defined as follows:  
-\[
-S_{comp}(r_i,A_i^{\prime}) =  \sum_{a \in A_i^{\prime}} \frac{[r_i \: entails \: a]}{|A_i^{\prime}|}
-\]
-\[
-S_{fact}(r_i,A_i^{\prime}) = 
-\begin{cases} 
-	0 & \text{if } \exists a \in A_i \: s.t.  \: r_i \: contradicts \: a\\ 
-	1 & otherwise
-\end{cases}
-\]
-Manes likened these metrics to traditional precision and recall, leading to the introduction of a new metric, the $F_{1}^{\prime}$ score, analogous to the $F_{1}$ score, defined as: 
-\[
-F_{1}^{\prime} = \frac{2 \times S_{comp} \times S_{fact}}{S_{comp} + S_{fact}}
-\]
-In our research, we translated the K-QA dataset into Persian and computed the Completeness and Factuality scores for our model, Gaokerena, as well as for the baseline model,aya-expanse-8b. as you can see in the Table
-\ref{tab:model_accuracy_on_ffqa}
-the results indicated that Gaokerena slightly outperformed aya-expanse-8b in both the $F_{1}^{\prime}$ score and the Factuality score, demonstrating the effectiveness of our approach.
 
-\begin{table}[ht]
-	\centering
-	\caption{Results on k-qa benchmark}
-	\begin{tabular}{|c|c|c|} % l for left-aligned, c for centered
-		\hline
-		\textbf{} & \textbf{gaokerena} & \textbf{aya-expanse-8b} \\ 
-		\hline
-		$S_{comp}$ & 0.7194 & \textbf{0.7322} \\ 
-		\hline
-		$S_{fact}$ & \textbf{0.4925} & 0.4776 \\ 
-		\hline
-		$F_{1}^{\prime}$ & \textbf{0.5847} & 0.5781 \\ 
-		\hline
-	\end{tabular}
-	\label{tab:model_accuracy_on_ffqa}
-\end{table}
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=0.48\textwidth]{fig4.png}}
+	\caption{Our model win rate against general purpose language models}
+	\label{fig4}
+\end{figure}
+\subsection{comparison with pipeline alternatives}
 
-\subsubsection{AI Evaluating AI}
 In addition to our K-QA benchmark, we also utilized GPT-4o
 \cite{b20}
 as an evaluator for free form question answering. We provided the test set from the MF3QA dataset to both aya-expanse-8b and our model. As illustrated in figure
-\ref{fig2}
+\ref{fig3}
 ,GPT-4o predominantly preferred the responses generated by our model to the baseline model. This indicates that our model delivers high-quality responses as judged by an advanced language model.
 
+\begin{table}[ht]
+	\centering
+	\caption{our model performance 
+		in comparison with pipeline alternatives}
+	\begin{tabular}{|l|c|c|c|c|}  % Using vertical lines for a simple table
+		\hline
+		\textbf{} & \textbf{Gao-} & \textbf{Meerkat8b}
+		& \textbf{MedMobile} & \textbf{MedMobile} \\ 
+		& \textbf{kerena} & \textbf{+ aya\_} & + \textbf{gemma2b-it} & \textbf{+ parsinlu} \\
+		& (ours) & \textbf{expanse8b}  &  &  \\ \hline
+		MMLU- & 48.14 & \textbf{50.37} & 14.07 & 25.18 \\ 
+		anatomy(fa) &  &  &  &  \\ \hline
+		MMLU- &  &   &  &  \\
+		medical & 53.0 & \textbf{62.0} & 20.0 & 35.0 \\ 
+		genetics(fa) &  &  &  &  \\ \hline
+		MMLU- &  &  &  &  \\
+		college & 43.93 & \textbf{53.75} & 19.08 & 27.17 \\
+		medicine(fa) &  &  &  &  \\ \hline
+		MMLU- &  &  &  &  \\
+		clinical& 55.47 & \textbf{60.75} & 27.54 & 31.70 \\
+		knowledge(fa)&  &  &  &  \\ \hline
+		MMLU- &  & &  &  \\
+		professional& 47.05 & \textbf{57.72} & 17.27 & 33.82 \\ 
+		medicine(fa)&  &  &  &  \\ \hline
+		MMLU- &  &  &  &  \\
+		college& 47.22 & \textbf{59.72} & 18.75 & 31.25 \\
+		biology(fa)&  &  &  &  \\ \hline
+		MMLU(avg) & 48.66 & \textbf{57.57} & 20.11 & 30.99 \\ \hline
+		IBMSEE & 38.69 & \textbf{56.54} & 24.40 & 32.73 \\ 
+		(sept 2023) &  &  &  &  \\  \hline
+		IBMSEE\_Sept & \textbf{38.69} & 11.30 & 24.40 & 32.73 \\ 
+		2023(with & (passed) & (failed) & (failed) & (failed) \\  
+		time limit) &  &  &  &  \\  \hline
+		inference time & low & very high & high & high \\  \hline
+	\end{tabular}
+	\label{tab:model_results_on_mcqa}
+\end{table}
+
 \begin{figure}[htbp]
-	\centerline{\includegraphics[width=0.4\textwidth]{fig2.png}}
-	\caption{GPT-4o choice}
-	\label{fig2}
+	\centerline{\includegraphics[width=0.48\textwidth]{fig5.png}}
+	\caption{Our model win rate against pipeline alternatives}
+	\label{fig5}
 \end{figure}
 \section*{Acknowledgment}
 We would like to thank Amir Jahani for his help with the data cleaning process.

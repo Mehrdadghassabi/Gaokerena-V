@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.10.18)  3 MAY 2025 23:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.10.18)  5 MAY 2025 22:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -270,6 +270,9 @@ LaTeX Warning: Label `tab:model_results_on_mcqa' multiply defined.
 
 LaTeX Warning: Label `tab:model_results_on_mcqa' multiply defined.
 
+
+LaTeX Warning: Label `tab:model_results_on_mcqa' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -311,14 +314,14 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 53.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 47.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 47.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 47.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -328,55 +331,70 @@ f-dist/fonts/enc/dvips/base/8r.enc}
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 91--91
+Underfull \hbox (badness 10000) in paragraph at lines 85--85
 [][][]\OT1/ptm/m/n/8 we have pub-lished our model and dataset at
  []
 
 [2]
-<fig1.png, id=14, 800.9925pt x 713.66624pt>
+<fig1.png, id=14, 795.97375pt x 712.6625pt>
 File: fig1.png Graphic file (type png)
 <use fig1.png>
-Package pdftex.def Info: fig1.png  used on input line 158.
-(pdftex.def)             Requested size: 206.39685pt x 183.89362pt.
+Package pdftex.def Info: fig1.png  used on input line 152.
+(pdftex.def)             Requested size: 206.39685pt x 184.78766pt.
 
-Overfull \hbox (8.47078pt too wide) in paragraph at lines 169--196
+Overfull \hbox (8.47078pt too wide) in paragraph at lines 163--190
  [][] 
  []
 
 [3 <./fig1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 227--227
+<fig2.png, id=20, 1373.13pt x 447.6725pt>
+File: fig2.png Graphic file (type png)
+<use fig2.png>
+Package pdftex.def Info: fig2.png  used on input line 202.
+(pdftex.def)             Requested size: 232.19843pt x 75.70029pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 222--222
 [][][]\OT1/ptm/m/n/8 you can see the de-tailed re-sult at
  []
 
+<fig3.png, id=21, 849.1725pt x 81.30376pt>
+File: fig3.png Graphic file (type png)
+<use fig3.png>
+Package pdftex.def Info: fig3.png  used on input line 227.
+(pdftex.def)             Requested size: 258.0pt x 24.70145pt.
+[4 <./fig2.png> <./fig3.png>]
+<fig4.png, id=27, 1479.5275pt x 482.80376pt>
+File: fig4.png Graphic file (type png)
+<use fig4.png>
+Package pdftex.def Info: fig4.png  used on input line 279.
+(pdftex.def)             Requested size: 247.6778pt x 80.82317pt.
 
-Overfull \hbox (0.99855pt too wide) in paragraph at lines 237--265
+Overfull \hbox (7.72632pt too wide) in paragraph at lines 295--327
  [][] 
  []
 
-[4]
-<fig2.png, id=30, 421.575pt x 461.725pt>
-File: fig2.png Graphic file (type png)
-<use fig2.png>
-Package pdftex.def Info: fig2.png  used on input line 316.
-(pdftex.def)             Requested size: 206.39685pt x 226.057pt.
+<fig5.png, id=28, 1486.55376pt x 485.815pt>
+File: fig5.png Graphic file (type png)
+<use fig5.png>
+Package pdftex.def Info: fig5.png  used on input line 330.
+(pdftex.def)             Requested size: 247.6778pt x 80.94179pt.
 
-Underfull \hbox (badness 2503) in paragraph at lines 329--330
+Underfull \hbox (badness 2503) in paragraph at lines 343--344
 []\OT1/ptm/m/n/8 Taghizadeh, Nas-rin, et al. "SINA-BERT: a pre-trained lan-guag
 e
  []
 
 
-Underfull \hbox (badness 1789) in paragraph at lines 329--330
+Underfull \hbox (badness 1789) in paragraph at lines 343--344
 \OT1/ptm/m/n/8 model for anal-y-sis of med-i-cal texts in Per-sian." arXiv prep
 rint
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 345--346
+[5 <./fig4.png> <./fig5.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 359--360
 []\OT1/ptm/m/n/8 Hurst, Aaron, et al. "Gpt-4o sys-tem card." arXiv preprint
  []
 
-[5 <./fig2.png>]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -401,33 +419,22 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4233 strings out of 474222
- 65558 string characters out of 5748732
- 1955975 words of memory out of 5000000
- 26451 multiletter control sequences out of 15000+600000
+ 4253 strings out of 474222
+ 65762 string characters out of 5748732
+ 1971975 words of memory out of 5000000
+ 26471 multiletter control sequences out of 15000+600000
  602149 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,11n,65p,1290b,334s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
-utmri8a.pfb>
-Output written on main.pdf (6 pages, 282866 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
+mes/utmri8a.pfb>
+Output written on main.pdf (6 pages, 285562 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
+ 60 PDF objects out of 1000 (max. 8388607)
+ 31 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
