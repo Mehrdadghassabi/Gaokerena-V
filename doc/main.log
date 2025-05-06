@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.10.18)  6 MAY 2025 17:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.10.18)  6 MAY 2025 20:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -333,10 +333,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--91
 <fig1.png, id=14, 795.97375pt x 712.6625pt>
 File: fig1.png Graphic file (type png)
 <use fig1.png>
-Package pdftex.def Info: fig1.png  used on input line 158.
+Package pdftex.def Info: fig1.png  used on input line 156.
 (pdftex.def)             Requested size: 206.39685pt x 184.78766pt.
 
-Overfull \hbox (8.47078pt too wide) in paragraph at lines 169--196
+Overfull \hbox (8.47078pt too wide) in paragraph at lines 167--194
  [][] 
  []
 
@@ -344,10 +344,10 @@ Overfull \hbox (8.47078pt too wide) in paragraph at lines 169--196
 <fig2.png, id=20, 1373.13pt x 447.6725pt>
 File: fig2.png Graphic file (type png)
 <use fig2.png>
-Package pdftex.def Info: fig2.png  used on input line 208.
+Package pdftex.def Info: fig2.png  used on input line 206.
 (pdftex.def)             Requested size: 232.19843pt x 75.70029pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--228
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
 [][][]\OT1/ptm/m/n/8 you can see the de-tailed re-sult at
  []
 
@@ -359,32 +359,43 @@ Package pdftex.def Info: fig3.png  used on input line 233.
 <fig4.png, id=22, 1482.53876pt x 480.79625pt>
 File: fig4.png Graphic file (type png)
 <use fig4.png>
-Package pdftex.def Info: fig4.png  used on input line 281.
+Package pdftex.def Info: fig4.png  used on input line 283.
 (pdftex.def)             Requested size: 247.6778pt x 80.31836pt.
 [4 <./fig2.png> <./fig3.png>]
-Overfull \hbox (7.72632pt too wide) in paragraph at lines 295--328
+Overfull \hbox (7.72632pt too wide) in paragraph at lines 307--340
  [][] 
  []
 
 <fig5.png, id=28, 1490.56876pt x 480.79625pt>
 File: fig5.png Graphic file (type png)
 <use fig5.png>
-Package pdftex.def Info: fig5.png  used on input line 331.
+Package pdftex.def Info: fig5.png  used on input line 343.
 (pdftex.def)             Requested size: 247.6778pt x 79.88551pt.
 [5 <./fig4.png> <./fig5.png>]
-Underfull \hbox (badness 2503) in paragraph at lines 344--345
+Underfull \hbox (badness 2503) in paragraph at lines 359--360
 []\OT1/ptm/m/n/8 Taghizadeh, Nas-rin, et al. "SINA-BERT: a pre-trained lan-guag
 e
  []
 
 
-Underfull \hbox (badness 1789) in paragraph at lines 344--345
+Underfull \hbox (badness 1789) in paragraph at lines 359--360
 \OT1/ptm/m/n/8 model for anal-y-sis of med-i-cal texts in Per-sian." arXiv prep
 rint
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 360--361
+Underfull \hbox (badness 6808) in paragraph at lines 382--383
+[]\OT1/ptm/m/n/8 Yang, An, et al. \Qwen2 Tech-ni-cal Re-port." arXiv Preprint
+ []
+
+
+Underfull \hbox (badness 1527) in paragraph at lines 400--401
+\OT1/ptm/m/n/8 i-cal con-ver-sa-tional AI mod-els and train-ing data." arXiv pr
+eprint
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 410--411
 []\OT1/ptm/m/n/8 Hurst, Aaron, et al. "Gpt-4o sys-tem card." arXiv preprint
  []
 
@@ -399,9 +410,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[6
-
-] (./main.aux)
+[6] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -412,19 +421,19 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4255 strings out of 474222
- 65869 string characters out of 5748732
+ 4268 strings out of 474222
+ 65938 string characters out of 5748732
  1971975 words of memory out of 5000000
- 26473 multiletter control sequences out of 15000+600000
+ 26486 multiletter control sequences out of 15000+600000
  602149 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,11n,65p,1290b,334s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,11n,65p,1291b,334s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
 mes/utmri8a.pfb>
-Output written on main.pdf (6 pages, 279085 bytes).
+Output written on main.pdf (6 pages, 280691 bytes).
 PDF statistics:
  60 PDF objects out of 1000 (max. 8388607)
  31 compressed objects within 1 object stream
