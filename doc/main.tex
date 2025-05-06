@@ -11,7 +11,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Leveraging Accessible Online Data to Enhance Medical Knowledge in a Small Persian Language Model}
+\title{Leveraging Online Data to Enhance Medical Knowledge in a Small Persian Language Model}
 
 \author{\IEEEauthorblockN{1\textsuperscript{st} Mehrdad Ghassabi}
 \IEEEauthorblockA{\textit{Faculty of Computer Engineering} \\
@@ -25,19 +25,25 @@ m.ghassabi@eng.ui.ac.ir}
 Tehran, Iran \\
 pedram.rostami@ut.ac.ir}
 \and
-\IEEEauthorblockN{3\textsuperscript{rd} Amirhossein Poursina}
+\IEEEauthorblockN{3\textsuperscript{rd} Hamidreza Baradaran Kashani}
+\IEEEauthorblockA{\textit{Faculty of Computer Engineering} \\
+	\textit{University of Tehran}\\
+	Isfahan, Iran \\
+	hrb.kashani@eng.ui.ac.ir }
+\and
+\IEEEauthorblockN{4\textsuperscript{th} Amirhossein Poursina}
 \IEEEauthorblockA{\textit{Faculty of Medicine} \\
 \textit{Isfahan University of Medical Sciences}\\
 Isfahan, Iran \\
 Amirhosseinpoorsina9@gmail.com}
 \and
-\IEEEauthorblockN{4\textsuperscript{th} Zahra Kazemi}
+\IEEEauthorblockN{5\textsuperscript{th} Zahra Kazemi}
 \IEEEauthorblockA{\textit{Faculty of Computer Engineering} \\
 \textit{University of Isfahan}\\
 Isfahan, Iran \\
 zhrakazemi@mehr.ui.ac.ir}
 \and
-\IEEEauthorblockN{5\textsuperscript{th} Milad Tavakoli}
+\IEEEauthorblockN{6\textsuperscript{th} Milad Tavakoli}
 \IEEEauthorblockA{\textit{Faculty of Computer Engineering} \\
 \textit{University of Isfahan}\\
 Isfahan, Iran \\
@@ -154,7 +160,7 @@ As previously mentioned, there is a notable absence of publicly available Persia
 	\label{fig1}
 \end{figure}
 
-\subsection{dataset}
+\subsection{Dataset}
 The collection of a real-world doctor-patient question-answering dataset is crucial for enhancing the capabilities of language models in the healthcare domain. Such a dataset allows models to learn valuable information derived from authentic interactions between healthcare providers and patients. By analyzing these real-world exchanges, language models can grasp the nuances of medical terminology, patient concerns, and the context surrounding healthcare inquiries. Furthermore, this dataset equips models with the ability to learn not just the factual content of responses but also the appropriate structure and tone for answering questions. This dual learning process is essential, as it enables the model to generate accurate, empathetic, and contextually relevant responses, ultimately improving patient communication and support in medical environments. In this context, Yang Liu \cite{b6} highlights several real-world doctor-patient question-answering datasets in his survey, and a comparison of these datasets with ours can be found in Table II. In an era where technology increasingly aids healthcare, a robust doctor-patient dataset stands as a foundational element in training models that can effectively contribute to better healthcare delivery.
 
 \begin{table}[ht]
@@ -205,18 +211,18 @@ and appending it to our test split. This comprehensive approach not only enriche
 \end{figure}
 
 \section{Training}
-\subsection{fine tuning}
+\subsection{Fine tuning}
 We fine-tuned the aya-expanse8b model on 60\% of our corpus, leveraging LoRA
 \cite{b13}
 method to optimize performance. Specifically, we implemented a rank of 8, an alpha value of 16, and a LoRA dropout rate of 0.05, conducting the fine-tuning for a single epoch. This approach allowed us to effectively adapt the model to our specific dataset while minimizing resource usage, ensuring a balance between efficiency and performance enhancement in our training process.
-\subsection{instruction tuning}
+\subsection{Instruction tuning}
 In addition to fine-tuning the aya-expanse8b model, we also instruction-tuned the fine-tuned model on our crawled free-form Farsi question-answering (MF3QA) dataset. For this instruction tuning, we employed a LoRA method with a rank of 2, an alpha value of 2, and a LoRA dropout rate of 0.4, conducting the process for a single epoch. This targeted approach allowed us to further enhance the model’s ability to understand and generate responses in the context of Farsi question-answering, optimizing its performance for our specific dataset and improving its overall effectiveness.
 \subsection{Carbon Footprint}
 During our recent computational experiments, we utilized an A100 PCIe 40G hardware setup on the Google Cloud Platform, specifically in the asia-east1 compute region. The hardware was operational for a total of 19 hours, resulting in a carbon footprint of 2.66 kg CO2 equivalent emissions calculated  based on the formula introduced by Wu et all
 \cite{b14}
 .
 \section{Results}
-In the absence of a publicly available Persian medical language model, we opted to evaluate our model against general-purpose language models to establish a baseline for performance. This comparison allows us to assess the efficacy of our specialized model in handling medical-related queries in Persian. Importantly, all models used for comparison were selected based on their suitability for small, runnable environments on home devices, addressing privacy concerns prevalent in the medical domain. Additionally, we compared our model with a pipeline alternative in our evaluation, the architecture of which is illustrated in Figure \ref{fig3}. By contrasting our model with both general-purpose language models and the pipeline alternative, we aim to demonstrate the advantages and specific capabilities of our small Persian medical language model in addressing the unique challenges of medical language processing within the Persian language context.
+In the absence of a publicly available Persian medical language model, we opted to evaluate our model against general-purpose language models to establish a baseline for performance. This comparison allows us to assess the efficacy of our specialized model in handling medical-related queries in Persian. Importantly, all models used for comparison were selected based on their suitability for small, runnable environments on home devices, addressing privacy concerns prevalent in the medical domain. Additionally, we compared our model with a pipeline alternative in our evaluation, the architecture of which is illustrated in figure \ref{fig3}. By contrasting our model with both general-purpose language models and the pipeline alternative, we aim to demonstrate the advantages and specific capabilities of our small Persian medical language model in addressing the unique challenges of medical language processing within the Persian language context.
 \footnote{
 	you can see the detailed result at https://github.com/Mehrdadghassabi/Gaokerena
 }
@@ -229,12 +235,8 @@ Moreover, we also address the significant challenge posed by the lack of availab
 	\label{fig3}
 \end{figure}
 
-\subsection{comparison with general purpose language models}
-In our results section, we address the significant challenge of the lack of available Persian datasets for medical language processing. To overcome this, we translated the medical portion of the Massive Multitask Language Understanding (MMLU)
-\cite{b18}
-dataset into Persian and supplemented it with data from the Iranian Basic Medical Sciences Entrance Exam(IBMSEE), which we also crawled. Notably,as you can see on Table
-\ref{tab:model_results_on_mcqa}
-our model achieved remarkable success by surpassing the passing score of the Iranian Basic Medical Sciences Entrance Exam, which stands at 36\%, making it the first Persian small language model to pass this exam. Furthermore, our model demonstrated substantial improvements on the translated MMLU dataset, not only achieving higher average scores but also excelling across most sub-categories, thereby showcasing its effectiveness in understanding and generating medical knowledge in the Persian language.
+\subsection{Comparison with general purpose language models}
+As you can see in Table \ref{tab:model_results_on_mcqa}, our model achieved remarkable success by surpassing the passing score of the Iranian Basic Medical Sciences Entrance Exam, which stands at 36\%, making it the first Persian small language model to pass this exam. Furthermore, our model demonstrated improvements on the translated MMLU dataset too, not only achieving higher average scores but also excelling across most sub-categories, thereby showcasing its effectiveness in understanding and generating medical knowledge in the Persian language. In addition to our K-QA benchmark, we also utilized GPT-4o \cite{b20} as an evaluator for free-form question answering. We provided the test set from the MF3QA dataset to both the opponent language model and our model. As illustrated in figure \ref{fig4}, GPT-4o predominantly preferred the responses generated by our model against all other three language models. This indicates that our model delivers high-quality responses as judged by an advanced language model.
 \begin{table}[ht]
 	\centering
 	\caption{
@@ -272,7 +274,7 @@ our model achieved remarkable success by surpassing the passing score of the Ira
         time limit) &  &  &  &  \\  \hline
         inference time & low & low & low & low \\  \hline
 	\end{tabular}
-	\label{tab:model_results_on_mcqa}
+	\label{tab:model_results_on_mcqa_vs_general_purpose_languages}
 \end{table}
 
 \begin{figure}[htbp]
@@ -280,14 +282,12 @@ our model achieved remarkable success by surpassing the passing score of the Ira
 	\caption{Our model win rate against general purpose language models}
 	\label{fig4}
 \end{figure}
-\subsection{comparison with pipeline alternatives}
+\subsection{Comparison with pipeline alternatives}
+As previously mentioned, one alternative to a Persian language model is a pipeline system. However, the major problem with pipeline systems is their speed; they have a high inference time because they require inference from one model, the output of which is then fed into a second model, and finally, the output of the second model is processed again by the first model. This iterative process, combined with the time-consuming loading and unloading of models, significantly hampers efficiency. To address the low speed of pipeline models, one suggestion is to load all parameters—both those pertaining to the translators and the medical language model—simultaneously, thereby eliminating the delays associated with model loading and unloading. However, this approach necessitates the use of models with fewer parameters due to the limited memory available on home devices. Our experiments with models such as Medmobile \cite{b4} paired with gemma2b-it \cite{b4} as translators, and Medmobile paired with parsinlu \cite{b4} models as translators, showed disappointing results, as evidenced by the poor performance displayed in Table \ref{tab:model_results_on_mcqa_vs_pipeline_alternative}.
 
-In addition to our K-QA benchmark, we also utilized GPT-4o
-\cite{b20}
-as an evaluator for free form question answering. We provided the test set from the MF3QA dataset to both aya-expanse-8b and our model. As illustrated in figure
-\ref{fig3}
-,GPT-4o predominantly preferred the responses generated by our model to the baseline model. This indicates that our model delivers high-quality responses as judged by an advanced language model.
-
+As you can see in Table
+ \ref{tab:model_results_on_mcqa_vs_pipeline_alternative},
+despite the impressive performance of Meerkat8b \cite{b5} paired with Aya-Expanse8b as a translator in the translated MMLU dataset and the IBMSEE exam (without a time limit), this pipeline alternative failed to pass the IBMSEE exam under real-world conditions, which include a time limit. The pipeline system had a high inference time, taking over three minutes for each question, whereas the IBMSEE exam allocates no more than one minute per question. Another significant issue with the pipeline alternative in the medical domain is its poor performance in detecting medical terms, likely due to the fact that the translators have not been specifically developed for medical translation, as there are currently no models tailored for medical translation in the Persian language. As illustrated in Figure \ref{fig5}, this limitation resulted in all pipeline alternatives achieving lower win rates against our model, Gaokerena. For instance, although Meerkat8b paired with Aya-Expanse8b achieved a better score in multiple-choice question answering, in free-form question answering, GPT-4o predominantly preferred the responses generated by our model over those of the pipeline.
 \begin{table}[ht]
 	\centering
 	\caption{our model performance 
@@ -316,14 +316,15 @@ as an evaluator for free form question answering. We provided the test set from 
 		college& 47.22 & \textbf{59.72} & 18.75 & 31.25 \\
 		biology(fa)&  &  &  &  \\ \hline
 		MMLU(avg) & 48.66 & \textbf{57.57} & 20.11 & 30.99 \\ \hline
-		IBMSEE & 38.69 & \textbf{56.54} & 24.40 & 32.73 \\ 
-		(sept 2023) &  &  &  &  \\  \hline
+		IBMSEE\_Sept &  &  &  &  \\ 
+		2023(without & 38.69 & \textbf{56.54} & 24.40 & 32.73 \\  
+		time limit) &  &  &  &  \\  \hline
 		IBMSEE\_Sept & \textbf{38.69} & 11.30 & 24.40 & 32.73 \\ 
 		2023(with & (passed) & (failed) & (failed) & (failed) \\  
 		time limit) &  &  &  &  \\  \hline
 		inference time & low & very high & high & high \\  \hline
 	\end{tabular}
-	\label{tab:model_results_on_mcqa}
+	\label{tab:model_results_on_mcqa_vs_pipeline_alternative}
 \end{table}
 
 \begin{figure}[htbp]
@@ -331,8 +332,8 @@ as an evaluator for free form question answering. We provided the test set from 
 	\caption{Our model win rate against pipeline alternatives}
 	\label{fig5}
 \end{figure}
-\section*{Acknowledgment}
-We would like to thank Amir Jahani for his help with the data cleaning process.
+\section*{Future research}
+As mentioned in the baseline model section, our future research plans involve leveraging our updated parameters on Aya-Vision8b, an extension of Aya-Expanse. This will allow us to incorporate medical images, such as MRIs and CT scans, as inputs to our model, enhancing its applicability in the medical domain. By integrating textual and visual data, we aim to improve diagnostic accuracy and provide healthcare professionals with a more comprehensive decision-making tool. Future work will focus on optimizing this integration and evaluating the model’s performance in real-world medical scenarios.
 
 
 \begin{thebibliography}{00}
