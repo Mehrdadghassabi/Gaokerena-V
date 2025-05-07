@@ -4,7 +4,6 @@
 <p align="center">
 📃 <a href="http://arxiv.org/abs/2501.12051" target="_blank">Paper</a> ｜🤗 <a href="https://huggingface.co/gaokerena" target="_blank">huggingface repository</a> | 🚀 <a href="https://colab.research.google.com/github/Mehrdadghassabi/Gaokerena/blob/master/assets/Untitled4.ipynb" target="_blank">quick start</a>
 </p>
----
 
 ## 📒 Table of Contents
 - [📒 Table of Contents](#-table-of-contents)
