@@ -70,7 +70,7 @@ here it is the result against pipeline alternatives:
 | **inference time**    | **low**                | very high                | high                   | high                 |
 
 here it is the result against general purpose language models:
-|                       | Gao-kerena (ours) | aya_expanse8b (baseline) | Qwen2.5 | PersianMind |
+|                       | Gaokerena (ours) | aya_expanse8b (baseline) | Qwen2.5 | PersianMind |
 |-----------------------|--------------------|---------------------------|---------|-------------|
 | **MMLU-anatomy(fa)**  | **48.14**          | 40.74                     | 41.48   | 25.18       |
 | **MMLU-medicalgenetics(fa)**      | **53.0**           | 49.0                      | 52.0    | 34.0        |
