@@ -1,8 +1,9 @@
 <div align="center">
   <img src="https://github.com/user-attachments/assets/fa5782f3-bf6e-4ff1-987d-517e6f2d135f"/>
 </div>
-
-[![quick start](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mehrdadghassabi/Gaokerena/blob/master/assets/Untitled4.ipynb)
+<p align="center">
+📃 <a href="http://arxiv.org/abs/2501.12051" target="_blank">Paper</a> ｜🤗 <a href="https://huggingface.co/gaokerena" target="_blank">our hugging face repository</a> | [![quick start](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mehrdadghassabi/Gaokerena/blob/master/assets/Untitled4.ipynb) 
+</p>
 
 ---
 
@@ -40,7 +41,7 @@ AI has huge potential to improve medicine, and with Gaokerena, we’re working t
 
 ## 🕵🏼‍♀️ Features
 - First [Open-Source](https://huggingface.co/gaokerena/gaokerena-v1) Persian Medical Model: The only publicly available Persian language model fine-tuned specifically for medical applications. making it freely available for research and other applications.
-- The first small language model to pass the Iranian Basic Medical Sciences Entrance Exam (کنکور علوم پایه پزشکی)
+- The first small(sub 8 billion parameters) language model to pass the Iranian Basic Medical Sciences Entrance Exam in real world condition (کنکور علوم پایه پزشکی)
 
 - Great Results: Stands out by delivering better results than other related models, including those that pair English medical models with translation systems. It excels at accurately interpreting medical questions and providing clear, reliable answers in Persian, making it highly effective for healthcare needs.
 
