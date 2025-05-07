@@ -14,37 +14,37 @@
 \title{Leveraging Online Data to Enhance Medical Knowledge in a Small Persian Language Model}
 
 \author{\IEEEauthorblockN{1\textsuperscript{st} Mehrdad Ghassabi}
-\IEEEauthorblockA{\textit{Faculty of Computer Engineering} \\
+\IEEEauthorblockA{\textit{School of Computer Engineering} \\
 \textit{University of Isfahan}\\
 Isfahan, Iran \\
 m.ghassabi@eng.ui.ac.ir}
 \and
 \IEEEauthorblockN{2\textsuperscript{nd} Pedram Rostami}
-\IEEEauthorblockA{\textit{Faculty of Electrical and Computer Engineering} \\
+\IEEEauthorblockA{\textit{School of Electrical and Computer Engineering} \\
 \textit{University of Tehran}\\
 Tehran, Iran \\
 pedram.rostami@ut.ac.ir}
 \and
 \IEEEauthorblockN{3\textsuperscript{rd} Hamidreza Baradaran Kashani}
-\IEEEauthorblockA{\textit{Faculty of Computer Engineering} \\
+\IEEEauthorblockA{\textit{School of Computer Engineering} \\
 	\textit{University of Isfahan}\\
 	Isfahan, Iran \\
 	hrb.kashani@eng.ui.ac.ir }
 \and
 \IEEEauthorblockN{4\textsuperscript{th} Amirhossein Poursina}
-\IEEEauthorblockA{\textit{Faculty of Medicine} \\
+\IEEEauthorblockA{\textit{School of Medicine} \\
 \textit{Isfahan University of Medical Sciences}\\
 Isfahan, Iran \\
 Amirhosseinpoorsina9@gmail.com}
 \and
 \IEEEauthorblockN{5\textsuperscript{th} Zahra Kazemi}
-\IEEEauthorblockA{\textit{Faculty of Computer Engineering} \\
+\IEEEauthorblockA{\textit{School of Computer Engineering} \\
 \textit{University of Isfahan}\\
 Isfahan, Iran \\
 zhrakazemi@mehr.ui.ac.ir}
 \and
 \IEEEauthorblockN{6\textsuperscript{th} Milad Tavakoli}
-\IEEEauthorblockA{\textit{Faculty of Computer Engineering} \\
+\IEEEauthorblockA{\textit{School of Computer Engineering} \\
 \textit{University of Isfahan}\\
 Isfahan, Iran \\
 m.tavakoli@mehr.ui.ac.ir}
@@ -210,14 +210,65 @@ and appending it to our test split. This comprehensive approach not only enriche
 
 \section{Training}
 \subsection{Fine tuning}
-We fine-tuned the aya-expanse8b model on 60\% of our corpus, leveraging LoRA
-\cite{b13}
-method to optimize performance. Specifically, we implemented a rank of 8, an alpha value of 16, and a LoRA dropout rate of 0.05, conducting the fine-tuning for a single epoch. This approach allowed us to effectively adapt the model to our specific dataset while minimizing resource usage, ensuring a balance between efficiency and performance enhancement in our training process.
+We fine-tuned the 8-billion-parameter checkpoint of the Aya
+Expanse model on 60\% of our corpus, focusing on minimizing
+resource usage. To ensure an efficient fine-tuning process, we
+employed gradient checkpointing and a small batch size of 2,
+reducing memory requirements during training. Additionally,
+we used gradient accumulation steps of 16, effectively increas-
+ing the overall batch size to 32 and enabling stable training
+dynamics. To further reduce the memory usage of our fine-
+tuning process, we leveraged Low Rank Adaptation (LoRA)
+to significantly reduce the number of trainable parameters
+\cite{b26}.
+Specifically, we implemented a rank of 8, an alpha value of
+16, and a dropout rate of 5\%, applying the LoRA weights to
+all trainable parameters of each transformer layer. We present
+all of our hyperparameter values in Table III, including those
+for training and for LoRA.
+
+To further optimize the process, we employed efficient
+tokenization and memory-aware training techniques. The to-
+kenization process divided the input text into manageable
+token sequences, ensuring consistent input and label structures
+by truncating, padding, and handling overflowed tokens to
+maintain contextual integrity within a fixed context length.
+This streamlined preparation, coupled with the LoRA-based
+fine-tuning, was further enhanced by Flash Attention 2 
+\cite{b27}.
+By minimizing memory overhead, Flash Attention 2 allowed
+us to handle longer context lengths and larger batch sizes
+efficiently, enabling effective fine-tuning for the next-token
+prediction objective while balancing computational efficiency
+with model performance.
 \subsection{Instruction tuning}
-In addition to fine-tuning the aya-expanse8b model, we also instruction-tuned the fine-tuned model on our crawled free-form Farsi question-answering (MF3QA) dataset. For this instruction tuning, we employed a LoRA method with a rank of 2, an alpha value of 2, and a LoRA dropout rate of 0.4, conducting the process for a single epoch. This targeted approach allowed us to further enhance the model’s ability to understand and generate responses in the context of Farsi question-answering, optimizing its performance for our specific dataset and improving its overall effectiveness.
+Following the fine-tuning stage, we performed instruction-
+tuning on the fine-tuned model using our crawled free-form
+Farsi question-answering (MF3QA) dataset. This stage utilized
+the default template of the Aya Expanse model and retained
+the same techniques and almost the same hyperparameters as
+the fine-tuning stage, with a few adjustments. Specifically, we
+employed the LoRA method with a rank of 2, an alpha value
+of 2, and a dropout rate of 0.4, and increased the weight
+decay to 0.5 instead of 0.1. The instruction-tuning process
+was conducted for a single epoch, enabling the model to better
+understand and generate responses tailored to Farsi question-
+answering tasks. This targeted optimization further refined the
+model’s capabilities, enhancing its effectiveness on our specific
+dataset.
 \subsection{Carbon Footprint}
-During our recent computational experiments, we utilized an A100 PCIe 40G hardware setup on the Google Cloud Platform, specifically in the asia-east1 compute region. The hardware was operational for a total of 19 hours, resulting in a carbon footprint of 2.66 kg CO2 equivalent emissions calculated  based on the formula introduced by Wu et all
-\cite{b27}
+The carbon footprint of our model optimization—including
+both fine-tuning and instruction-tuning—was estimated based
+on hardware specifications and operational duration. The pro-
+cess ran for a combined total of 19 hours on a NVIDIA A100
+PCIe 40GB GPUs hosted in Google Cloud Platform’s asia-
+east1 region. Assuming a typical power consumption of 250
+watts per GPU, the total energy used was 4.75 KWh (250
+watts × 19 hours). Using the carbon intensity factor of the
+asia-east1 grid (0.56 kilograms of CO2 equivalent per kWh),
+this translates to 2.66 kilograms of CO2 equivalent emitted
+during the tuning process.
+\cite{b28}
 .
 \section{Results}
 In the absence of a publicly available Persian medical language model, we opted to evaluate our model against general-purpose language models to establish a baseline for performance. This comparison allows us to assess the efficacy of our specialized model in handling medical-related queries in Persian. Importantly, all models used for comparison were selected based on their suitability for small, runnable environments on home devices, addressing privacy concerns prevalent in the medical domain. Additionally, we compared our model with a pipeline alternative in our evaluation, the architecture of which is illustrated in figure \ref{fig3}. By contrasting our model with both general-purpose language models and the pipeline alternative, we aim to demonstrate the advantages and specific capabilities of our small Persian medical language model in addressing the unique challenges of medical language processing within the Persian language context.
@@ -226,7 +277,7 @@ In the absence of a publicly available Persian medical language model, we opted 
 }
 
 Moreover, we also address the significant challenge posed by the lack of available Persian benchmark for medical language processing. To overcome this challenge, we translated the medical portion of the Massive Multitask Language Understanding (MMLU) dataset 
-\cite{b28} 
+\cite{b29} 
 into Persian and supplemented it with data from the Iranian Basic Medical Sciences Entrance Exam (IBMSEE).
 
 \begin{figure}[htbp]
@@ -237,7 +288,7 @@ into Persian and supplemented it with data from the Iranian Basic Medical Scienc
 
 \subsection{Comparison with general purpose language models}
 As you can see in Table \ref{tab:model_results_on_mcqa}, our model achieved remarkable success by surpassing the passing score of the Iranian Basic Medical Sciences Entrance Exam, which stands at 36\%, making it the first Persian small language model to pass this exam. Furthermore, our model demonstrated improvements on the translated MMLU dataset too, not only achieving higher average scores but also excelling across most sub-categories, thereby showcasing its effectiveness in understanding and generating medical knowledge in the Persian language. In addition to our K-QA benchmark, we also utilized GPT-4o 
-\cite{b29} 
+\cite{b30} 
 as an evaluator for free-form question answering. We provided the test set from the MF3QA dataset to both the opponent language model and our model. As illustrated in figure \ref{fig4}, GPT-4o predominantly preferred the responses generated by our model against all other three language models. This indicates that our model delivers high-quality responses as judged by an advanced language model.
 \begin{table}[ht]
 	\centering
@@ -291,8 +342,8 @@ paired with
 gemma-2b-it 
 \cite{b14}
 as translator, and Medmobile paired with parsinlu 
-\cite{b30}
 \cite{b31}
+\cite{b32}
 models as translators, showed disappointing results, as evidenced by the poor performance displayed in Table \ref{tab:model_results_on_mcqa_vs_pipeline_alternative}.
 
 As you can see in Table
@@ -402,18 +453,18 @@ Han, Tianyu, et al. "MedAlpaca--an open-source collection of medical conversatio
 Manes, Itay, et al. "K-qa: A real-world medical q\&a benchmark." arXiv preprint arXiv:2401.14493 (2024).
 \bibitem{b26}
 Hu, Edward J., et al. "Lora: Low-rank adaptation of large language models." ICLR 1.2 (2022): 3.
-\bibitem{b27} 
-Lacoste, Alexandre, et al. "Quantifying the carbon emissions of machine learning." arXiv preprint arXiv:1910.09700 (2019).
+\bibitem{b27}
+Dao, Tri. "Flashattention-2: Faster attention with better parallelism and work partitioning, 2023." URL https://arxiv. org/abs/2307.08691 (2023).
 \bibitem{b28} 
-Hendrycks, Dan, et al. "Measuring massive multitask language understanding." arXiv preprint arXiv:2009.03300 (2020).
+Lacoste, Alexandre, et al. "Quantifying the carbon emissions of machine learning." arXiv preprint arXiv:1910.09700 (2019).
 \bibitem{b29} 
-Hurst, Aaron, et al. "Gpt-4o system card." arXiv preprint arXiv:2410.21276 (2024).
+Hendrycks, Dan, et al. "Measuring massive multitask language understanding." arXiv preprint arXiv:2009.03300 (2020).
 \bibitem{b30} 
-Khashabi, Daniel, et al. "Parsinlu: a suite of language understanding challenges for persian." Transactions of the Association for Computational Linguistics 9 (2021): 1147-1162.
+Hurst, Aaron, et al. "Gpt-4o system card." arXiv preprint arXiv:2410.21276 (2024).
 \bibitem{b31} 
-Kashefi, Omid. "MIZAN: a large persian-english parallel corpus." arXiv preprint arXiv:1801.02107 (2018).
+Khashabi, Daniel, et al. "Parsinlu: a suite of language understanding challenges for persian." Transactions of the Association for Computational Linguistics 9 (2021): 1147-1162.
 \bibitem{b32} 
-Manes, Itay, et al. "K-qa: A real-world medical q\&a benchmark." arXiv preprint arXiv:2401.14493 (2024).
+Kashefi, Omid. "MIZAN: a large persian-english parallel corpus." arXiv preprint arXiv:1801.02107 (2018).
 \end{thebibliography}
 
 
