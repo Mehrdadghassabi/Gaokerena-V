@@ -52,23 +52,28 @@ Gaokerena is built on [aya-expanse-8b](https://huggingface.co/CohereForAI/aya-ex
 The Gaokerena model was trained through a  process that involved fine-tuning the Aya-ExPanse-8B base model on 60% of our Persian medical corpus, using the LoRA method for efficiency. This was followed by instruction tuning on our free-form question-answering dataset [MF3QA](https://huggingface.co/datasets/gaokerena/MF3QA), optimizing it for Persian medical queries.  The training was conducted on A100 PCIe 40G hardware via the Google Cloud Platform in the asia-east1 region, operating for 19 hours and resulting in a carbon footprint of 2.66 kg CO2 equivalent emissions.
 
 ## 📊 Results
-
-## ⛔️ License
-[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) (non-commercial use only)
+We have fully published the results [here](https://github.com/Mehrdadghassabi/Gaokerena/tree/main/evaluation). our model correctly answered about half of the questions in the medical portion of the MMLU dataset
+and successfully passed Iranian Basic Medical Sciences Entrance Exam - Sept 2017 (کنکور علوم پایه پزشکی شهریور ۱۴۰۲) while other alternatives failed to.
+### multiple choice qa
+### free form choice qa
 
 ## ⚠️ Risks and Limitations
-While Gaokerena aims to provide accurate information, it is not a substitute for professional medical advice. The model may have limitations in:
+While Gaokerena aims to provide relatively accurate information, it is not a substitute for professional medical advice. The model may have limitations in:
 
 - Handling medical emergencies.
 - Addressing highly specialized or rare medical conditions.
 - Offering region-specific guidance, as the training data does not include localized Persian medical practices.
 
+## ⛔️ License
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) (non-commercial use only)
+
 ## 🤝 Collaborators
 1. Mehrdad Ghassabi
 2. Pedram Rostami
-3. Amirhossein Poursina
-4. Zahra Kazemi
-5. Milad Tavakoli
+3. Dr.Hamid Reza Baradaran Kashani
+4. Amirhossein Poursina
+5. Zahra Kazemi
+6. Milad Tavakoli
 ## 🙏🏼 Acknowledgement
 We would like to thank 
 - Amir Jahani for his help with the data cleaning process.
