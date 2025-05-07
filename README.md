@@ -58,16 +58,16 @@ and successfully passed Iranian Basic Medical Sciences Entrance Exam - Sept 2017
 here it is the result against pipeline alternatives:
 |                       | Gaokerena (ours) | Meerkat8b + aya_expanse8b | MedMobile + gemma2b-it | MedMobile + parsinlu |
 |-----------------------|--------------------|----------------------------|------------------------|----------------------|
-| **MMLU-anatomy(fa)**  | **48.14**              | **50.37**                 | **14.07**                  | **25.18**                |
-| **MMLU-medicalgenetics(fa)**      | **53.0**              | **62.0**                  | **20.0**                   | **35.0**                 |
-| **MMLU-collegemedicine(fa)**      | **43.93**              | **53.75**                 | **19.08**                  | **27.17**                |
-| **MMLU-clinicalknowledge(fa)**     | **55.47**              | **60.75**                 | **27.54**                  | **31.70**               |
-| **MMLU-professionalmedicine(fa)**  | **47.05**              | **57.72**                 | **17.27**                  | **33.82**                |
-| **MMLU-collegebiology(fa)**      | **47.22**              | **59.72**                 | **18.75**                  | **31.25**                |
-| **MMLU(avg)**         | **48.66**              | **57.57**                 | **20.11**                  | **30.99**                |
-| **IBMSEE Sept 2023(without time limit)**  | **38.69**              | **56.54**                 | **24.40**                | **32.73**                |
-| **IBMSEE Sept 2023(with time limit)**  | **38.69**(passed)          | **11.30**(failed)                    | **24.40**(failed)                 | **32.73**(failed)               |
-| **inference time**    | **low**                | **very high**                | **high**                   | **high**                 |
+| **MMLU-anatomy(fa)**  | 48.14              | **50.37**                 | 14.07                  | 25.18                |
+| **MMLU-medicalgenetics(fa)**      | 53.0              | **62.0**                  | 20.0                   | 35.0                 |
+| **MMLU-collegemedicine(fa)**      | 43.93              | **53.75**                 | 19.08                  | 27.17                |
+| **MMLU-clinicalknowledge(fa)**     | 55.47              | **60.75**                 | 27.54                 | 31.70               |
+| **MMLU-professionalmedicine(fa)**  | 47.05              | **57.72**                 | 17.27                  | 33.82               |
+| **MMLU-collegebiology(fa)**      | 47.22              | **59.72**                 | 18.75                  | 31.25                |
+| **MMLU(avg)**         | 48.66              | **57.57**                 | 20.11                  | 30.99                |
+| **IBMSEE Sept 2023(without time limit)**  | 38.69              | **56.54**                 | 24.40                | 32.73                |
+| **IBMSEE Sept 2023(with time limit)**  | **38.69**(passed)          | 11.30(failed)                    | 24.40(failed)                 | 32.73(failed)               |
+| **inference time**    | **low**                | very high                | high                   | high                 |
 
 here it is the result against general purpose language models:
 |                       | Gao-kerena (ours) | aya_expanse8b (baseline) | Qwen2.5 | PersianMind |
