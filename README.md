@@ -55,7 +55,7 @@ The Gaokerena model was trained through a  process that involved fine-tuning the
 We have fully published the results [here](https://github.com/Mehrdadghassabi/Gaokerena/tree/main/evaluation). our model correctly answered about half of the questions in the medical portion of the MMLU dataset
 and successfully passed Iranian Basic Medical Sciences Entrance Exam - Sept 2017 (کنکور علوم پایه پزشکی شهریور ۱۴۰۲) while other alternatives failed to.
 ### multiple choice qa
-here it is the result against pipeline alternatives
+here it is the result against pipeline alternatives:
 |                       | Gaokerena (ours) | Meerkat8b + aya_expanse8b | MedMobile + gemma2b-it | MedMobile + parsinlu |
 |-----------------------|--------------------|----------------------------|------------------------|----------------------|
 | **MMLU-anatomy(fa)**  | **48.14**              | **50.37**                 | **14.07**                  | **25.18**                |
@@ -70,6 +70,25 @@ here it is the result against pipeline alternatives
 | **inference time**    | **low**                | **very high**                | **high**                   | **high**                 |
 
 here it is the result against general purpose language models:
+|                       | Gao-kerena (ours) | aya_expanse8b (baseline) | Qwen2.5 | PersianMind |
+|-----------------------|--------------------|---------------------------|---------|-------------|
+| **MMLU-anatomy(fa)**  | **48.14**          | 40.74                     | 41.48   | 25.18       |
+| **MMLU-medical**      | **53.0**           | 49.0                      | 52.0    | 34.0        |
+| genetics(fa)         |                    |                           |         |             |
+| **MMLU-college**      | 43.93              | **44.51**                 | 43.35   | 20.23       |
+| medicine(fa)         |                    |                           |         |             |
+| **MMLU-clinical**     | **55.47**          | 52.07                     | 47.92   | 25.28       |
+| knowledge(fa)        |                    |                           |         |             |
+| **MMLU-professional**  | **47.05**          | 45.58                     | 43.01   | 23.89       |
+| medicine(fa)         |                    |                           |         |             |
+| **MMLU-college**      | **47.22**          | 45.14                     | 44.85   | 32.63       |
+| biology(fa)          |                    |                           |         |             |
+| **MMLU(avg)**         | **49.31**          | 46.64                     | 45.17   | 25.89       |
+| **IBMSEE_Sept 2023**  |                    |                           |         |             |
+| (without time limit) | **38.69**          | 34.52                     | 33.33   | 19.64       |
+| **IBMSEE_Sept 2023**  | **38.69**          | 34.52                     | 33.33   | 19.64       |
+| (with time limit)    | (passed)           | (failed)                 | (failed)| (failed)    |
+| **inference time**    | low                | low                       | low     | low         |
 ### free form choice qa
 
 ## ⚠️ Risks and Limitations
