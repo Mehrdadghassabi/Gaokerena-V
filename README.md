@@ -55,6 +55,26 @@ The Gaokerena model was trained through a  process that involved fine-tuning the
 We have fully published the results [here](https://github.com/Mehrdadghassabi/Gaokerena/tree/main/evaluation). our model correctly answered about half of the questions in the medical portion of the MMLU dataset
 and successfully passed Iranian Basic Medical Sciences Entrance Exam - Sept 2017 (کنکور علوم پایه پزشکی شهریور ۱۴۰۲) while other alternatives failed to.
 ### multiple choice qa
+here it is the result against pipeline alternatives
+|                       | Gao-kerena (ours) | Meerkat8b + aya_expanse8b | MedMobile + gemma2b-it | MedMobile + parsinlu |
+|-----------------------|--------------------|----------------------------|------------------------|----------------------|
+| **MMLU-anatomy(fa)**  | 48.14              | **50.37**                 | 14.07                  | 25.18                |
+| **MMLU-medical**      | 53.0               | **62.0**                  | 20.0                   | 35.0                 |
+| genetics(fa)         |                    |                            |                        |                      |
+| **MMLU-college**      | 43.93              | **53.75**                 | 19.08                  | 27.17                |
+| medicine(fa)         |                    |                            |                        |                      |
+| **MMLU-clinical**     | 55.47              | **60.75**                 | 27.54                  | 31.70                |
+| knowledge(fa)        |                    |                            |                        |                      |
+| **MMLU-professional**  | 47.05              | **57.72**                 | 17.27                  | 33.82                |
+| medicine(fa)         |                    |                            |                        |                      |
+| **MMLU-college**      | 47.22              | **59.72**                 | 18.75                  | 31.25                |
+| biology(fa)          |                    |                            |                        |                      |
+| **MMLU(avg)**         | 48.66              | **57.57**                 | 20.11                  | 30.99                |
+| **IBMSEE_Sept 2023**  |                    |                            |                        |                      |
+| (without time limit) | 38.69              | **56.54**                 | 24.40                  | 32.73                |
+| **IBMSEE_Sept 2023**  | **38.69**          | 11.30                     | 24.40                  | 32.73                |
+| (with time limit)    | (passed)           | (failed)                  | (failed)               | (failed)             |
+| **inference time**    | low                | very high                 | high                   | high                 |
 ### free form choice qa
 
 ## ⚠️ Risks and Limitations
@@ -70,7 +90,7 @@ While Gaokerena aims to provide relatively accurate information, it is not a sub
 ## 🤝 Collaborators
 1. Mehrdad Ghassabi
 2. Pedram Rostami
-3. Dr.Hamid Reza Baradaran Kashani
+3. Dr. Hamid Reza Baradaran Kashani
 4. Amirhossein Poursina
 5. Zahra Kazemi
 6. Milad Tavakoli
