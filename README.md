@@ -81,8 +81,16 @@ here it is the result against general purpose language models:
 | **MMLU(avg)**         | **49.31**          | 46.64                     | 45.17   | 25.89       |
 | **IBMSEE Sept 2023(without time limit)**   | **38.69**          | 34.52                     | 33.33   | 19.64       |
 | **IBMSEE Sept 2023(with time limit)**  | **38.69**(passed)          | 34.52(failed)                     | 33.33(failed)   | 19.64(failed)       |
-| **inference time**    | low                | low                       | low     | low         |
+| **inference time**    | **low**                | **low**                       | **low**     | **low**         |
 ### free form choice qa
+win rate against pipeline alternatives:
+
+![fig5](https://github.com/user-attachments/assets/5e134034-fb85-4fc4-ae3d-d4b9afd62f43)
+
+win rate against general purpose language models:
+
+![fig4](https://github.com/user-attachments/assets/aac5de66-3c51-4436-8d42-5eb52252c762)
+
 
 ## ⚠️ Risks and Limitations
 While Gaokerena aims to provide relatively accurate information, it is not a substitute for professional medical advice. The model may have limitations in:
