@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.10.18)  7 MAY 2025 18:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.10.18)  10 MAY 2025 03:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -333,10 +333,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--91
 <fig1.png, id=14, 795.97375pt x 712.6625pt>
 File: fig1.png Graphic file (type png)
 <use fig1.png>
-Package pdftex.def Info: fig1.png  used on input line 156.
+Package pdftex.def Info: fig1.png  used on input line 158.
 (pdftex.def)             Requested size: 206.39685pt x 184.78766pt.
 
-Overfull \hbox (8.47078pt too wide) in paragraph at lines 167--194
+Overfull \hbox (8.47078pt too wide) in paragraph at lines 169--196
  [][] 
  []
 
@@ -344,63 +344,63 @@ Overfull \hbox (8.47078pt too wide) in paragraph at lines 167--194
 <fig2.png, id=20, 1373.13pt x 447.6725pt>
 File: fig2.png Graphic file (type png)
 <use fig2.png>
-Package pdftex.def Info: fig2.png  used on input line 206.
+Package pdftex.def Info: fig2.png  used on input line 208.
 (pdftex.def)             Requested size: 232.19843pt x 75.70029pt.
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 2
-67.
+69.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 277--277
+Underfull \hbox (badness 10000) in paragraph at lines 279--279
 [][][]\OT1/ptm/m/n/8 you can see the de-tailed re-sult at
  []
 
 <fig3.png, id=21, 849.1725pt x 81.30376pt>
 File: fig3.png Graphic file (type png)
 <use fig3.png>
-Package pdftex.def Info: fig3.png  used on input line 284.
+Package pdftex.def Info: fig3.png  used on input line 286.
 (pdftex.def)             Requested size: 258.0pt x 24.70145pt.
 [4 <./fig2.png>]
 <fig4.png, id=26, 1482.53876pt x 480.79625pt>
 File: fig4.png Graphic file (type png)
 <use fig4.png>
-Package pdftex.def Info: fig4.png  used on input line 334.
+Package pdftex.def Info: fig4.png  used on input line 336.
 (pdftex.def)             Requested size: 247.6778pt x 80.31836pt.
 
-Overfull \hbox (7.72632pt too wide) in paragraph at lines 358--391
+Overfull \hbox (7.72632pt too wide) in paragraph at lines 360--393
  [][] 
  []
 
 <fig5.png, id=27, 1490.56876pt x 480.79625pt>
 File: fig5.png Graphic file (type png)
 <use fig5.png>
-Package pdftex.def Info: fig5.png  used on input line 394.
+Package pdftex.def Info: fig5.png  used on input line 396.
 (pdftex.def)             Requested size: 247.6778pt x 79.88551pt.
 [5 <./fig3.png> <./fig4.png> <./fig5.png>]
-Underfull \hbox (badness 2503) in paragraph at lines 410--411
+Underfull \hbox (badness 2503) in paragraph at lines 412--413
 []\OT1/ptm/m/n/8 Taghizadeh, Nas-rin, et al. "SINA-BERT: a pre-trained lan-guag
 e
  []
 
 
-Underfull \hbox (badness 1789) in paragraph at lines 410--411
+Underfull \hbox (badness 1789) in paragraph at lines 412--413
 \OT1/ptm/m/n/8 model for anal-y-sis of med-i-cal texts in Per-sian." arXiv prep
 rint
  []
 
 
-Underfull \hbox (badness 6808) in paragraph at lines 433--434
+Underfull \hbox (badness 6808) in paragraph at lines 435--436
 []\OT1/ptm/m/n/8 Yang, An, et al. \Qwen2 Tech-ni-cal Re-port." arXiv Preprint
  []
 
 
-Underfull \hbox (badness 1527) in paragraph at lines 451--452
+Underfull \hbox (badness 1527) in paragraph at lines 453--454
 \OT1/ptm/m/n/8 i-cal con-ver-sa-tional AI mod-els and train-ing data." arXiv pr
 eprint
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 463--464
+Underfull \hbox (badness 10000) in paragraph at lines 465--466
 []\OT1/ptm/m/n/8 Hurst, Aaron, et al. "Gpt-4o sys-tem card." arXiv preprint
  []
 
@@ -428,7 +428,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  4294 strings out of 474222
  66327 string characters out of 5748732
- 1966975 words of memory out of 5000000
+ 1965975 words of memory out of 5000000
  26508 multiletter control sequences out of 15000+600000
  602463 words of font info for 125 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -438,7 +438,7 @@ Here is how much of TeX's memory you used:
 texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
 mes/utmri8a.pfb>
-Output written on main.pdf (6 pages, 282830 bytes).
+Output written on main.pdf (6 pages, 282657 bytes).
 PDF statistics:
  60 PDF objects out of 1000 (max. 8388607)
  31 compressed objects within 1 object stream

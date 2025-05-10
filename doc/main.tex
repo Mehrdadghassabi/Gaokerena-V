@@ -53,7 +53,7 @@ m.tavakoli@mehr.ui.ac.ir}
 \maketitle
 
 \begin{abstract}
-The rapid advancement of language models has demonstrated the potential of artificial intelligence in medical knowledge dissemination, yet many models struggle with specialized domains in low-resource languages like Persian. This study explores the enhancement of a small Persian language model by leveraging accessible online data, including a crawled corpus from medical magazines and a dataset of real doctor-patient Q\&A pairs. We preprocess and fine-tune the model using this curated dataset to improve its medical knowledge while maintaining efficiency. Our approach focuses on domain-specific adaptation without requiring large-scale computational resources, making it feasible for localized healthcare applications. Benchmark evaluations show that the enhanced model achieves significant improvements in medical question answering accuracy and response coherence compared to its baseline. This work highlights the feasibility of leveraging open-access online data to enrich small language models in specialized fields, providing a cost-effective solution for non-English medical AI applications.
+The rapid advancement of language models has demonstrated the potential of artificial intelligence in the healthcare industry. However, small language models struggle with specialized domains in low-resource languages like Persian. While numerous medical-domain websites exist in Persian, no curated dataset or corpus has been available—making ours the first of its kind. This study explores the enhancement of medical knowledge in a small language model by leveraging accessible online data, including a crawled corpus from medical magazines and a dataset of real doctor-patient Q\&A pairs. We fine-tuned a baseline model using our curated data to improve its medical knowledge. Benchmark evaluations demonstrate that the fine-tuned model achieves improved accuracy in medical question answering and provides better responses compared to its baseline. This work highlights the potential of leveraging open-access online data to enrich small language models in medical fields, providing a novel solution for Persian medical AI applications suitable for resource-constrained environments.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -102,7 +102,7 @@ Our contributions in this work are as follows:
 Several notable projects have contributed to the development of medical language models, employing various strategies to enhance their performance and applicability in healthcare.
 
 ChatDoctor
-\cite{b6}, which is the most similar work to ours, represents a notable initiative focused on developing a medical language model. The team behind ChatDoctor sourced its training data from HealthcareMagic and its test data from iCliniq, compiling a total of 200,000 free-form question-answering pairs from these online platforms. They then curated the dataset by filtering answers based on their length, resulting in a final collection of 100,000 high-quality pairs. Using this dataset, they fine-tuned a LLaMA model \cite{b7} to create a system capable of delivering accurate and contextually relevant medical information. Furthermore, ChatDoctor leveraged a retrieval-augmented generation (RAG) approach, which allowed the model to access and integrate external knowledge more effectively, thereby enhancing its overall performance.
+\cite{b6}, which is the most similar work to ours, represents a notable initiative focused on developing a medical language model. The team behind ChatDoctor sourced its training data from HealthcareMagic and its test data from iCliniq, compiling a total of more than 200,000 free-form question-answering pairs from these online platforms. They then curated the dataset by filtering answers based on their length, resulting in a final collection of 100,000 high-quality pairs. Using this dataset, they fine-tuned a LLaMA model \cite{b7} to create a system capable of delivering accurate and contextually relevant medical information. Furthermore, ChatDoctor leveraged a retrieval-augmented generation (RAG) approach, which allowed the model to access and integrate external knowledge more effectively, thereby enhancing its overall performance.
 
 Meerkat
 \cite{b8}
@@ -114,12 +114,12 @@ represents yet another advancement in the realm of small medical language models
 \cite{b10}
 using a combination of synthetic and human-generated datasets, enabling it to achieve optimal performance tailored for mobile applications in the medical domain. By focusing on the specific requirements of mobile users, MedMobile sought to deliver a model that is both efficient and effective, ensuring accessibility to high-quality medical information on the go.
 \subsection{Related Works in Persian}
-As previously mentioned, there has been limited research focused on Persian medical language models, highlighting a significant gap in resources for the Persian-speaking medical community. Furthermore, existing works on Persian medical question-answering systems are entirely closed-source regarding their datasets, models, and codebases. This lack of accessible resources leaves the field largely underexplored, presenting researchers with an almost blank slate to build upon. On the other hand, all of these efforts have primarily concentrated on extractive solutions, which aim to retrieve relevant information from predefined sources, rather than employing generative approaches capable of producing context-aware responses.
+As previously mentioned, there has been limited research focused on Persian medical language models, highlighting a significant gap in resources for the Persian-speaking medical community. Furthermore, existing works on Persian medical question-answering systems are entirely closed-source regarding their datasets, models, and codebases. This lack of public resources leaves the field largely underexplored, presenting researchers with an almost blank slate to build upon. On the other hand, all of these efforts have primarily concentrated on extractive solutions, which aim to retrieve relevant information from predefined sources, rather than employing generative approaches capable of producing context-aware responses.
 
 Perhaps the most notable effort in this area is Sina BERT \cite{b4}, which involved training a BERT model using a crawled corpus alongside Persian annotated datasets specifically developed for various tasks, including medical question answering, medical sentiment analysis, and medical question retrieval. Sina BERT is the most similar work to ours among Persian-language-focused efforts; however, it differs in that it uses a BERT model—an encoder-based language model—as its baseline. This choice limits its capability for generative AI tasks, as BERT is primarily designed for understanding and extracting information rather than generating answers.
 
 Another notable work is the Persian Medical Question Answering System developed by H. Veisi et al.
-\cite{b11}
+\cite{b11}.
 Their system is structured around three main modules: question processing, document retrieval, and answer extraction. The question processing module is responsible for analyzing and refining user queries, the document retrieval module locates relevant medical documents from predefined data, and the answer extraction module identifies and extracts the most suitable answers from the retrieved content.
 
 Similar to these two works L.Darabi
@@ -129,13 +129,15 @@ used models like Pars BERT
 to retrieve relevant answers. Her approach involves finding similar questions to handle repeated queries and employs strict and lenient evaluation strategies for accurate or approximate answers. Additionally, classification methods and Named Entity Recognition (NER) are used to improve answer relevance by categorizing questions and identifying medical entities like drug and disease names.
 
 \section{Baseline Model}
-We have chosen aya-expanse as our baseline model primarily due to the lack of open-source Persian medical language models, which necessitates the use of a general-purpose language model. While there are several multilingual options available, including aya-expanse \cite{b5}, Gemma \cite{b14}, Qwen \cite{b15}, and PersianMind \cite{b16}, we have determined that aya-expanse is the most suitable choice for our needs. One key reason is that the training data for the other models predominantly consists of non-Persian languages, leading to biases that may result in the generation of non-Persian text, even when specified to use only Persian. In contrast, aya-expanse demonstrates a robust understanding of Persian grammar and produces grammatically rich Persian text, making it a more reliable option for our research. Furthermore, our future research plans include the capability to leverage updated parameters on aya-vision, another model of aya family, which will allow us to incorporate medical images such as MRIs and CT scans as inputs, thereby enhancing our model’s applicability to the medical domain.
+We have chosen aya-expanse as our baseline model primarily due to the lack of open-source Persian medical language models, which necessitates the use of a general-purpose language model. While there are several multilingual options available, including aya-expanse \cite{b5}, Gemma \cite{b14}, Qwen \cite{b15}, and PersianMind \cite{b16}, we have determined that aya-expanse is the most suitable choice for our needs. One key reason is that the training data for the other models predominantly consists of non-Persian languages, leading to biases that may result in the generation of non-Persian characters, even when specified to use only Persian. In contrast, aya-expanse demonstrates a robust understanding of Persian grammar and produces grammatically rich Persian text, making it a more reliable option for our research. Furthermore, our future research plans include the capability to leverage our updated parameters on aya-vision, another model of aya family, which will allow us to incorporate medical images such as MRIs and CT scans as inputs, thereby enhancing our model’s applicability to the medical domain.
 \section{Data}
 
 \subsection{Corpus}
-As previously mentioned, there is a notable absence of publicly available Persian medical corpora specifically collected for training machine learning models. This lack of a dedicated Persian medical corpus poses a significant challenge for researchers and developers aiming to create effective models for medical applications in the Persian language. Without high-quality, domain-specific textual data necessary for training, these efforts may be hindered, ultimately impacting the development of advanced medical technologies and solutions tailored for Persian-speaking populations. To provide further insight into this issue, we have compiled a comprehensive corpus containing approximately 90 million tokens and about 100,000 articles. Additionally, I. Garcia Ferrero et al
+As previously mentioned, there is a notable absence of publicly available Persian medical corpora specifically collected for training machine learning models. This lack of a dedicated Persian medical corpus poses a significant challenge for researchers and developers aiming to create effective models for medical applications in the Persian language. Without high-quality, domain-specific textual data necessary for training, these efforts may be hindered, ultimately impacting the development of advanced medical technologies and solutions tailored for Persian-speaking populations. To provide further insight into this issue, we have compiled a comprehensive corpus containing approximately 90 million tokens and about 100,000 articles. 
+
+I. Garcia Ferrero et al.
 \cite{b17}
-. collected corpora dedicated to four languages (English, French, Spanish, and Italian), which can be compared to ours in Table I. The accompanying figure \ref{fig1} illustrates the share of each magazine within our corpus, effectively highlighting the diversity of sources and underscoring the need to address gaps in available resources to foster innovation and improve health-related applications.
+collected corpora dedicated to four languages (English, French, Spanish, and Italian), which can be compared to ours in Table I. The accompanying figure \ref{fig1} illustrates the share of each magazine within our corpus, effectively highlighting the diversity of sources and underscoring the need to address gaps in available resources to foster innovation and improve health-related applications.
 
 \begin{table}[ht]
 	\centering
@@ -194,7 +196,7 @@ The collection of a real-world doctor-patient question-answering dataset is cruc
 \end{table}
 
 
-In our research, we crawled more than 180,000 question-answer pairs from Persian medical forums, employing both manual and automatic filtering methods to refine the dataset through a laborious cleaning process. This approach is similar to the work done by Yunxiang Li et al. \cite{b6} in their article on the Chat Doctor medical language model, where they extracted data from English medical forums. Notably, Yunxiang Li discarded about half of the question-answer pairs based on the length of the answers, as shorter responses are generally inadequate for training a model and can lead the model to learn to provide brief answers. However, we faced a greater challenge; Persian doctors tend to provide much shorter answers compared to their English counterparts, resulting in the necessity to discard over 80\% of our question-answer records to ensure quality and relevance for our training purposes.
+In our research, we crawled more than 180,000 question-answer pairs from Persian medical forums, employing both manual and automatic filtering methods to refine the dataset through a laborious cleaning process. This approach is similar to the work done by Yunxiang Li et al. \cite{b6}. in their article on the Chat Doctor medical language model, where they extracted data from English medical forums. Notably, Yunxiang Li discarded about half of the question-answer pairs based on the length of the answers, as shorter responses are generally inadequate for training a model and can lead the model to learn to provide brief answers. However, we faced a greater challenge; Persian doctors tend to provide much shorter answers compared to their English counterparts, resulting in the necessity to discard over 80\% of our question-answer records to ensure quality and relevance for our training purposes.
 
 As you can see in the figure
 \ref{fig2}
@@ -210,8 +212,8 @@ and appending it to our test split. This comprehensive approach not only enriche
 
 \section{Training}
 \subsection{Fine tuning}
-We fine-tuned the 8-billion-parameter checkpoint of the Aya
-Expanse model on 60\% of our corpus, focusing on minimizing
+We fine-tuned the 8-billion-parameter checkpoint of the aya
+-expanse model on 60\% of our corpus, focusing on minimizing
 resource usage. To ensure an efficient fine-tuning process, we
 employed gradient checkpointing and a small batch size of 2,
 reducing memory requirements during training. Additionally,
@@ -219,8 +221,8 @@ we used gradient accumulation steps of 16, effectively increas-
 ing the overall batch size to 32 and enabling stable training
 dynamics. To further reduce the memory usage of our fine-
 tuning process, we leveraged Low Rank Adaptation (LoRA)
-to significantly reduce the number of trainable parameters
-\cite{b26}.
+\cite{b26}
+to significantly reduce the number of trainable parameters.
 Specifically, we implemented a rank of 8, an alpha value of
 16, and a dropout rate of 5\%, applying the LoRA weights to
 all trainable parameters of each transformer layer. We present
@@ -245,7 +247,7 @@ with model performance.
 Following the fine-tuning stage, we performed instruction-
 tuning on the fine-tuned model using our crawled free-form
 Farsi question-answering (MF3QA) dataset. This stage utilized
-the default template of the Aya Expanse model and retained
+the default template of the aya-expanse model and retained
 the same techniques and almost the same hyperparameters as
 the fine-tuning stage, with a few adjustments. Specifically, we
 employed the LoRA method with a rank of 2, an alpha value
