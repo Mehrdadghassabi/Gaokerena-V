@@ -64,7 +64,7 @@ here it is the result against pipeline alternatives:
 | **MMLU-clinicalknowledge(fa)**     | 55.47              | **60.75**                 | 27.54                 | 31.70               |
 | **MMLU-professionalmedicine(fa)**  | 47.05              | **57.72**                 | 17.27                  | 33.82               |
 | **MMLU-collegebiology(fa)**      | 47.22              | **59.72**                 | 18.75                  | 31.25                |
-| **MMLU(avg)**         | 48.66              | **57.57**                 | 20.11                  | 30.99                |
+| **MMLU(avg)**         | 49.31              | **57.57**                 | 20.11                  | 30.99                |
 | **IBMSEE Sept 2023(without time limit)**  | 38.69              | **56.54**                 | 24.40                | 32.73                |
 | **IBMSEE Sept 2023(with time limit)**  | **38.69**(passed)          | 11.30(failed)                    | 24.40(failed)                 | 32.73(failed)               |
 | **inference time**    | **low**                | very high                | high                   | high                 |
