@@ -14,7 +14,7 @@
 \title{Leveraging Online Data to Enhance Medical Knowledge in a Small Persian Language Model}
 
 \author{\IEEEauthorblockN{1\textsuperscript{st} Mehrdad Ghassabi}
-\IEEEauthorblockA{\textit{School of Computer Engineering} \\
+\IEEEauthorblockA{\textit{Faculty of Computer Engineering} \\
 \textit{University of Isfahan}\\
 Isfahan, Iran \\
 m.ghassabi@eng.ui.ac.ir}
@@ -26,7 +26,7 @@ Tehran, Iran \\
 pedram.rostami@ut.ac.ir}
 \and
 \IEEEauthorblockN{3\textsuperscript{rd} Hamidreza Baradaran Kashani}
-\IEEEauthorblockA{\textit{School of Computer Engineering} \\
+\IEEEauthorblockA{\textit{Faculty of Computer Engineering} \\
 	\textit{University of Isfahan}\\
 	Isfahan, Iran \\
 	hrb.kashani@eng.ui.ac.ir }
@@ -38,13 +38,13 @@ Isfahan, Iran \\
 Amirhosseinpoorsina9@gmail.com}
 \and
 \IEEEauthorblockN{5\textsuperscript{th} Zahra Kazemi}
-\IEEEauthorblockA{\textit{School of Computer Engineering} \\
+\IEEEauthorblockA{\textit{Faculty of Computer Engineering} \\
 \textit{University of Isfahan}\\
 Isfahan, Iran \\
 zhrakazemi@mehr.ui.ac.ir}
 \and
 \IEEEauthorblockN{6\textsuperscript{th} Milad Tavakoli}
-\IEEEauthorblockA{\textit{School of Computer Engineering} \\
+\IEEEauthorblockA{\textit{Faculty of Computer Engineering} \\
 \textit{University of Isfahan}\\
 Isfahan, Iran \\
 m.tavakoli@mehr.ui.ac.ir}
@@ -327,7 +327,7 @@ as an evaluator for free-form question answering. We provided the test set from 
         IBMSEE\_Sept & \textbf{38.69} & 34.52 & 33.33 & 19.64 \\ 
         2023(with & (passed) & (failed) & (failed) & (failed) \\  
         time limit) &  &  &  &  \\  \hline
-        inference time & low & low & low & low \\  \hline
+        inference time & $\approx 10s$ & $\approx 8s$ & $\approx 15s$ & $\approx 2s$ \\  \hline
 	\end{tabular}
 	\label{tab:model_results_on_mcqa_vs_general_purpose_languages}
 \end{table}
@@ -361,8 +361,8 @@ paired with aya-expanse-8b as a translator in the translated MMLU dataset and th
 		\hline
 		\textbf{} & \textbf{Gao-} & \textbf{Meerkat8b}
 		& \textbf{MedMobile} & \textbf{MedMobile} \\ 
-		& \textbf{kerena} & \textbf{+ aya\_} & + \textbf{gemma2b-it} & \textbf{+ parsinlu} \\
-		& (ours) & \textbf{expanse8b}  &  &  \\ \hline
+		& \textbf{kerena} & \textbf{+ aya\_} & + \textbf{gemma2b} & \textbf{+ parsinlu} \\
+		& (ours) & \textbf{expanse8b}  & \textbf{-it} &  \\ \hline
 		MMLU- & 48.14 & \textbf{50.37} & 14.07 & 25.18 \\ 
 		anatomy(fa) &  &  &  &  \\ \hline
 		MMLU- &  &   &  &  \\
@@ -387,7 +387,7 @@ paired with aya-expanse-8b as a translator in the translated MMLU dataset and th
 		IBMSEE\_Sept & \textbf{38.69} & 11.30 & 24.40 & 32.73 \\ 
 		2023(with & (passed) & (failed) & (failed) & (failed) \\  
 		time limit) &  &  &  &  \\  \hline
-		inference time & low & very high & high & high \\  \hline
+		inference time & $\approx 10s$ & $\approx 190s$ & $\approx 20s$ & $\approx 30s$ \\  \hline
 	\end{tabular}
 	\label{tab:model_results_on_mcqa_vs_pipeline_alternative}
 \end{table}
