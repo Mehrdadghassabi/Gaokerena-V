@@ -56,18 +56,16 @@ We have fully published the results [here](https://github.com/Mehrdadghassabi/Ga
 and successfully passed Iranian Basic Medical Sciences Entrance Exam - Sept 2017 (کنکور علوم پایه پزشکی شهریور ۱۴۰۲) while other alternatives failed to.
 ### multiple choice qa
 here it is the result against pipeline alternatives:
-|                       | Gaokerena (ours) | Meerkat8b + aya_expanse8b | MedMobile + gemma2b-it | MedMobile + parsinlu |
-|-----------------------|--------------------|----------------------------|------------------------|----------------------|
-| **MMLU-anatomy(fa)**  | 48.14              | **50.37**                 | 14.07                  | 25.18                |
-| **MMLU-medicalgenetics(fa)**      | 53.0              | **62.0**                  | 20.0                   | 35.0                 |
-| **MMLU-collegemedicine(fa)**      | 43.93              | **53.75**                 | 19.08                  | 27.17                |
-| **MMLU-clinicalknowledge(fa)**     | 55.47              | **60.75**                 | 27.54                 | 31.70               |
-| **MMLU-professionalmedicine(fa)**  | 47.05              | **57.72**                 | 17.27                  | 33.82               |
-| **MMLU-collegebiology(fa)**      | 47.22              | **59.72**                 | 18.75                  | 31.25                |
-| **MMLU(avg)**         | 49.31              | **57.57**                 | 20.11                  | 30.99                |
-| **IBMSEE Sept 2023(without time limit)**  | 38.69              | **56.54**                 | 24.40                | 32.73                |
-| **IBMSEE Sept 2023(with time limit)**  | **38.69**(passed)          | 11.30(failed)                    | 24.40(failed)                 | 32.73(failed)               |
-| **inference time**    | **low**                | very high                | high                   | high                 |
+|                       | Gaokerena (ours)  | MedMobile + gemma2b-it | MedMobile + parsinlu |
+|-----------------------|--------------------|----------------------------|------------------------|
+| **MMLU-anatomy(fa)**  | **48.14**          | 14.07                      |   25.18                |
+| **MMLU-medicalgenetics(fa)** | **53.0**    | 20.0                       | 35.0                   |
+| **MMLU-collegemedicine(fa)** | **43.93**   | 19.08                      | 27.17                  |
+| **MMLU-clinicalknowledge(fa)**     | **55.47**                        | 27.54                 | 31.70               |
+| **MMLU-professionalmedicine(fa)**  | **47.05**                    | 17.27                  | 33.82               |
+| **MMLU-collegebiology(fa)**      | **47.22**                        | 18.75                  | 31.25                |
+| **MMLU(avg)**         | **49.31**                             | 20.11                  | 30.99                |
+| **IBMSEE Sept 2023**  | **38.69**                              | 24.40                | 32.73                |
 
 here it is the result against general purpose language models:
 |                       | Gaokerena (ours) | aya_expanse8b (baseline) | Qwen2.5 | PersianMind |
@@ -79,9 +77,7 @@ here it is the result against general purpose language models:
 | **MMLU-professionalmedicine(fa)**  | **47.05**          | 45.58                     | 43.01   | 23.89       |          |
 | **MMLU-collegebiology(fa)**      | **47.22**          | 45.14                     | 44.85   | 32.63       |
 | **MMLU(avg)**         | **49.31**          | 46.64                     | 45.17   | 25.89       |
-| **IBMSEE Sept 2023(without time limit)**   | **38.69**          | 34.52                     | 33.33   | 19.64       |
-| **IBMSEE Sept 2023(with time limit)**  | **38.69**(passed)          | 34.52(failed)                     | 33.33(failed)   | 19.64(failed)       |
-| **inference time**    | **low**                | **low**                       | **low**     | **low**         |
+| **IBMSEE Sept 2023**   | **38.69**          | 34.52                     | 33.33   | 19.64       |
 ### free form choice qa
 win rate against pipeline alternatives:
 
