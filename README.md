@@ -96,7 +96,7 @@ While Gaokerena aims to provide relatively accurate information, it is not a sub
 - Addressing highly specialized or rare medical conditions.
 - Offering region-specific guidance, as the training data does not include localized Persian medical practices.
 
-## ⛔️ License
+## 🤝 Collaborators
 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) (non-commercial use only)
 
 ## 🤝 Collaborators
