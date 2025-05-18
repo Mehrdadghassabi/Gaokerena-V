@@ -13,8 +13,8 @@
 - [📚 Base model](#-base-model)
 - [🏃 Training process](#-training-process)
 - [📊 Results](#-Results)
-- [⛔️ License](#-Results)
 - [⚠️ Risks and Limitations](#-risks-and-limitations)
+- [⛔️ License](#-Results)
 - [🤝 Collaborators](#-collaborators)
 - [🙏🏼 Acknowledgement](#-acknowledgement)
 
