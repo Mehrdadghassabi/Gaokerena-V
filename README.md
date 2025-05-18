@@ -14,7 +14,7 @@
 - [🏃 Training process](#-training-process)
 - [📊 Results](#-Results)
 - [⚠️ Risks and Limitations](#-risks-and-limitations)
-- [⛔️ License](#-license)
+- [⛔️ License](#-License)
 - [🤝 Collaborators](#-collaborators)
 - [🙏🏼 Acknowledgement](#-acknowledgement)
 
