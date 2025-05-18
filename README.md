@@ -81,7 +81,8 @@ here it is the result against general purpose language models:
 ### free form choice qa
 win rate against pipeline alternatives:
 
-![fig5](https://github.com/user-attachments/assets/5e134034-fb85-4fc4-ae3d-d4b9afd62f43)
+![image](https://github.com/user-attachments/assets/6de1498f-e5d1-459c-aa12-66a468aea98f)
+
 
 win rate against general purpose language models:
 
