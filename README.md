@@ -2,7 +2,7 @@
   <img src="https://github.com/user-attachments/assets/fa5782f3-bf6e-4ff1-987d-517e6f2d135f"/>
 </div>
 <p align="center">
-📃 <a href="https://github.com/Mehrdadghassabi/Gaokerena/blob/main/doc/main.pdf" target="_blank">Paper</a> ｜🤗 <a href="https://huggingface.co/gaokerena" target="_blank">huggingface repository</a> | 🚀 <a href="https://colab.research.google.com/github/Mehrdadghassabi/Gaokerena/blob/master/assets/Untitled4.ipynb" target="_blank">quick start</a>
+📃 <a href="https://arxiv.org/abs/2505.16000" target="_blank">Paper</a> ｜🤗 <a href="https://huggingface.co/gaokerena" target="_blank">huggingface repository</a> | 🚀 <a href="https://colab.research.google.com/github/Mehrdadghassabi/Gaokerena/blob/master/assets/Untitled4.ipynb" target="_blank">quick start</a>
 </p>
 
 ## 📒 Table of Contents
