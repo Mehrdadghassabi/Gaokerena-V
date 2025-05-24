@@ -106,7 +106,7 @@
 	
 	Meerkat
 	\cite{b8}
-	is another significant contribution in the field. This project involved extracting chains of thought from medical textbooks and fine-tuning a language model using this data, alongside other supplementary datasets. By focusing on the reasoning processes involved in medical decision-making, Meerkat aimed to create a model that not only provides information but also mimics the cognitive processes of healthcare professionals, thereby supporting more nuanced and informed interactions.
+	is another significant contribution in this field. This project involved extracting chains of thought from medical textbooks and fine-tuning a language model using this data, alongside other supplementary datasets. By focusing on the reasoning processes involved in medical decision-making, Meerkat aimed to create a model that not only provides information but also mimics the cognitive processes of healthcare professionals, thereby supporting more nuanced and informed interactions.
 	
 	MedMobile
 	\cite{b9}
@@ -130,9 +130,9 @@
 	to retrieve relevant answers. Her approach involves finding similar questions to handle repeated queries and employs strict and lenient evaluation strategies for accurate or approximate answers. Additionally, classification methods and Named Entity Recognition (NER) are used to improve answer relevance by categorizing questions and identifying medical entities like drug and disease names.
 	
 	\section{Baseline Model}
-	We have chosen aya-expanse-8b as our baseline model primarily due to the lack of open-source Persian medical language models, which necessitates the use of a general-purpose language model. While there are several multilingual options available, including aya-expanse \cite{b5}, Gemma2 \cite{b15}, Qwen2 \cite{b16}, and PersianMind \cite{b17}, we have determined that aya-expanse is the most suitable choice for our needs. One key reason is that the training data for the other models predominantly consists of non-Persian languages, leading to biases that may result in the generation of non-Persian characters, even when specified to use only Persian. In contrast, aya-expanse demonstrates a robust understanding of Persian grammar and produces grammatically rich Persian text, making it a more reliable option for our research. Furthermore, our future research plans include the capability to leverage our updated parameters on aya-vision
+	We have chosen aya-expanse-8b as our baseline model primarily due to the lack of open-source Persian medical language models, which necessitates the use of a general-purpose language model. While there are several multilingual options available, including aya-expanse \cite{b5}, Gemma2 \cite{b15}, Qwen2 \cite{b16}, and PersianMind \cite{b17}, we have determined that aya-expanse is the most suitable choice for our needs. One key reason is that the training data for the other models predominantly consists of non-Persian languages, leading to biases that may result in the generation of non-Persian characters, even when we explicitly instruct the model to use only Persian. In contrast, aya-expanse demonstrates a robust understanding of Persian grammar and produces grammatically rich Persian text, making it a more reliable option for our research. Furthermore, if we merge our updated parameters into aya-vision
 	\cite{b18}
-	, another model of aya family, which will allow us to incorporate medical images such as MRIs and CT scans as inputs, thereby enhancing our model’s applicability to the medical domain.
+	, another model of aya family, instead of aya-expanse, we gain the capability to incorporate medical images such as MRIs and CT scans as inputs, thereby enhancing our model’s applicability to the medical domain.
 	\section{Data}
 	
 	\subsection{Corpus}
@@ -140,7 +140,9 @@
 	
 	I. Garcia Ferrero et al.
 	\cite{b19}
-	collected medical corpora dedicated to four languages (English, French, Spanish, and Italian), which can be compared to ours in Table I. The accompanying Figure \ref{fig1} illustrates the share of each magazine within our corpus, effectively highlighting the diversity of sources and underscoring the need to address gaps in available resources to foster innovation and improve health-related applications.
+	collected medical corpora dedicated to four languages (English, French, Spanish, and Italian), which can be compared to ours, as shown in Table 
+	\ref{tab:corpus_comparison}.
+	The accompanying Figure \ref{fig1} illustrates the share of each magazine within our corpus, effectively highlighting the diversity of sources and underscoring the need to address gaps in available resources to foster innovation and improve health-related applications.
 	
 	\begin{table}[ht]
 		\centering
@@ -154,7 +156,7 @@
 			Italian& 143M &  I. Garcia Ferrero et al.  \\ \hline
 			Persian& 90M & us	\\ \hline
 		\end{tabular}
-		\label{tab:model_results_on_mcqa}
+		\label{tab:corpus_comparison}
 	\end{table}
 	
 	\begin{figure}[htbp]
@@ -166,7 +168,8 @@
 	\subsection{Dataset}
 	The collection of a real-world doctor-patient question-answering dataset is crucial for enhancing the capabilities of language models in the healthcare domain. Such a dataset allows models to learn valuable information derived from authentic interactions between healthcare providers and patients. By analyzing these real-world exchanges, language models can grasp the nuances of medical terminology, patient concerns, and the context surrounding healthcare inquiries. Furthermore, this dataset equips models with the ability to learn not just the factual content of responses but also the appropriate structure and tone for answering questions. This dual learning process is essential, as it enables the model to generate accurate, empathetic, and contextually relevant responses, ultimately improving patient communication and support in medical environments. In this context, Yang Liu 
 	\cite{b20}
-	highlights several real-world doctor-patient question-answering datasets in his survey, a comparison of these datasets with ours can be found in Table II. In an era where technology increasingly aids healthcare, a robust doctor-patient dataset stands as a foundational element in training models that can effectively contribute to better healthcare delivery.
+	highlights several real-world doctor-patient question-answering datasets in his survey, a comparison of these datasets with ours can be found in Table 
+	\ref{tab:mf3qa_comparisin}. In an era where technology increasingly aids healthcare, a robust doctor-patient dataset stands as a foundational element in training models that can effectively contribute to better healthcare delivery.
 	
 	\begin{table}[ht]
 		\centering
@@ -199,7 +202,7 @@
 			\\ \hline
 			MF3QA           &Persian  & 20k            & us \\ \hline
 		\end{tabular}
-		\label{tab:model_results_on_mcqa}
+		\label{tab:mf3qa_comparisin}
 	\end{table}
 	
 	
@@ -287,7 +290,7 @@
 	
 	
 	\subsection{Comparison with general purpose language models}
-	As you can see in Table \ref{tab:model_results_on_mcqa}, our model achieved remarkable success by surpassing the passing score of the Iranian Basic Medical Sciences Entrance Exam, which stands at 36\%, making it the first Persian language model with fewer than 8 billion parameters to pass this exam. Furthermore, our model demonstrated improvements on the translated MMLU dataset, achieving not only higher average scores but also excelling across most sub-categories, thereby showcasing its effectiveness in understanding and generating medical knowledge in the Persian language. Notably, the reason PersianMind has a low inference time, as illustrated in Figure \ref{fig3}, is that it tends to generate very short responses compared to other models, producing the end-of-sentence token much sooner. In addition to our multiple choice question answering evaluation, we also utilized GPT-4o \cite{b32} as an evaluator for free-form question answering. We provided the test set from the MF3QA dataset to both the competing language model and our model. As shown in Figure \ref{fig3}, GPT-4o predominantly preferred the responses generated by our model over those from the other three language models tested. This indicates that our model delivers high-quality responses, as judged by an advanced language model.
+	As you can see in Table \ref{tab:model_results_vs_general_purpose_languages}, our model achieved remarkable success by surpassing the passing score of the Iranian Basic Medical Sciences Entrance Exam, which stands at 36\%, making it the first Persian language model with fewer than 8 billion parameters to pass this exam. Furthermore, our model demonstrated improvements on the translated MMLU dataset, achieving not only higher average scores but also excelling across most sub-categories, thereby showcasing its effectiveness in understanding and generating medical knowledge in the Persian language. Notably, the reason PersianMind has a low inference time, as shown in Table \ref{tab:model_results_vs_general_purpose_languages}, is that it tends to generate very short responses compared to other models, producing the end-of-sentence token much sooner. In addition to our multiple choice question answering evaluation, we also utilized GPT-4o \cite{b32} as an evaluator for free-form question answering. We provided the test set from the MF3QA dataset to both the competing language model and our model. As shown in Figure \ref{fig3}, GPT-4o predominantly preferred the responses generated by our model over those from the other three language models tested. This indicates that our model delivers high-quality responses, as judged by an advanced language model.
 	\begin{table}[ht]
 		\centering
 		\caption{
@@ -323,7 +326,7 @@
 			parameters & 8b & 8b & 7.6b & 6.8b \\ \hline
 			inference time & $\approx 10s$ & $\approx 8s$ & $\approx 15s$ & $\approx 2s$ \\  \hline
 		\end{tabular}
-		\label{tab:model_results_on_mcqa_vs_general_purpose_languages}
+		\label{tab:model_results_vs_general_purpose_languages}
 	\end{table}
 	
 	\begin{figure}[htbp]
@@ -333,14 +336,14 @@
 	\end{figure}
 	\subsection{Comparison with pipeline alternatives}
 	As previously mentioned, one alternative to creating a Persian medical language model is a pipeline system. However, a major problem with pipeline systems is their speed; they exhibit high inference times because the output from one model must be fed into a second model, and then the output of the second model is processed again by the first model. This iterative process significantly hampers efficiency.
-	
 	To address the low speed of pipeline models, we have loaded all parameters—both those pertaining to the translators and the medical language model—simultaneously. Our experiments with models such as Medmobile \cite{b9} paired with gemma-2b-it 
 	\cite{b14}
 	as translators, and Medmobile paired with parsinlu 
 	\cite{b32} \cite{b34} 
-	models, showed disappointing results, as evidenced by the poor performance displayed in Table \ref{tab:model_results_on_mcqa_vs_pipeline_alternative}.
+	models, showed disappointing results, as evidenced by the poor performance displayed in Table \ref{tab:model_results_vs_pipeline_alternative}.
 	
-	Another significant issue with the pipeline alternative in the medical domain is its poor performance in detecting medical terms. This limitation is likely due to the fact that the translators have not been specifically developed for medical translation, as there are currently no models tailored for medical translation in the Persian language. As illustrated in Figure \ref{fig4}, this limitation resulted in all pipeline alternatives achieving lower win rates against our model, Gaokerena.
+	Another significant issue with the pipeline alternative is its poor performance in accurately detecting and translating medical terms. This limitation poses a serious challenge, as precise terminology is crucial for effective communication in healthcare settings, where misunderstandings can have serious consequences for patient care and treatment outcomes. The underlying cause of this deficiency is likely due to the fact that the translators employed in these pipeline systems have not been specifically developed for medical translation. Unlike general-purpose translation models, medical translation requires a nuanced understanding of specialized vocabulary, context, and the intricacies of medical language.
+	Currently, there are no models tailored for medical translation in the Persian language, which means that existing systems are ill-equipped to handle the complexities of medical terminology. As shown in Figure \ref{fig4}, these limitations have resulted in all pipeline alternatives achieving lower win rates against our model, Gaokerena. This performance gap highlights the inadequacies of current pipeline approaches in meeting the demands of medical translation, emphasizing the necessity for the development of dedicated medical translator models that can effectively address these specific challenges.
 	
 	\begin{table}[ht]
 		\centering
@@ -370,7 +373,7 @@
 			parameters & 8b & 3.8b+2b & 3.8b+1.2b+1.2b \\ \hline
 			inference time & $\approx 10s$ & $\approx 20s$ & $\approx 30s$ \\  \hline
 		\end{tabular}
-		\label{tab:model_results_on_mcqa_vs_pipeline_alternative}
+		\label{tab:model_results_vs_pipeline_alternative}
 	\end{table}
 	
 	\begin{figure}[htbp]
@@ -379,8 +382,9 @@
 		\label{fig4}
 	\end{figure}
 	\section*{Future research}
-	As mentioned in the baseline model section, our future research plans involve leveraging our updated parameters on aya-vision, another model of aya family of models. This will allow us to incorporate medical images, such as MRIs and CT scans, as inputs to our model, enhancing its applicability in the medical domain. By integrating textual and visual data, we aim to improve diagnostic accuracy and provide healthcare professionals with a more comprehensive decision-making tool. Future work will focus on optimizing this integration and evaluating the model’s performance in real-world medical scenarios.
-	
+	As mentioned in the baseline model section, we can merge our updated parameters into aya-vision instead of aya-exapanse, This will allow us to incorporate medical images, such as MRIs and CT scans, as inputs to our model.
+	However, it is important to note that our models capabilities with multi-modal queries are under-explored.
+	our future research plans involve to exploring and enhancing our model’s responses to queries that are accompanied by medical images.
 	
 	\begin{thebibliography}{00}
 		\bibitem{b1} 
