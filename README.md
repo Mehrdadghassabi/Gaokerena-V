@@ -75,7 +75,7 @@ here it is the result against general purpose language models:
 | **MMLU-collegemedicine(fa)**      | 43.93              | **44.51**                 | 43.35   | 20.23       |
 | **MMLU-clinicalknowledge(fa)**     | **55.47**          | 52.07                     | 47.92   | 25.28       |
 | **MMLU-professionalmedicine(fa)**  | **47.05**          | 45.58                     | 43.01   | 23.89       |          |
-| **MMLU-collegebiology(fa)**      | **47.22**          | 45.14                     | 44.85   | 32.63       |
+| **MMLU-collegebiology(fa)**      | **47.22**          | 45.14                     | 42.36   | 32.63       |
 | **MMLU(avg)**         | **49.31**          | 46.64                     | 45.17   | 25.89       |
 | **IBMSEE Sept 2023**   | **38.69**          | 34.52                     | 33.33   | 19.64       |
 ### free form choice qa
