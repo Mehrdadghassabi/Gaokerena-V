@@ -244,8 +244,19 @@ While Yunxiang Li only cleaned his question-answer pairs based on answer length,
 	\section{Training}
 	\subsection{Fine tuning}
 We fine-tuned the 8-billion-parameter checkpoint of the aya-expanse model on 60\% of our corpus, focusing on minimizing resource usage. To ensure an efficient fine-tuning process, we employed gradient checkpointing and a small batch size of 2,reducing memory requirements during training. Additionally,we used gradient accumulation steps of 16, effectively increasing the overall batch size to 32 and enabling stable training dynamics. To further reduce the memory usage of our fine-tuning process, we leveraged Low Rank Adaptation (LoRA) \cite{b28} to significantly reduce the number of trainable parameters. Specifically, we implemented a rank of 8, an alpha value of 16, and a dropout rate of 5\%, applying the LoRA weights to all trainable parameters of each transformer layer.To further optimize the process, we employed efficient tokenization and memory-aware training techniques. The tokenization process divided the input text into manageable token sequences, ensuring consistent input and label structures by truncating, padding, and handling overflowed tokens to maintain contextual integrity within a fixed context length. This streamlined preparation, coupled with the LoRA-based fine-tuning, was further enhanced by Flash Attention 2 \cite{b29}.By minimizing memory overhead, Flash Attention 2 allowed us to handle longer context lengths and larger batch sizes efficiently, enabling effective fine-tuning for the next-token prediction objective while balancing computational efficiency with model performance.
+Figure~\ref{fig:ft_loss} presents the loss curve during the fine-tuning stage. The curve demonstrates a smooth and consistent decrease in training loss, indicating stable convergence without signs of divergence or severe overfitting.  
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{PretrainingLoss.png}
+    \caption{Training loss curve during the fine-tuning stage.}
+    \label{fig:ft_loss}
+\end{figure}
 	\subsection{Instruction tuning}
 Following the fine-tuning stage, we performed instruction-tuning on the fine-tuned model using our crawled medical free-form Farsi question-answering (MF3QA) dataset.As you can see in table \ref{tab:ft_it_training_detail} this stage utilized the default template of the aya-expanse model and retained the same techniques and almost the same hyperparameters as the fine-tuning stage, with a few adjustments. These adjustments were made to prevent the model from overfitting on the MF3QA dataset and to ensure it primarily learned the speaking style of a doctor. Specifically, we employed the LoRA method with a rank of 2, an alpha value of 2, and a dropout rate of 0.4, while increasing the weight decay to 0.5 (instead of 0.1). The instruction-tuning process was conducted for a single epoch, enabling the model to better understand and generate responses tailored to Farsi question-answering tasks. This targeted optimization further refined the model’s capabilities, enhancing its effectiveness on our specific dataset.
+Figure~\ref{fig:it_loss} illustrates the training loss during instruction-tuning. Due to the smaller dataset size and single-epoch training, the loss converges more quickly, reflecting the model’s adaptation to the task-specific speaking style without overfitting.  
+
 
 	\begin{table}[ht]
 		\centering
@@ -271,6 +282,14 @@ Following the fine-tuning stage, we performed instruction-tuning on the fine-tun
 		\end{tabular}
 		\label{tab:ft_it_training_detail}
 	\end{table}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{InstructionTuningLoss.png}
+    \caption{Training loss curve during the instruction-tuning stage.}
+    \label{fig:it_loss}
+\end{figure}
+
 
 	\subsection{Carbon Footprint}
 The carbon footprint of our model optimization—including both fine-tuning and instruction-tuning—was estimated based on hardware specifications and operational duration. The process ran for a combined total of 19 hours on NVIDIA A100 PCIe 40GB GPUs hosted in Google Cloud Platform’s asia-east1 region, utilizing a Google Colab Pro+ account for the hardware resources. Assuming a typical power consumption of 250 watts per GPU, the total energy used was 4.75 KWh (250 watts × 19 hours). Using the carbon intensity factor of the asia-east1 grid (0.56 kilograms of CO2 equivalent per kWh), this translates to 2.66 kilograms of CO2 equivalent emitted during the tuning process \cite{b30}.
