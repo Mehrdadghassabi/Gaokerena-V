@@ -38,7 +38,7 @@ AI has huge potential to improve medicine, and with Gaokerena, we’re working t
     6. [Translation](https://github.com/Mehrdadghassabi/Gaokerena/tree/main/dataset/MMLU_fa) of medical portion of [MMLU](https://github.com/Itaymanes/K-QA/blob/main/dataset/questions_w_answers.jsonl) benchmark into persian
 
 ## 🕵🏼‍♀️ Features
-- First [Open-Source](https://huggingface.co/gaokerena/gaokerena-v1) Persian Medical Model: The only publicly available Persian language model fine-tuned specifically for medical applications. making it freely available for research and other applications.
+- First [Open-Source](https://huggingface.co/gaokerena/gaokerena-v1.0) Persian Medical Model: The only publicly available Persian language model fine-tuned specifically for medical applications. making it freely available for research and other applications.
 - The first small(sub 8 billion parameters) language model to pass the Iranian Basic Medical Sciences Entrance Exam in real world condition (کنکور علوم پایه پزشکی)
 
 - Great Results: Stands out by delivering better results than other related models, including those that pair English medical models with translation systems. It excels at accurately interpreting medical questions and providing clear, reliable answers in Persian, making it highly effective for healthcare needs.
@@ -49,7 +49,7 @@ AI has huge potential to improve medicine, and with Gaokerena, we’re working t
 Gaokerena is built on [aya-expanse-8b](https://huggingface.co/CohereForAI/aya-expanse-8b), a robust and efficient language model selected for its proven performance and adaptability. This base model was fine-tuned to address the specific requirements of Persian medical applications, ensuring optimal accuracy and performance.
 
 ## 🏃 Training process
-The Gaokerena model was trained through a  process that involved fine-tuning the Aya-ExPanse-8B base model on 60% of our Persian medical corpus, using the LoRA method for efficiency. This was followed by instruction tuning on our free-form question-answering dataset [MF3QA](https://huggingface.co/datasets/gaokerena/MF3QA), optimizing it for Persian medical queries.  The training was conducted on A100 PCIe 40G hardware via the Google Cloud Platform in the asia-east1 region, operating for 19 hours and resulting in a carbon footprint of 2.66 kg CO2 equivalent emissions.
+The Gaokerena model was trained through a  process that involved fine-tuning the aya-expanse-8b base model on 60% of our Persian medical corpus, using the LoRA method for efficiency. This was followed by instruction tuning on our free-form question-answering dataset [MF3QA](https://huggingface.co/datasets/gaokerena/MF3QA), optimizing it for Persian medical queries.  The training was conducted on A100 PCIe 40G hardware via the Google Cloud Platform in the asia-east1 region, operating for 19 hours and resulting in a carbon footprint of 2.66 kg CO2 equivalent emissions.
 
 ## 📊 Results
 We have fully published the results [here](https://github.com/Mehrdadghassabi/Gaokerena/tree/main/evaluation). our model correctly answered about half of the questions in the medical portion of the MMLU dataset
