@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.15)  21 SEP 2025 04:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.15)  27 SEP 2025 11:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -363,77 +363,92 @@ Package pdftex.def Info: fig2.png  used on input line 239.
 
 
 [4 <./fig2.png>]
+<fig3.png, id=25, 375.366pt x 188.559pt>
+File: fig3.png Graphic file (type png)
+<use fig3.png>
+Package pdftex.def Info: fig3.png  used on input line 252.
+(pdftex.def)             Requested size: 201.60077pt x 101.2708pt.
+<fig4.png, id=26, 372.957pt x 186.369pt>
+File: fig4.png Graphic file (type png)
+<use fig4.png>
+Package pdftex.def Info: fig4.png  used on input line 288.
+(pdftex.def)             Requested size: 201.60077pt x 100.74013pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 2
-76.
- (c:/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+95.
+(c:/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 279--279
+Underfull \hbox (badness 10000) in paragraph at lines 298--298
 [][][]\OT1/ptm/m/n/8 You can see the de-tailed re-sult at
  []
 
 
 
-[5]
-<fig3.png, id=28, 1046.40938pt x 336.50719pt>
-File: fig3.png Graphic file (type png)
-<use fig3.png>
-Package pdftex.def Info: fig3.png  used on input line 330.
+[5 <./fig3.png> <./fig4.png>]
+<fig5.png, id=32, 1046.40938pt x 336.50719pt>
+File: fig5.png Graphic file (type png)
+<use fig5.png>
+Package pdftex.def Info: fig5.png  used on input line 349.
 (pdftex.def)             Requested size: 247.6778pt x 79.644pt.
 
 
 
-Overfull \hbox (0.90228pt too wide) in paragraph at lines 347--372
+
+[6 <./fig5.png>]
+Overfull \hbox (0.90228pt too wide) in paragraph at lines 366--391
  [][] 
  []
 
-<fig4.png, id=29, 1045.65656pt x 335.00156pt>
-File: fig4.png Graphic file (type png)
-<use fig4.png>
-Package pdftex.def Info: fig4.png  used on input line 375.
+<fig6.png, id=40, 1045.65656pt x 335.00156pt>
+File: fig6.png Graphic file (type png)
+<use fig6.png>
+Package pdftex.def Info: fig6.png  used on input line 394.
 (pdftex.def)             Requested size: 247.6778pt x 79.349pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[6 <./fig3.png>]
-<fig5.png, id=37, 435.87843pt x 410.2828pt>
-File: fig5.png Graphic file (type png)
-<use fig5.png>
-Package pdftex.def Info: fig5.png  used on input line 417.
+<fig7.png, id=41, 435.87843pt x 410.2828pt>
+File: fig7.png Graphic file (type png)
+<use fig7.png>
+Package pdftex.def Info: fig7.png  used on input line 436.
 (pdftex.def)             Requested size: 232.19843pt x 218.5632pt.
 
 
 
-Underfull \hbox (badness 2503) in paragraph at lines 435--436
+Underfull \vbox (badness 5064) has occurred while \output is active []
+
+
+
+[7 <./fig6.png> <./fig7.png>]
+Underfull \hbox (badness 2503) in paragraph at lines 454--455
 []\OT1/ptm/m/n/8 Taghizadeh, Nas-rin, et al. "SINA-BERT: a pre-trained lan-guag
 e
  []
 
 
-Underfull \hbox (badness 1789) in paragraph at lines 435--436
+Underfull \hbox (badness 1789) in paragraph at lines 454--455
 \OT1/ptm/m/n/8 model for anal-y-sis of med-i-cal texts in Per-sian." arXiv prep
 rint
  []
 
 
-Underfull \hbox (badness 6808) in paragraph at lines 460--461
+Underfull \hbox (badness 6808) in paragraph at lines 479--480
 []\OT1/ptm/m/n/8 Yang, An, et al. \Qwen2 Tech-ni-cal Re-port." arXiv Preprint
  []
 
 
-
-[7 <./fig4.png> <./fig5.png>]
-Underfull \hbox (badness 1527) in paragraph at lines 480--481
+Underfull \hbox (badness 1527) in paragraph at lines 499--500
 \OT1/ptm/m/n/8 i-cal con-ver-sa-tional AI mod-els and train-ing data." arXiv pr
 eprint
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 492--493
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 511--512
 []\OT1/ptm/m/n/8 Hurst, Aaron, et al. "Gpt-4o sys-tem card." arXiv preprint
  []
 
@@ -450,21 +465,17 @@ Before submitting the final camera ready copy, remember to:
 
 
 
-
-
-[8
-
-] (./main.aux)
+[8] (./main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-08-13>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4305 strings out of 467799
- 66028 string characters out of 5436040
- 508654 words of memory out of 5000000
- 32908 multiletter control sequences out of 15000+600000
+ 4321 strings out of 467799
+ 66248 string characters out of 5436040
+ 499698 words of memory out of 5000000
+ 32924 multiletter control sequences out of 15000+600000
  671219 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,11n,65p,1705b,336s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -475,10 +486,10 @@ onts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1
 /urw/times/utmb8a.pfb><c:/texlive/2025/texmf-dist/fonts/type1/urw/times/utmbi8a
 .pfb><c:/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2
 025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (8 pages, 360272 bytes).
+Output written on main.pdf (8 pages, 461717 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
+ 87 PDF objects out of 1000 (max. 8388607)
  46 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

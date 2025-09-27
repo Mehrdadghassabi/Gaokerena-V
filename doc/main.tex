@@ -244,18 +244,18 @@ While Yunxiang Li only cleaned his question-answer pairs based on answer length,
 	\section{Training}
 	\subsection{Fine tuning}
 We fine-tuned the 8-billion-parameter checkpoint of the aya-expanse model on 60\% of our corpus, focusing on minimizing resource usage. To ensure an efficient fine-tuning process, we employed gradient checkpointing and a small batch size of 2,reducing memory requirements during training. Additionally,we used gradient accumulation steps of 16, effectively increasing the overall batch size to 32 and enabling stable training dynamics. To further reduce the memory usage of our fine-tuning process, we leveraged Low Rank Adaptation (LoRA) \cite{b28} to significantly reduce the number of trainable parameters. Specifically, we implemented a rank of 8, an alpha value of 16, and a dropout rate of 5\%, applying the LoRA weights to all trainable parameters of each transformer layer.To further optimize the process, we employed efficient tokenization and memory-aware training techniques. The tokenization process divided the input text into manageable token sequences, ensuring consistent input and label structures by truncating, padding, and handling overflowed tokens to maintain contextual integrity within a fixed context length. This streamlined preparation, coupled with the LoRA-based fine-tuning, was further enhanced by Flash Attention 2 \cite{b29}.By minimizing memory overhead, Flash Attention 2 allowed us to handle longer context lengths and larger batch sizes efficiently, enabling effective fine-tuning for the next-token prediction objective while balancing computational efficiency with model performance.
-Figure~\ref{fig:ft_loss} presents the loss curve during the fine-tuning stage. The curve demonstrates a smooth and consistent decrease in training loss, indicating stable convergence without signs of divergence or severe overfitting.  
+Figure \ref{fig3} presents the loss curve during the fine-tuning stage. The curve demonstrates a smooth and consistent decrease in training loss, indicating stable convergence without signs of divergence or severe overfitting.  
 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\linewidth]{PretrainingLoss.png}
+    \includegraphics[width=0.8\linewidth]{fig3.png}
     \caption{Training loss curve during the fine-tuning stage.}
-    \label{fig:ft_loss}
+    \label{fig3}
 \end{figure}
 	\subsection{Instruction tuning}
 Following the fine-tuning stage, we performed instruction-tuning on the fine-tuned model using our crawled medical free-form Farsi question-answering (MF3QA) dataset.As you can see in table \ref{tab:ft_it_training_detail} this stage utilized the default template of the aya-expanse model and retained the same techniques and almost the same hyperparameters as the fine-tuning stage, with a few adjustments. These adjustments were made to prevent the model from overfitting on the MF3QA dataset and to ensure it primarily learned the speaking style of a doctor. Specifically, we employed the LoRA method with a rank of 2, an alpha value of 2, and a dropout rate of 0.4, while increasing the weight decay to 0.5 (instead of 0.1). The instruction-tuning process was conducted for a single epoch, enabling the model to better understand and generate responses tailored to Farsi question-answering tasks. This targeted optimization further refined the model’s capabilities, enhancing its effectiveness on our specific dataset.
-Figure~\ref{fig:it_loss} illustrates the training loss during instruction-tuning. Due to the smaller dataset size and single-epoch training, the loss converges more quickly, reflecting the model’s adaptation to the task-specific speaking style without overfitting.  
+Figure \ref{fig5} illustrates the training loss during instruction-tuning. Due to the smaller dataset size and single-epoch training, the loss converges more quickly, reflecting the model’s adaptation to the task-specific speaking style without overfitting.  
 
 
 	\begin{table}[ht]
@@ -285,9 +285,9 @@ Figure~\ref{fig:it_loss} illustrates the training loss during instruction-tuning
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\linewidth]{InstructionTuningLoss.png}
+    \includegraphics[width=0.8\linewidth]{fig4.png}
     \caption{Training loss curve during the instruction-tuning stage.}
-    \label{fig:it_loss}
+    \label{fig4}
 \end{figure}
 
 
@@ -303,7 +303,7 @@ The carbon footprint of our model optimization—including both fine-tuning and 
 	
 	
 	\subsection{Comparison with general purpose language models}
-As you can see in Table \ref{tab:model_results_vs_general_purpose_languages}, our model achieved remarkable success by surpassing the passing score of the Iranian Basic Medical Sciences Entrance Exam, which stands at 36\%, making it the first Persian language model with fewer than 8 billion parameters to pass this exam. Furthermore, our model demonstrated improvements on the translated MMLU dataset, achieving not only higher average scores but also excelling across most sub-categories, thereby showcasing its effectiveness in understanding and generating medical knowledge in the Persian language. Notably, the reason PersianMind has a low inference time, as shown in Table \ref{tab:model_results_vs_general_purpose_languages}, is that it tends to generate very short responses compared to other models, producing the end-of-sentence token much sooner. In addition to our multiple-choice question-answering evaluation, we also utilized GPT-4o \cite{b32} as an evaluator for free-form question answering. We provided the test set from the MF3QA dataset (which includes 2,000 records) to both the competing language model and our model. As shown in Figure \ref{fig4}, GPT-4o predominantly preferred the responses generated by our model over those from the other three language models tested. This indicates that our model delivers high-quality responses, as judged by an advanced language model. Moreover, GPT-4o was prompted to prefer responses that provide more accurate medical information while avoiding incorrect medical information, further validating the reliability and precision of our model in generating medically accurate answers.
+As you can see in Table \ref{tab:model_results_vs_general_purpose_languages}, our model achieved remarkable success by surpassing the passing score of the Iranian Basic Medical Sciences Entrance Exam, which stands at 36\%, making it the first Persian language model with fewer than 8 billion parameters to pass this exam. Furthermore, our model demonstrated improvements on the translated MMLU dataset, achieving not only higher average scores but also excelling across most sub-categories, thereby showcasing its effectiveness in understanding and generating medical knowledge in the Persian language. Notably, the reason PersianMind has a low inference time, as shown in Table \ref{tab:model_results_vs_general_purpose_languages}, is that it tends to generate very short responses compared to other models, producing the end-of-sentence token much sooner. In addition to our multiple-choice question-answering evaluation, we also utilized GPT-4o \cite{b32} as an evaluator for free-form question answering. We provided the test set from the MF3QA dataset (which includes 2,000 records) to both the competing language model and our model. As shown in Figure \ref{fig5}, GPT-4o predominantly preferred the responses generated by our model over those from the other three language models tested. This indicates that our model delivers high-quality responses, as judged by an advanced language model. Moreover, GPT-4o was prompted to prefer responses that provide more accurate medical information while avoiding incorrect medical information, further validating the reliability and precision of our model in generating medically accurate answers.
 \footnote{you can see the prompt at https://github.com/Mehrdadghassabi/Gaokerena-V/blob/main/evaluation/free\_form\_qa/gaokerena\_vs\_aya/Untitled20.ipynb}
 
 
@@ -346,9 +346,9 @@ As you can see in Table \ref{tab:model_results_vs_general_purpose_languages}, ou
 	\end{table}
 	
 	\begin{figure}[htbp]
-		\centerline{\includegraphics[width=0.48\textwidth]{fig3.png}}
+		\centerline{\includegraphics[width=0.48\textwidth]{fig5.png}}
 		\caption{Our model win rate against general purpose language models}
-		\label{fig3}
+		\label{fig5}
 	\end{figure}
 	\subsection{Comparison with pipeline alternatives}
 	As previously mentioned, one alternative to creating a Persian medical language model is a pipeline system. However, a major problem with pipeline systems is their speed; they exhibit high inference times because the output from one model must be fed into a second model, and then the output of the second model is processed again by the first model. This iterative process significantly hampers efficiency. To address the low speed of pipeline models, we have loaded all parameters—both those pertaining to the translators and the medical language model—simultaneously.
@@ -357,7 +357,7 @@ Our experiments with models such as Medmobile \cite{b9} paired with gemma-2b-it 
 
 Another significant issue with the pipeline alternative is its poor performance in accurately detecting and translating medical terms. This limitation poses a serious challenge, as precise terminology is crucial for effective communication in healthcare settings, where misunderstandings can have serious consequences for patient care and treatment outcomes. The underlying cause of this deficiency is likely due to the fact that the translators employed in these pipeline systems have not been specifically developed for medical translation. Unlike general-purpose translation models, medical translation requires a nuanced understanding of specialized vocabulary, context, and the intricacies of medical language.
 
-Currently, there are no models tailored for medical translation in the Persian language, which means that existing systems are ill-equipped to handle the complexities of medical terminology. As shown in Figure \ref{fig4}, these limitations have resulted in all pipeline alternatives achieving lower win rates against our model, Gaokerena-V. This performance gap highlights the inadequacies of current pipeline approaches in meeting the demands of medical translation, emphasizing the necessity for the development of dedicated medical translator models that can effectively address these specific challenges.
+Currently, there are no models tailored for medical translation in the Persian language, which means that existing systems are ill-equipped to handle the complexities of medical terminology. As shown in Figure \ref{fig6}, these limitations have resulted in all pipeline alternatives achieving lower win rates against our model, Gaokerena-V. This performance gap highlights the inadequacies of current pipeline approaches in meeting the demands of medical translation, emphasizing the necessity for the development of dedicated medical translator models that can effectively address these specific challenges.
 	
 	\begin{table}[ht]
 		\centering
@@ -391,14 +391,14 @@ Currently, there are no models tailored for medical translation in the Persian l
 	\end{table}
 	
 	\begin{figure}[htbp]
-		\centerline{\includegraphics[width=0.48\textwidth]{fig4.png}}
+		\centerline{\includegraphics[width=0.48\textwidth]{fig6.png}}
 		\caption{Our model win rate against pipeline alternatives}
-		\label{fig4}
+		\label{fig6}
 	\end{figure}
         \section{Ablation study}
-        As an ablation study, we trained qwen2.5 using exactly the same methodology and training setup as employed for aya-expanse. This allowed us to directly compare the performance of the two models under identical conditions,
-       as you can see in Figure \ref{fig5} and detailed in Table \ref{tab:gaokernaV_vs_qwen2.5trained}, the trained qwen2.5 model achieved lower scores    in comparison with gaokerena-V (trained aya-expanse).
-       these results validate our decision to select aya-expanse as the baseline model, demonstrating its superior performance and suitability as the foundation for further experimentation.
+        As an ablation study, we trained qwen2.5 using exactly the same methodology and training setup as employed for aya-expanse. This allowed us to directly compare the performance of the two baseline models under identical conditions,
+       the results of this comparison are presented in Figure \ref{fig7} and detailed further in Table \ref{tab:gaokernaV_vs_qwen2.5trained}, where it is evident that the trained qwen-2.5 model achieved lower scores across key performance metrics in comparison with gaokerena-V, which utilized Aya-Expanse as its baseline model. These findings highlight the advantages of using aya-expanse as the backbone model and reinforce its effectiveness in producing higher-performing models.
+
 
 
 	\begin{table}[ht]
@@ -433,15 +433,15 @@ Currently, there are no models tailored for medical translation in the Persian l
 
 
 	\begin{figure}[htbp]
-		\centerline{\includegraphics[width=0.45\textwidth]{fig5.png}}
+		\centerline{\includegraphics[width=0.45\textwidth]{fig7.png}}
 		\caption{Our model win rate against trained qwen2.5}
-		\label{fig5}
+		\label{fig7}
 	\end{figure}
 
 	\section*{Future research}
 	As mentioned in the baseline model section, we can merge our updated parameters into aya-vision instead of aya-expanse, This will allow us to incorporate medical images, such as MRIs and CT scans, as inputs to our model.
 	However, it is important to note that our models capabilities with multi-modal queries are under-explored.
-	our future research plans involve to exploring and enhancing our model’s responses to queries that are accompanied by medical images.
+	Our future research plans include exploring and improving the model’s responses to queries accompanied by medical images. This will involve fine-tuning the model to better process and align textual and visual data, with the goal of expanding its utility in medical diagnostics and analysis.
 	
 	\begin{thebibliography}{00}
 		\bibitem{b1} 
