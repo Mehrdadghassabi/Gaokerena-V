@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.15)  27 SEP 2025 19:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.15)  3 OCT 2025 03:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -326,7 +326,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 93--93
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
 [][][]\OT1/ptm/m/n/8 we have pub-lished our model and datasets at
  []
 
@@ -339,17 +339,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 93--93
 <fig1.png, id=14, 792.9625pt x 709.65125pt>
 File: fig1.png Graphic file (type png)
 <use fig1.png>
-Package pdftex.def Info: fig1.png  used on input line 181.
+Package pdftex.def Info: fig1.png  used on input line 180.
 (pdftex.def)             Requested size: 206.39685pt x 184.71071pt.
 
 
 [3 <./fig1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 227--227
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
 [][][]\OT1/ptm/m/n/8 you can see the crawl-ing codes at
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 227--227
+Underfull \hbox (badness 10000) in paragraph at lines 226--226
 \OT1/ptm/m/n/8 https://github.com/Mehrdadghassabi/Gaokerena-
  []
 
@@ -358,7 +358,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 227--227
 <fig2.png, id=20, 1373.13pt x 447.6725pt>
 File: fig2.png Graphic file (type png)
 <use fig2.png>
-Package pdftex.def Info: fig2.png  used on input line 239.
+Package pdftex.def Info: fig2.png  used on input line 238.
 (pdftex.def)             Requested size: 232.19843pt x 75.70029pt.
 
 
@@ -366,85 +366,79 @@ Package pdftex.def Info: fig2.png  used on input line 239.
 <fig3.png, id=25, 375.366pt x 188.559pt>
 File: fig3.png Graphic file (type png)
 <use fig3.png>
-Package pdftex.def Info: fig3.png  used on input line 252.
+Package pdftex.def Info: fig3.png  used on input line 255.
 (pdftex.def)             Requested size: 201.60077pt x 101.2708pt.
 <fig4.png, id=26, 372.957pt x 186.369pt>
 File: fig4.png Graphic file (type png)
 <use fig4.png>
-Package pdftex.def Info: fig4.png  used on input line 288.
+Package pdftex.def Info: fig4.png  used on input line 291.
 (pdftex.def)             Requested size: 201.60077pt x 100.74013pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 2
-95.
+98.
 (c:/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--298
+Underfull \hbox (badness 10000) in paragraph at lines 301--301
 [][][]\OT1/ptm/m/n/8 You can see the de-tailed re-sult at
  []
 
 
 
 [5 <./fig3.png> <./fig4.png>]
+
 <fig5.png, id=32, 1046.40938pt x 336.50719pt>
 File: fig5.png Graphic file (type png)
 <use fig5.png>
-Package pdftex.def Info: fig5.png  used on input line 349.
+Package pdftex.def Info: fig5.png  used on input line 363.
 (pdftex.def)             Requested size: 247.6778pt x 79.644pt.
-
-
 
 
 [6 <./fig5.png>]
 <fig6.png, id=40, 1045.65656pt x 335.00156pt>
 File: fig6.png Graphic file (type png)
 <use fig6.png>
-Package pdftex.def Info: fig6.png  used on input line 395.
+Package pdftex.def Info: fig6.png  used on input line 409.
 (pdftex.def)             Requested size: 247.6778pt x 79.349pt.
-<fig7.png, id=41, 435.87843pt x 410.2828pt>
-File: fig7.png Graphic file (type png)
-<use fig7.png>
-Package pdftex.def Info: fig7.png  used on input line 437.
-(pdftex.def)             Requested size: 232.19843pt x 218.5632pt.
+
+Underfull \hbox (badness 2073) in paragraph at lines 415--417
+[]\OT1/ptm/m/n/10 Although Gaokerena-V demon-strates en-hanced Per-sian
+ []
 
 
 
-Underfull \vbox (badness 5064) has occurred while \output is active []
 
-
-
-[7 <./fig6.png> <./fig7.png>]
-Underfull \hbox (badness 2503) in paragraph at lines 455--456
+Underfull \hbox (badness 2503) in paragraph at lines 426--427
 []\OT1/ptm/m/n/8 Taghizadeh, Nas-rin, et al. "SINA-BERT: a pre-trained lan-guag
 e
  []
 
 
-Underfull \hbox (badness 1789) in paragraph at lines 455--456
+Underfull \hbox (badness 1789) in paragraph at lines 426--427
 \OT1/ptm/m/n/8 model for anal-y-sis of med-i-cal texts in Per-sian." arXiv prep
 rint
  []
 
 
-Underfull \hbox (badness 6808) in paragraph at lines 480--481
+Underfull \hbox (badness 6808) in paragraph at lines 453--454
 []\OT1/ptm/m/n/8 Yang, An, et al. \Qwen2 Tech-ni-cal Re-port." arXiv Preprint
  []
 
 
-Underfull \hbox (badness 1527) in paragraph at lines 500--501
+
+[7 <./fig6.png>]
+Underfull \hbox (badness 1527) in paragraph at lines 473--474
 \OT1/ptm/m/n/8 i-cal con-ver-sa-tional AI mod-els and train-ing data." arXiv pr
 eprint
  []
 
 
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 512--513
+Underfull \hbox (badness 10000) in paragraph at lines 485--486
 []\OT1/ptm/m/n/8 Hurst, Aaron, et al. "Gpt-4o sys-tem card." arXiv preprint
  []
 
@@ -461,20 +455,24 @@ Before submitting the final camera ready copy, remember to:
 
 
 
-[8] (./main.aux)
+
+
+[8
+
+] (./main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-08-13>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4321 strings out of 467799
- 66248 string characters out of 5436040
- 499698 words of memory out of 5000000
- 32924 multiletter control sequences out of 15000+600000
+ 4314 strings out of 467799
+ 66115 string characters out of 5436040
+ 499661 words of memory out of 5000000
+ 32917 multiletter control sequences out of 15000+600000
  671219 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,11n,65p,1705b,336s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,11n,65p,1402b,336s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texl
 ive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2025/texmf-dist/f
@@ -482,10 +480,10 @@ onts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1
 /urw/times/utmb8a.pfb><c:/texlive/2025/texmf-dist/fonts/type1/urw/times/utmbi8a
 .pfb><c:/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2
 025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (8 pages, 461771 bytes).
+Output written on main.pdf (8 pages, 431526 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
+ 85 PDF objects out of 1000 (max. 8388607)
  46 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
