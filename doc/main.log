@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.15)  3 OCT 2025 03:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.9.15)  5 OCT 2025 19:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -391,12 +391,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 301--301
 
 
 [5 <./fig3.png> <./fig4.png>]
-
 <fig5.png, id=32, 1046.40938pt x 336.50719pt>
 File: fig5.png Graphic file (type png)
 <use fig5.png>
 Package pdftex.def Info: fig5.png  used on input line 363.
 (pdftex.def)             Requested size: 247.6778pt x 79.644pt.
+
+
 
 
 [6 <./fig5.png>]
@@ -468,7 +469,7 @@ L3 programming layer <2025-08-13>
 Here is how much of TeX's memory you used:
  4314 strings out of 467799
  66115 string characters out of 5436040
- 499661 words of memory out of 5000000
+ 498661 words of memory out of 5000000
  32917 multiletter control sequences out of 15000+600000
  671219 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -480,7 +481,7 @@ onts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1
 /urw/times/utmb8a.pfb><c:/texlive/2025/texmf-dist/fonts/type1/urw/times/utmbi8a
 .pfb><c:/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2
 025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (8 pages, 431526 bytes).
+Output written on main.pdf (8 pages, 431482 bytes).
 PDF statistics:
  85 PDF objects out of 1000 (max. 8388607)
  46 compressed objects within 1 object stream
