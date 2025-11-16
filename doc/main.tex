@@ -1,6 +1,20 @@
 \documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
-% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+
+% ---------- ADDED FOR HEADER ----------
+\usepackage{fancyhdr}
+\fancyhf{} % clear header/footer
+
+% remove underline
+\renewcommand{\headrulewidth}{0pt}
+
+% header for all pages
+\fancyhead[C]{32nd National and 10th International Iranian Conference on Biomedical Engineering (ICBME)}
+
+
+\pagestyle{fancy}
+
+
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
@@ -10,7 +24,8 @@
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
 		T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
-	
+
+          
 	\title{Leveraging Online Data to Enhance Medical Knowledge in a Small Persian Language Model}
 	
 	\author{\IEEEauthorblockN{1\textsuperscript{st} Mehrdad Ghassabi}
@@ -51,6 +66,10 @@
 	}
 	
 	\maketitle
+
+\IEEEpubid{\begin{minipage}{\textwidth}\vspace{80pt}%
+979-8-3315-7714-8/25/\$31.00~\copyright~2025 IEEE
+\end{minipage}}
 	
 	\begin{abstract}
 The rapid advancement of language models has demonstrated the potential of artificial intelligence in the healthcare industry. However, small language models struggle with specialized domains in low-resource languages like Persian. While numerous medical-domain websites exist in Persian, no curated dataset or corpus has been available—making ours the first of its kind. This study introduces a newly curated dataset comprising 20k doctor-patient Q\&A pairs and 60\% of a 90-million-token crawled corpus from medical magazines. Using a parameter-efficient fine-tuning approach, we enhanced the medical knowledge of the baseline model, aya-expanse-8b. Benchmark evaluations demonstrate that the fine-tuned model achieves improved accuracy in medical question answering and successfully passed the Iranian Basic Medical Science Entrance Exam (IBSEE) in September 2023, which the baseline model did not. Additionally, the fine-tuned model improved Persian-translated MMLU accuracy by an average of 2.67\%. This work highlights the potential of leveraging open-access online data to enrich small language models in medical fields, providing a novel solution for Persian medical AI applications suitable for resource-constrained environments. Future research could explore multimodal input to further enhance performance.
@@ -149,7 +168,7 @@ As previously mentioned, there has been limited research focused on Persian medi
 	to retrieve relevant answers. Her approach involves finding similar questions to handle repeated queries and employs strict and lenient evaluation strategies for accurate or approximate answers. Additionally, classification methods and Named Entity Recognition (NER) are used to improve answer relevance by categorizing questions and identifying medical entities like drug and disease names.
 	
 	\section{Baseline Model}
-	We have chosen aya-expanse-8b as our baseline model primarily due to the lack of open-source Persian medical language models, which necessitates the use of a general-purpose language model. While there are several multilingual options available, including aya-expanse \cite{b5}, gemma-2 \cite{b16}, qwen2.5 \cite{b17}, and persianmind \cite{b18}, we have determined that aya-expanse is the most suitable choice for our needs. One key reason is that the training data for the other models predominantly consists of non-Persian languages, leading to biases that may result in the generation of non-Persian characters, even when we explicitly instruct the model to use only Persian. In contrast, aya-expanse demonstrates a robust understanding of Persian grammar and produces grammatically rich Persian text, making it a more reliable option for our research. Furthermore, if we merge our updated parameters into aya-vision \cite{b19}, another model from the aya family, instead of aya-expanse, we gain the capability to incorporate medical images such as MRIs and CT scans as inputs, thereby enhancing our model’s ability to process complex medical questions.
+	We have chosen aya-expanse-8b as our baseline model primarily due to the lack of open-source Persian medical language models, which necessitates the use of a general-purpose language model. While there are several multilingual options available, including aya-expanse, gemma-2 \cite{b16}, qwen2.5 \cite{b17}, and persianmind \cite{b18}, we have determined that aya-expanse is the most suitable choice for our needs. One key reason is that the training data for the other models predominantly consists of non-Persian languages, leading to biases that may result in the generation of non-Persian characters, even when we explicitly instruct the model to use only Persian. In contrast, aya-expanse demonstrates a robust understanding of Persian grammar and produces grammatically rich Persian text, making it a more reliable option for our research. Furthermore, if we merge our updated parameters into aya-vision \cite{b19}, another model from the aya family, instead of aya-expanse, we gain the capability to incorporate medical images such as MRIs and CT scans as inputs, thereby enhancing our model’s ability to process complex medical questions.
 	\section{Data}
 	
 	\subsection{Corpus}
