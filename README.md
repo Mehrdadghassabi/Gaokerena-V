@@ -56,7 +56,7 @@ We have fully published the results [here](https://github.com/Mehrdadghassabi/Ga
 and successfully passed Iranian Basic Medical Sciences Entrance Exam - Sept 2017 (کنکور علوم پایه پزشکی شهریور ۱۴۰۲) while other alternatives failed to.
 ### multiple choice qa
 here it is the result against pipeline alternatives:
-|                       | Gaokerena (ours)  | MedMobile + gemma2b-it | MedMobile + parsinlu |
+|                       | Gaokerena-V (ours)  | MedMobile + gemma2b-it | MedMobile + parsinlu |
 |-----------------------|--------------------|----------------------------|------------------------|
 | **MMLU-anatomy(fa)**  | **48.14**          | 14.07                      |   25.18                |
 | **MMLU-medicalgenetics(fa)** | **53.0**    | 20.0                       | 35.0                   |
@@ -68,7 +68,7 @@ here it is the result against pipeline alternatives:
 | **IBMSEE Sept 2023**  | **38.69**                              | 24.40                | 32.73                |
 
 here it is the result against general purpose language models:
-|                       | Gaokerena (ours) | aya_expanse8b (baseline) | Qwen2.5 | PersianMind |
+|                       | Gaokerena-V (ours) | aya_expanse8b (baseline) | Qwen2.5 | PersianMind |
 |-----------------------|--------------------|---------------------------|---------|-------------|
 | **MMLU-anatomy(fa)**  | **48.14**          | 40.74                     | 41.48   | 25.18       |
 | **MMLU-medicalgenetics(fa)**      | **53.0**           | 49.0                      | 52.0    | 34.0        |
