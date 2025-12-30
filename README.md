@@ -109,5 +109,5 @@ While Gaokerena aims to provide relatively accurate information, it is not a sub
 ## 🙏🏼 Acknowledgement
 We would like to thank 
 - Amir Jahani for his help with the data cleaning process.
-- journeyfree.ai for creating logo.
+- journeyfree.ai and Skype for logo creation.
 - mohammad ghafghazian for crawling small portion of [dryab site](https://doctor-yab.ir) putting it [here](https://www.kaggle.com/datasets/mohamadghafghaziyan/persian-medical-qa-dataset), we used his data in MF3QA.
