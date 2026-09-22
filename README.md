@@ -98,7 +98,7 @@ While Gaokerena aims to provide relatively accurate information, it is not a sub
 - Offering region-specific guidance, as the training data does not include localized Persian medical practices.
 
 ## ⛔️ License
-[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) (non-commercial use only)
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ## 🤝 Collaborators
 1. Mehrdad Ghassabi
