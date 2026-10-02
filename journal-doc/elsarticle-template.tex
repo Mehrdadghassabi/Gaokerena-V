@@ -329,18 +329,19 @@ This finding motivates the remainder of this section. Because sampling-based con
 
 \begin{table}[ht]
 \centering
-\begin{tabular}{|l|c|c|c|}
+\begin{tabular}{|l|c|c|c|c|}
 \hline
-\textbf{} & \textbf{Gaokerena-V} & \textbf{Aya-Expanse} & \textbf{Med-Gemma} \\ \hline
-Accuracy & \textbf{38.69} & 34.52 & 37.50 \\ \hline
-Number of & & & \\
-single option taken & 10 & 44 & \textbf{168} \\ \hline
-Number of & & & \\
-all options taken & 10 & 7 & \textbf{0} \\ \hline
-Entropy & 1.62 & 1.21 & \textbf{0} \\ \hline
-Prompt & CoT & CoT & CoT \\ \hline
-Number of & & & \\
-parameters & 8 billion & 8 billion & 4 billion \\ \hline
+\textbf{} & \textbf{Gao} & \textbf{Gao} &\textbf{Aya-} & \textbf{Med-} \\ \
+\textbf{} & \textbf{kerena-V} & \textbf{kerena-R} &\textbf{Expanse} & \textbf{Gemma} \\ \hline
+Accuracy & 29.76 & \textbf{38.69} & 35.71 & 37.50 \\ \hline
+Number of & & & &\\
+single option taken & 14 & 37 & 36 & \textbf{168} \\ \hline
+Number of & & & & \\
+all options taken & 10 & 4 & 6 & \textbf{0} \\ \hline
+Entropy & 1.11 & 0.80 & 1.21 & \textbf{0} \\ \hline
+Prompt & CoT & CoT & CoT & CoT \\ \hline
+Number of & & & & \\
+parameters & 8 billion & 8 billion & 8 billion & 4 billion \\ \hline
 \end{tabular}
 \caption{Comparison of model consistency on IBMSEE (September 2023), five runs per question.}
 \label{tab:uhead_consistency}
@@ -464,8 +465,8 @@ As a medical-reasoning-enhanced version of Aya-Expanse-8b, Gaokerena-R is design
 		\centering
 		\begin{tabular}{|l|c|c|c|}  
 			\hline
-			\textbf{} & \textbf{Gaokerena-R} & \textbf{Gaokerena-V} & \textbf{Aya-Expanse-8b} \\ 
-			& &  & \textbf{-8b} \\
+			\textbf{} & \textbf{Gao} & \textbf{Gao} & \textbf{Aya-} \\ 
+			& \textbf{kerena-R} & \textbf{kerena-V} & \textbf{Expanse} \\
 			&   & &(backbone)  \\ \hline
 			MMLU-anatomy(fa)  & 41.48 & \textbf{48.14}  & 40.74  \\ \hline
 			MMLU-&  &  &   \\ 
