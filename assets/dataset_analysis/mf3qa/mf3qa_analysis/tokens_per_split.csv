@@ -1,0 +1,4 @@
+﻿tokenizer,split,rows,q_tokens,a_tokens,total_tokens,a_tokens_median,answers_lt50_tokens_%
+Qwen/Qwen2.5-7B,dev,2000,301350,519870,821220,204.0,0.0
+Qwen/Qwen2.5-7B,test,2000,167254,339255,506509,135.0,14.95
+Qwen/Qwen2.5-7B,train,20000,3177492,4100809,7278301,163.0,0.0

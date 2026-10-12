@@ -1,0 +1,7 @@
+﻿split,source,rows,not_in_raw
+dev,niniban.com,2000,0
+test,doctor-yab.ir,1711,44
+test,isovisit.com,88,3
+test,kqa,201,201
+train,drhast.com,16596,255
+train,niniban.com,3404,0

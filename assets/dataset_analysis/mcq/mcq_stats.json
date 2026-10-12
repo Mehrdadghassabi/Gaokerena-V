@@ -1,0 +1,307 @@
+{
+ "KOPP_sept23": {
+  "n": 168,
+  "key_pct": [
+   32.1,
+   26.8,
+   16.1,
+   25.0
+  ],
+  "key_chi2_p": 0.02929088653488826,
+  "const_guess_max_pct": 32.1,
+  "longest_option_correct_pct": 23.2,
+  "median_stem_words": 12.0,
+  "median_option_words": 2.0,
+  "flags": {
+   "bad_numeral": {
+    "n": 2,
+    "pct": 1.2
+   },
+   "stem_is_opt": {
+    "n": 0,
+    "pct": 0.0
+   },
+   "stem_is_prev_opt": {
+    "n": 1,
+    "pct": 0.6
+   },
+   "dup_opts": {
+    "n": 2,
+    "pct": 1.2
+   },
+   "arabic_yk": {
+    "n": 105,
+    "pct": 62.5
+   },
+   "latin_stem": {
+    "n": 41,
+    "pct": 24.4
+   },
+   "unbalanced_paren": {
+    "n": 0,
+    "pct": 0.0
+   },
+   "no_space_script_boundary": {
+    "n": 23,
+    "pct": 13.7
+   }
+  },
+  "subjects": {
+   "تشریح": 32.1,
+   "فیزیولوژی": 21.4,
+   "بیوشیمی": 11.9,
+   "اصول خدمات سلامت": 11.9,
+   "باکتری شناسی": 9.5,
+   "انگل شناسی": 6.0,
+   "ویروس شناسی": 3.0,
+   "قارچ شناسی": 3.0,
+   "حشره شناسی": 1.2
+  },
+  "n_subjects": 9
+ },
+ "KOPP_other_years": {
+  "n": 1710,
+  "key_pct": [
+   27.3,
+   24.6,
+   25.0,
+   23.2
+  ],
+  "key_chi2_p": 0.11720255727518164,
+  "const_guess_max_pct": 27.3,
+  "longest_option_correct_pct": 20.8,
+  "median_stem_words": 13.0,
+  "median_option_words": 2.0,
+  "flags": {
+   "bad_numeral": {
+    "n": 2,
+    "pct": 0.1
+   },
+   "stem_is_opt": {
+    "n": 1,
+    "pct": 0.1
+   },
+   "stem_is_prev_opt": {
+    "n": 0,
+    "pct": 0.0
+   },
+   "dup_opts": {
+    "n": 11,
+    "pct": 0.6
+   },
+   "arabic_yk": {
+    "n": 500,
+    "pct": 29.2
+   },
+   "latin_stem": {
+    "n": 342,
+    "pct": 20.0
+   },
+   "unbalanced_paren": {
+    "n": 5,
+    "pct": 0.3
+   },
+   "no_space_script_boundary": {
+    "n": 101,
+    "pct": 5.9
+   }
+  },
+  "subjects": {
+   "تشریح": 21.3,
+   "فیزیولوژی": 16.0,
+   "بیوشیمی": 9.9,
+   "باکتری شناسی": 8.8,
+   "اصول خدمات سلامت": 6.8,
+   "ایمنی شناسی": 4.8,
+   "انگل شناسی": 3.6,
+   "تشريح": 3.2,
+   "روانشناسی بالینی": 2.9,
+   "آسیب شناسی": 2.9,
+   "ژنتیک": 2.8,
+   "‫تشر‬‫ی‬‫ح‬": 2.5,
+   "ویروس شناسی": 2.3,
+   "قارچ شناسی": 2.3,
+   "‫فیزیولوژی‬": 1.9,
+   "اپیدمیلوژی": 1.5,
+   "فیزیک پزشکی": 1.5,
+   "باكتری شناسی": 1.1,
+   "بيوشيمی بالینی": 1.1,
+   "‫باکتری‬‫ شناسی‬": 0.9,
+   "اصول اپیدمیلوژی": 0.6,
+   "حشره شناسی": 0.6,
+   "‫ایمنی‬‫ شناسی‬": 0.5,
+   "ويروس شناسی": 0.3
+  },
+  "n_subjects": 24
+ },
+ "KOPP_all": {
+  "n": 1878,
+  "key_pct": [
+   27.7,
+   24.8,
+   24.2,
+   23.3
+  ],
+  "key_chi2_p": 0.044325794622244626,
+  "const_guess_max_pct": 27.7,
+  "longest_option_correct_pct": 21.0,
+  "median_stem_words": 13.0,
+  "median_option_words": 2.0,
+  "flags": {
+   "bad_numeral": {
+    "n": 4,
+    "pct": 0.2
+   },
+   "stem_is_opt": {
+    "n": 1,
+    "pct": 0.1
+   },
+   "stem_is_prev_opt": {
+    "n": 1,
+    "pct": 0.1
+   },
+   "dup_opts": {
+    "n": 13,
+    "pct": 0.7
+   },
+   "arabic_yk": {
+    "n": 605,
+    "pct": 32.2
+   },
+   "latin_stem": {
+    "n": 383,
+    "pct": 20.4
+   },
+   "unbalanced_paren": {
+    "n": 5,
+    "pct": 0.3
+   },
+   "no_space_script_boundary": {
+    "n": 124,
+    "pct": 6.6
+   }
+  },
+  "subjects": {
+   "تشریح": 22.3,
+   "فیزیولوژی": 16.5,
+   "بیوشیمی": 10.1,
+   "باکتری شناسی": 8.9,
+   "اصول خدمات سلامت": 7.2,
+   "ایمنی شناسی": 4.4,
+   "انگل شناسی": 3.8,
+   "تشريح": 2.9,
+   "روانشناسی بالینی": 2.7,
+   "آسیب شناسی": 2.6,
+   "ژنتیک": 2.6,
+   "قارچ شناسی": 2.4,
+   "ویروس شناسی": 2.4,
+   "‫تشر‬‫ی‬‫ح‬": 2.2,
+   "‫فیزیولوژی‬": 1.8,
+   "اپیدمیلوژی": 1.4,
+   "فیزیک پزشکی": 1.3,
+   "بيوشيمی بالینی": 1.0,
+   "باكتری شناسی": 1.0,
+   "‫باکتری‬‫ شناسی‬": 0.8,
+   "حشره شناسی": 0.6,
+   "اصول اپیدمیلوژی": 0.5,
+   "‫ایمنی‬‫ شناسی‬": 0.4,
+   "ويروس شناسی": 0.3
+  },
+  "n_subjects": 24
+ },
+ "FA_MED_MMLU": {
+  "n": 1089,
+  "key_pct": [
+   21.6,
+   23.3,
+   22.8,
+   32.3
+  ],
+  "key_chi2_p": 5.652845701575524e-07,
+  "const_guess_max_pct": 32.3,
+  "longest_option_correct_pct": 25.3,
+  "median_stem_words": 17.0,
+  "median_option_words": 4.0,
+  "flags": {
+   "bad_numeral": {
+    "n": 4,
+    "pct": 0.4
+   },
+   "stem_is_opt": {
+    "n": 0,
+    "pct": 0.0
+   },
+   "stem_is_prev_opt": {
+    "n": 0,
+    "pct": 0.0
+   },
+   "dup_opts": {
+    "n": 2,
+    "pct": 0.2
+   },
+   "arabic_yk": {
+    "n": 8,
+    "pct": 0.7
+   },
+   "latin_stem": {
+    "n": 246,
+    "pct": 22.6
+   },
+   "unbalanced_paren": {
+    "n": 2,
+    "pct": 0.2
+   },
+   "no_space_script_boundary": {
+    "n": 17,
+    "pct": 1.6
+   }
+  },
+  "subjects": {
+   "professional_medicine": 25.0,
+   "clinical_knowledge": 24.3,
+   "college_medicine": 15.9,
+   "college_biology": 13.2,
+   "anatomy": 12.4,
+   "medical_genetics": 9.2
+  },
+  "n_subjects": 6
+ },
+ "exact_dup_stems": 95,
+ "near_dup_pairs": 199,
+ "near_dup_cross_benchmark": 6,
+ "flagged_item_ids": {
+  "bad_numeral": [
+   11,
+   29,
+   1526,
+   1755,
+   1983,
+   2013,
+   2072,
+   2265
+  ],
+  "stem_is_opt": [
+   1338
+  ],
+  "stem_is_prev_opt": [
+   19
+  ],
+  "dup_opts": [
+   126,
+   163,
+   510,
+   553,
+   686,
+   687,
+   692,
+   693,
+   716,
+   743,
+   1254,
+   1262,
+   1486,
+   2484,
+   2781
+  ]
+ }
+}

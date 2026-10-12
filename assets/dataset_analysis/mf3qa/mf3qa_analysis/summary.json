@@ -1,0 +1,428 @@
+{
+  "rows": {
+    "clean": 24000,
+    "unclean": 186029
+  },
+  "stats": {
+    "per_split": [
+      {
+        "dataset": "cleaned",
+        "split": "dev",
+        "rows": 2000,
+        "q_words_median": 45.0,
+        "q_words_mean": 53.1325,
+        "a_words_median": 77.0,
+        "a_words_mean": 97.761,
+        "a_words_p5": 44.0,
+        "a_words_p95": 250.24999999999977,
+        "answers_lt30_words_%": 0.0,
+        "short_referral_only_%": 0.0,
+        "empty_q_%": 0.0,
+        "empty_a_%": 0.0
+      },
+      {
+        "dataset": "cleaned",
+        "split": "test",
+        "rows": 2000,
+        "q_words_median": 11.0,
+        "q_words_mean": 29.3145,
+        "a_words_median": 51.0,
+        "a_words_mean": 62.151,
+        "a_words_p5": 9.0,
+        "a_words_p95": 152.0,
+        "answers_lt30_words_%": 27.900000000000002,
+        "short_referral_only_%": 0.35000000000000003,
+        "empty_q_%": 0.0,
+        "empty_a_%": 0.0
+      },
+      {
+        "dataset": "cleaned",
+        "split": "train",
+        "rows": 20000,
+        "q_words_median": 51.0,
+        "q_words_mean": 55.4065,
+        "a_words_median": 60.0,
+        "a_words_mean": 75.23345,
+        "a_words_p5": 39.0,
+        "a_words_p95": 159.0,
+        "answers_lt30_words_%": 0.015,
+        "short_referral_only_%": 0.0,
+        "empty_q_%": 0.0,
+        "empty_a_%": 0.0
+      },
+      {
+        "dataset": "uncleaned",
+        "split": "train",
+        "rows": 186029,
+        "q_words_median": 43.0,
+        "q_words_mean": 48.21745534298416,
+        "a_words_median": 17.0,
+        "a_words_mean": 25.874627074273366,
+        "a_words_p5": 5.0,
+        "a_words_p95": 76.0,
+        "answers_lt30_words_%": 74.29110515027227,
+        "short_referral_only_%": 13.24524670884647,
+        "empty_q_%": 0.0026877529847496896,
+        "empty_a_%": 0.04192894656209516
+      }
+    ],
+    "ks_answer_words_train_vs_test": {
+      "statistic": 0.32755,
+      "pvalue": 3.2816412344422316e-174
+    },
+    "ks_question_words_train_vs_test": {
+      "statistic": 0.5472,
+      "pvalue": 0.0
+    }
+  },
+  "tokens": {
+    "Qwen/Qwen2.5-7B": {
+      "fertility_tokens_per_word_A": 2.7185272840180805
+    },
+    "table": [
+      {
+        "tokenizer": "Qwen/Qwen2.5-7B",
+        "split": "dev",
+        "rows": 2000,
+        "q_tokens": 301350,
+        "a_tokens": 519870,
+        "total_tokens": 821220,
+        "a_tokens_median": 204.0,
+        "answers_lt50_tokens_%": 0.0
+      },
+      {
+        "tokenizer": "Qwen/Qwen2.5-7B",
+        "split": "test",
+        "rows": 2000,
+        "q_tokens": 167254,
+        "a_tokens": 339255,
+        "total_tokens": 506509,
+        "a_tokens_median": 135.0,
+        "answers_lt50_tokens_%": 14.95
+      },
+      {
+        "tokenizer": "Qwen/Qwen2.5-7B",
+        "split": "train",
+        "rows": 20000,
+        "q_tokens": 3177492,
+        "a_tokens": 4100809,
+        "total_tokens": 7278301,
+        "a_tokens_median": 163.0,
+        "answers_lt50_tokens_%": 0.0
+      }
+    ]
+  },
+  "funnel": {
+    "raw_rows": 186029,
+    "cleaned_rows": 24000,
+    "raw_empty_question_or_answer": 83,
+    "raw_unique_questions": 183722,
+    "raw_rows_matched_in_cleaned": 23622,
+    "removed_%_vs_cleaned_size": 87.09878567320149,
+    "cleaned_rows_with_no_raw_match": 503,
+    "cleaned_rows_with_no_raw_match_by_split": {
+      "test": 248,
+      "train": 255
+    }
+  },
+  "align": {
+    "method": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "sim_true": {
+      "mean": 0.5251561811545398,
+      "median": 0.5394965708255768,
+      "p5": 0.2556579470634461,
+      "p95": 0.7479585945606232
+    },
+    "sim_shuffled": {
+      "mean": 0.23878383058982824,
+      "median": 0.23089808225631714,
+      "p5": 0.021459663379937412,
+      "p95": 0.48468485921621324
+    },
+    "threshold_shuffled_median": 0.23089808225631714,
+    "threshold_shuffled_p95": 0.48468485474586487,
+    "likely_mismatch_rows": 938,
+    "likely_mismatch_%": 3.908333333333333,
+    "weak_alignment_%": 36.204166666666666,
+    "note": "likely_mismatch = true-pair similarity below the median of random-pair similarity; confirm on the manual audit sample"
+  },
+  "style": {
+    "llm_like_%_overall": 10.295833333333333,
+    "stock_phrase_%": 7.895833333333334,
+    "colloquial_forms_%": 15.3375,
+    "note": "heuristic proxy for LLM-style text (stock phrases, or ZWNJ-rich formal register without colloquial forms); validate against the manual audit"
+  },
+  "pii": {
+    "table": [
+      {
+        "dataset": "cleaned",
+        "split": "dev",
+        "field": "question",
+        "rows": 2000,
+        "url_rows": 0,
+        "url_%": 0.0,
+        "email_rows": 1,
+        "email_%": 0.05,
+        "mobile_rows": 0,
+        "mobile_%": 0.0,
+        "landline_rows": 0,
+        "landline_%": 0.0,
+        "social_handle_rows": 0,
+        "social_handle_%": 0.0,
+        "dr_name_approx_rows": 183,
+        "dr_name_approx_%": 9.15
+      },
+      {
+        "dataset": "cleaned",
+        "split": "test",
+        "field": "question",
+        "rows": 2000,
+        "url_rows": 0,
+        "url_%": 0.0,
+        "email_rows": 0,
+        "email_%": 0.0,
+        "mobile_rows": 0,
+        "mobile_%": 0.0,
+        "landline_rows": 0,
+        "landline_%": 0.0,
+        "social_handle_rows": 0,
+        "social_handle_%": 0.0,
+        "dr_name_approx_rows": 113,
+        "dr_name_approx_%": 5.65
+      },
+      {
+        "dataset": "cleaned",
+        "split": "train",
+        "field": "question",
+        "rows": 20000,
+        "url_rows": 1,
+        "url_%": 0.005,
+        "email_rows": 0,
+        "email_%": 0.0,
+        "mobile_rows": 9,
+        "mobile_%": 0.045,
+        "landline_rows": 1,
+        "landline_%": 0.005,
+        "social_handle_rows": 0,
+        "social_handle_%": 0.0,
+        "dr_name_approx_rows": 2559,
+        "dr_name_approx_%": 12.795000000000002
+      },
+      {
+        "dataset": "cleaned",
+        "split": "dev",
+        "field": "answer",
+        "rows": 2000,
+        "url_rows": 0,
+        "url_%": 0.0,
+        "email_rows": 0,
+        "email_%": 0.0,
+        "mobile_rows": 0,
+        "mobile_%": 0.0,
+        "landline_rows": 0,
+        "landline_%": 0.0,
+        "social_handle_rows": 0,
+        "social_handle_%": 0.0,
+        "dr_name_approx_rows": 209,
+        "dr_name_approx_%": 10.45
+      },
+      {
+        "dataset": "cleaned",
+        "split": "test",
+        "field": "answer",
+        "rows": 2000,
+        "url_rows": 0,
+        "url_%": 0.0,
+        "email_rows": 0,
+        "email_%": 0.0,
+        "mobile_rows": 2,
+        "mobile_%": 0.1,
+        "landline_rows": 0,
+        "landline_%": 0.0,
+        "social_handle_rows": 0,
+        "social_handle_%": 0.0,
+        "dr_name_approx_rows": 7,
+        "dr_name_approx_%": 0.35000000000000003
+      },
+      {
+        "dataset": "cleaned",
+        "split": "train",
+        "field": "answer",
+        "rows": 20000,
+        "url_rows": 2,
+        "url_%": 0.01,
+        "email_rows": 0,
+        "email_%": 0.0,
+        "mobile_rows": 1,
+        "mobile_%": 0.005,
+        "landline_rows": 0,
+        "landline_%": 0.0,
+        "social_handle_rows": 1,
+        "social_handle_%": 0.005,
+        "dr_name_approx_rows": 550,
+        "dr_name_approx_%": 2.75
+      },
+      {
+        "dataset": "uncleaned",
+        "split": "train",
+        "field": "question",
+        "rows": 186029,
+        "url_rows": 90,
+        "url_%": 0.04837955372549441,
+        "email_rows": 19,
+        "email_%": 0.01021346134204882,
+        "mobile_rows": 132,
+        "mobile_%": 0.0709566787973918,
+        "landline_rows": 12,
+        "landline_%": 0.006450607163399256,
+        "social_handle_rows": 4,
+        "social_handle_%": 0.0021502023877997514,
+        "dr_name_approx_rows": 24353,
+        "dr_name_approx_%": 13.09096968752184
+      },
+      {
+        "dataset": "uncleaned",
+        "split": "train",
+        "field": "answer",
+        "rows": 186029,
+        "url_rows": 765,
+        "url_%": 0.41122620666670257,
+        "email_rows": 35,
+        "email_%": 0.018814270893247827,
+        "mobile_rows": 2002,
+        "mobile_%": 1.0761762950937757,
+        "landline_rows": 1076,
+        "landline_%": 0.5784044423181333,
+        "social_handle_rows": 144,
+        "social_handle_%": 0.07740728596079105,
+        "dr_name_approx_rows": 2418,
+        "dr_name_approx_%": 1.29979734342495
+      }
+    ],
+    "note": "counts and row ids only (no PII values exported); doctor-name detector is approximate"
+  },
+  "sensitive": {
+    "note": "keyword/regex screens on questions only; they over- and under-count. Use the row-id list for manual review and decide on a content warning / filtered release.",
+    "totals": [
+      {
+        "dataset": "cleaned",
+        "split": "dev",
+        "self_harm_kw_rows": 0,
+        "first_person_minor_rows": 10,
+        "child_dosing_rows": 158,
+        "sexual_health_rows": 133,
+        "pregnancy_rows": 1118,
+        "rows": 2000
+      },
+      {
+        "dataset": "cleaned",
+        "split": "test",
+        "self_harm_kw_rows": 14,
+        "first_person_minor_rows": 25,
+        "child_dosing_rows": 22,
+        "sexual_health_rows": 62,
+        "pregnancy_rows": 56,
+        "rows": 2000
+      },
+      {
+        "dataset": "cleaned",
+        "split": "train",
+        "self_harm_kw_rows": 119,
+        "first_person_minor_rows": 154,
+        "child_dosing_rows": 1111,
+        "sexual_health_rows": 840,
+        "pregnancy_rows": 3405,
+        "rows": 20000
+      },
+      {
+        "dataset": "uncleaned",
+        "split": "train",
+        "self_harm_kw_rows": 868,
+        "first_person_minor_rows": 2117,
+        "child_dosing_rows": 7320,
+        "sexual_health_rows": 12758,
+        "pregnancy_rows": 29117,
+        "rows": 186029
+      }
+    ]
+  },
+  "dedup": {
+    "qkey_dup_within_split_rows": {
+      "dev": 1,
+      "test": 0,
+      "train": 17
+    },
+    "dev_rows_with_qkey_in_test": 0,
+    "dev_rows_with_qkey_in_train": 3,
+    "test_rows_with_qkey_in_dev": 0,
+    "test_rows_with_qkey_in_train": 0,
+    "train_rows_with_qkey_in_dev": 3,
+    "train_rows_with_qkey_in_test": 0,
+    "qakey_dup_within_split_rows": {
+      "dev": 1,
+      "test": 0,
+      "train": 11
+    },
+    "dev_rows_with_qakey_in_test": 0,
+    "dev_rows_with_qakey_in_train": 2,
+    "test_rows_with_qakey_in_dev": 0,
+    "test_rows_with_qakey_in_train": 0,
+    "train_rows_with_qakey_in_dev": 2,
+    "train_rows_with_qakey_in_test": 0,
+    "near_dup_question_pairs_within_split": {
+      "train": 154,
+      "dev": 4,
+      "test": 2
+    },
+    "train_rows_with_near_dup_question_in_dev": 10,
+    "dev_rows_with_near_dup_question_in_train": 10,
+    "near_dup_params": "3-word shingles on questions (>=5 words), Jaccard>=0.8, 64 perms",
+    "nearest_train_question_similarity": {
+      "dev": {
+        "median": 0.14319420550531814,
+        "p95": 0.270115986571617,
+        "share_ge_0.8_%": 0.8,
+        "share_ge_0.9_%": 0.5
+      },
+      "test": {
+        "median": 0.15940127921050995,
+        "p95": 0.33833224242548354,
+        "share_ge_0.8_%": 0.05,
+        "share_ge_0.9_%": 0.0
+      }
+    },
+    "clean_rows_with_answer_repeated_>=5_times_%": 3.7125,
+    "unclean_rows_with_answer_repeated_>=5_times_%": 4.929876524627881
+  },
+  "topics": {
+    "n_topics": 12,
+    "sample_rows": 20000
+  },
+  "contamination": [
+    {
+      "split": "dev",
+      "items": 2000,
+      "evaluable": 2000,
+      "any_8gram_match_%": 41.0,
+      "gt_50%_matched_%": 11.700000000000001
+    },
+    {
+      "split": "test",
+      "items": 2000,
+      "evaluable": 1997,
+      "any_8gram_match_%": 18.477716574862292,
+      "gt_50%_matched_%": 2.103154732098147
+    },
+    {
+      "split": "train",
+      "items": 20000,
+      "evaluable": 20000,
+      "any_8gram_match_%": 14.605,
+      "gt_50%_matched_%": 2.1999999999999997
+    }
+  ],
+  "audit": {
+    "rows": 200,
+    "protocol": "two annotators, report Cohen's kappa for aligned / llm_generated / unsafe"
+  }
+}

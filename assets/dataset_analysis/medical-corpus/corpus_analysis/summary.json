@@ -1,0 +1,39 @@
+{
+  "stats": {
+    "documents": 101954,
+    "sources": 11,
+    "words_total": 85495070,
+    "chars_total": 417359730,
+    "median_words": 620.0,
+    "very_short_docs_lt50_words": 502,
+    "very_long_docs_gt10k_words": 4
+  },
+  "composition": {
+    "persian_share": 0.9656311929402911,
+    "latin_share": 0.005864142455447617,
+    "docs_with_arabic_yeh_kaf_%": 7.028659983914315,
+    "docs_mixed_digit_scripts_%": 13.956294014947918,
+    "docs_latin_share_gt_20%_%": 0.03531004178354944
+  },
+  "dedup": {
+    "exact_dup_docs": 2257,
+    "exact_dup_%": 2.213743452929753,
+    "exact_dup_cross_source_docs": 13,
+    "near_dup_docs": 3903,
+    "near_dup_%": 3.8281970300331523,
+    "near_dup_cross_source_docs": 423,
+    "near_dup_params": "5-word shingles, first 500 words, Jaccard>=0.8, 64 perms",
+    "docs_after_dedup": 98051,
+    "words_after_dedup": 80740771,
+    "words_removed_%": 5.5609042720241035
+  },
+  "boilerplate": {
+    "distinct_sentences_in_>=20_docs": 2193,
+    "mean_boilerplate_char_share_%": 1.7728872831187652,
+    "docs_with_>10%_boilerplate": 4542
+  },
+  "topics": {
+    "n_topics": 15,
+    "sample_docs": 20000
+  }
+}

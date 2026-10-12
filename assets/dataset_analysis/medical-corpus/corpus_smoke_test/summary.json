@@ -1,0 +1,30 @@
+{
+  "stats": {
+    "documents": 2000,
+    "sources": 2,
+    "words_total": 3870759,
+    "chars_total": 19325323,
+    "median_words": 2011.0,
+    "very_short_docs_lt50_words": 7,
+    "very_long_docs_gt10k_words": 0
+  },
+  "composition": {
+    "persian_share": 0.9451148930783302,
+    "latin_share": 0.0228649021371949,
+    "docs_with_arabic_yeh_kaf_%": 14.7,
+    "docs_mixed_digit_scripts_%": 35.55,
+    "docs_latin_share_gt_20%_%": 0.05
+  },
+  "dedup": {
+    "exact_dup_docs": 10,
+    "exact_dup_%": 0.5,
+    "exact_dup_cross_source_docs": 0,
+    "near_dup_docs": 10,
+    "near_dup_%": 0.5,
+    "near_dup_cross_source_docs": 0,
+    "near_dup_params": "5-word shingles, first 500 words, Jaccard>=0.8, 64 perms",
+    "docs_after_dedup": 1990,
+    "words_after_dedup": 3844945,
+    "words_removed_%": 0.6668976291213213
+  }
+}

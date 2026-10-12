@@ -1,0 +1,11 @@
+﻿dataset,split,source,rows,q_words_median,a_words_median,a_words_mean
+cleaned,dev,niniban.com,2000,45.0,77.0,97.761
+cleaned,test,doctor-yab.ir,1711,11.0,48.0,58.26943308007014
+cleaned,test,isovisit.com,88,37.5,37.0,43.70454545454545
+cleaned,test,kqa,201,9.0,100.0,103.26865671641791
+cleaned,train,drhast.com,16596,53.0,57.0,70.66877560858038
+cleaned,train,niniban.com,3404,46.0,76.0,97.4882491186839
+uncleaned,train,doctor-yab.ir,54539,38.0,14.0,20.564220099378428
+uncleaned,train,drhast.com,122233,44.0,17.0,25.052579908862583
+uncleaned,train,isovisit.com,85,38.0,38.0,44.84705882352941
+uncleaned,train,niniban.com,9172,44.0,48.0,68.23102921936328
